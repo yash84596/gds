@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GDS Public School</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1F3A3D",
+                        accent: "#F2A900",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#121212", // A common dark mode background
+                        "text-light": "#1F3A3D",
+                        "text-dark": "#E5E5E5",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-primary text-text-light dark:text-text-dark font-sans">
+    <header class="relative bg-cover bg-center text-white" style="background-image: url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');">
+    <!-- Fixed Sticky Navigation Bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                        <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary">GDS Public School</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="index.html">Home</a>
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="About.html">About</a>
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="Curriculum.html">Curriculum</a>
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="Event.html">Events</a>
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="Contact_Us.html">Contact Us</a>
+                    <a class="text-primary hover:text-accent font-medium transition-colors duration-300" href="trail_index.html">Trail</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                        <div id="hamburgerLine1" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center"></div>
+                        <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out"></div>
+                        <div id="hamburgerLine3" class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center"></div>
+                    </div>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex flex-col h-full">
+            <!-- Mobile Menu Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
+                <div class="flex items-center">
+                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                        <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                    </div>
+                    <span class="text-lg font-bold text-primary">GDS School</span>
+                </div>
+                <button id="closeMobileMenu" class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Items -->
+            <nav class="flex-1 py-4 overflow-y-auto">
+                <div class="space-y-1">
+                    <a href="index.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="About.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="Curriculum.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Curriculum</span>
+                    </a>
+                    <a href="Event.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Events</span>
+                    </a>
+                    <a href="Contact_Us.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="trail_index.html" class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-play-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Trail</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Footer -->
+            <div class="p-6 border-t border-gray-100 bg-gray-50">
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-facebook-f text-primary text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-twitter text-primary text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-instagram text-primary text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-linkedin-in text-primary text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Background Image -->
+    <div class="absolute inset-0 bg-primary opacity-60"></div>
+    <div class="relative z-10" style="padding-top: 80px;">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-40">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public School</span></h1>
+            <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development.</p>
+            <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300" href="#">
+                Begin Your Legacy <span class="align-middle">→</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Mobile Menu Functionality
+    class MobileMenu {
+        constructor() {
+            this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            this.mobileMenu = document.getElementById('mobileMenu');
+            this.mobileOverlay = document.getElementById('mobileOverlay');
+            this.closeMobileMenu = document.getElementById('closeMobileMenu');
+            this.hamburgerLines = [
+                document.getElementById('hamburgerLine1'),
+                document.getElementById('hamburgerLine2'),
+                document.getElementById('hamburgerLine3')
+            ];
+            this.isMenuOpen = false;
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+
+            this.init();
+        }
+
+        init() {
+            this.bindEvents();
+            this.setActivePageLink();
+        }
+
+        bindEvents() {
+            // Menu toggle events
+            this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+            this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
+            this.mobileOverlay.addEventListener('click', () => this.closeMenu());
+
+            // Navigation link events
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(() => this.closeMenu(), 200);
+                });
+            });
+
+            // Window resize event
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Keyboard events
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Touch events for swipe gestures
+            this.mobileMenu.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+            });
+
+            this.mobileMenu.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+            });
+        }
+
+        toggleMenu() {
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu() {
+            this.isMenuOpen = true;
+            
+            // Show menu and overlay
+            this.mobileMenu.classList.remove('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-0', 'invisible');
+            this.mobileOverlay.classList.add('opacity-100', 'visible');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+            
+            // Animate hamburger to X
+            this.animateHamburgerToX();
+        }
+
+        closeMenu() {
+            this.isMenuOpen = false;
+            
+            // Hide menu and overlay
+            this.mobileMenu.classList.add('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-100', 'visible');
+            this.mobileOverlay.classList.add('opacity-0', 'invisible');
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+            
+            // Animate X back to hamburger
+            this.animateXToHamburger();
+        }
+
+        animateHamburgerToX() {
+            this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            this.hamburgerLines[1].style.opacity = '0';
+            this.hamburgerLines[1].style.transform = 'scale(0)';
+            this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        animateXToHamburger() {
+            this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+            this.hamburgerLines[1].style.opacity = '1';
+            this.hamburgerLines[1].style.transform = 'scale(1)';
+            this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+        }
+
+        handleSwipe() {
+            const swipeThreshold = 100;
+            if (this.touchStartX - this.touchEndX > swipeThreshold) {
+                // Swiped left (close menu)
+                this.closeMenu();
+            }
+        }
+
+        setActivePageLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
+            
+            allNavLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    // Desktop nav
+                    if (link.closest('nav.hidden')) {
+                        link.classList.add('text-accent');
+                        link.classList.remove('text-primary');
+                    }
+                    // Mobile nav
+                    if (link.classList.contains('mobile-nav-link')) {
+                        link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
+                        link.classList.remove('text-gray-700', 'border-transparent');
+                        const icon = link.querySelector('i');
+                        if (icon) icon.classList.add('text-accent');
+                    }
+                }
+            });
+        }
+    }
+
+    // Initialize mobile menu when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        new MobileMenu();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Custom CSS for enhanced animations and responsiveness */
+    
+    /* Hamburger animation improvements */
+    #hamburgerLine1, #hamburgerLine2, #hamburgerLine3 {
+        transform-origin: center;
+        will-change: transform, opacity;
+    }
+
+    /* Mobile menu enhancements */
+    #mobileMenu {
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Mobile nav link hover effects */
+    .mobile-nav-link {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(242, 169, 0, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .mobile-nav-link:hover::before {
+        left: 100%;
+    }
+
+    /* Smooth overlay transitions */
+    #mobileOverlay {
+        backdrop-filter: blur(2px);
+    }
+
+    /* Focus states for accessibility */
+    button:focus-visible, .mobile-nav-link:focus-visible {
+        outline: 2px solid #F2A900;
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        #mobileMenu {
+            width: 100vw;
+        }
+    }
+
+    /* Header scroll effect */
+    .header-scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+    }
+
+    /* Animation delays for staggered effect */
+    .mobile-nav-link:nth-child(1) { transition-delay: 0ms; }
+    .mobile-nav-link:nth-child(2) { transition-delay: 50ms; }
+    .mobile-nav-link:nth-child(3) { transition-delay: 100ms; }
+    .mobile-nav-link:nth-child(4) { transition-delay: 150ms; }
+    .mobile-nav-link:nth-child(5) { transition-delay: 200ms; }
+    .mobile-nav-link:nth-child(6) { transition-delay: 250ms; }
+
+    /* Clean transitions */
+    * {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+</style>
+
+
+
+    <section class="py-16 sm:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Where <span class="text-accent">Tradition Meets
+                    Tomorrow</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Combining generations of
+                educational excellence with innovative teaching methods, creating leaders who will shape the future.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Master Educators Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/93e257f037532e6683d5adce6af32d44.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">person</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Master Educators</h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">World-class faculty with decades of
+                            experience and commitment to educational excellence and student development.</p>
+                    </div>
+                </div>
+
+                <!-- Timeless Spaces Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/0353073c46e078d3731e50415647e495.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">schedule</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Timeless Spaces</h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">State-of-the-art facilities that
+                            blend traditional
+                            values with modern learning environments and cutting-edge technology.</p>
+                    </div>
+                </div>
+
+                <!-- Connected Learning Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/0c0a23580e20b828bb88a191377a52f7.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">public</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Connected Learning
+                        </h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">Global curriculum and international
+                            partnerships that prepare students for success in an interconnected world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-background-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Our <span class="text-accent">Living
+                    Curriculum</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Where every subject comes alive
+                through discovery, nurturing innovative human beings in grades K-12.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Sciences & Mathematics Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Modern science laboratory with equipment and experiments" class="w-full h-56 object-cover"
+                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">science</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Sciences & Mathematics</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Discover the wonders of nature, explore
+                            advanced mathematical concepts, and develop critical thinking through hands-on experiments.
+                        </p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+
+                <!-- Languages & Stories Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Beautiful library interior with classic architecture and bookshelves"
+                        class="w-full h-56 object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7j1HF3XiPiB7uQt9IgAIajeUYRAuSwDPgs1Thx9QflfXM6w2xSdbeNuqxOApUChLi-O8pl_EXTSUpPUnH1RZEucCJlYCEtjUQKbjSPIzxRbDfEtEdED7b26-cI46svyMjy_hfDjahqToU15S-NR-HZKvQbBSFP4BGhy7qV9Dm0bn18ufbBRBodB7rPbXldrFfsa7J_Q_b392KrlKU0cSdEgiB-wnhbRQ054FyuHXgreNo0DTWB08355HwxI-1P_awwsn3aphqMhsL" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">book</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Languages & Stories</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Master multiple languages, dive into
+                            world
+                            literature, and develop exceptional communication and creative writing skills.</p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+
+                <!-- Arts & Heritage Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Colorful art classroom with student artwork and creative displays"
+                        class="w-full h-56 object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtTRhVWgVL1SwiLlW3Mt7KSmkhE9BaBcRGS9GeCuESKCrW6S_VCdOa0wyDctR7ePxp5ut_uWK-ovI2H-JQX03ehi0v0srECthVEQy_OYA9PdxewQqzhlZh0FFBl6ac60grNDIqM3mwi8XG_zNgvjvpNX6-V4Ni80ON5C7uG0OH7QfBi-YfyZNEBArTVwci_kfS_kt9HvAj-TbUMMshtFJMdcS_tEDNGs4yseoilsxEBPRumzl__xorcDSNk3ngDC0M4vkJn6IM3I10" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">palette</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Arts & Heritage</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Celebrate creativity through visual
+                            arts,
+                            music, drama, and cultural studies that connect past traditions with future innovations.</p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Button -->
+            <div class="text-center">
+                <a class="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg text-lg"
+                    href="#">
+                    Discover Our Complete Journey →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="bg-cover bg-center" style="background-image: url('img/15bb93b129fb5b3909ed28b2b58e5249.jpg');">
+        <div class="bg-primary bg-opacity-80 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h2 class="text-3xl sm:text-5xl font-bold">Ready to Join Our <span class="text-accent">School
+                        Family?</span></h2>
+                <p class="mt-4 text-lg max-w-3xl mx-auto">Take the first step towards an exceptional educational
+                    journey. Our admissions team is here to guide you through the process.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                    href="#">
+                    Apply for Admission
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent p-2.5 rounded-md mr-4">
+                            <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <span class="text-xl font-bold">GDS Public School</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
+                        education and character development.</p>
+                    <div class="flex space-x-3">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
+                            <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>info@gdspublicschool.edu</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
+                        educational insights.</p>
+                    <div class="flex space-x-3">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

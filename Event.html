@@ -37,40 +37,381 @@
 </head>
 
 <body class="min-h-screen bg-white">
-    <!-- Header -->
     <header
-        class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
-                        <i class="fas fa-graduation-cap text-primary text-xl"></i>
-                    </div>
-                    <span class="text-xl font-bold text-primary">GDS Public School</span>
+    class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-xl"></i>
                 </div>
+                <span class="text-xl font-bold text-primary">GDS Public School</span>
+            </div>
 
-                <!-- Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a class="text-text-gray hover:text-accent transition-colors font-medium" href="index.html">Home</a>
-                    <a class="text-text-gray hover:text-accent transition-colors font-medium"
-                        href="about.html">About</a>
-                    <a class="text-text-gray hover:text-accent transition-colors font-medium"
-                        href="curriculum.html">Curriculum</a>
-                    <a class="text-text-gray hover:text-accent transition-colors font-medium"
-                        href="events.html">Events</a>
-                    <a class="text-text-gray hover:text-accent transition-colors font-medium"
-                        href="contact.html">Contact Us</a>
-                </nav>
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    href="Curriculum.html">Curriculum</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
+                    Us</a>
+            </nav>
 
-                <!-- Mobile Menu Button -->
-                <button
-                    class="md:hidden text-text-gray hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn"
+                class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                    <div id="hamburgerLine1"
+                        class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                    <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                    </div>
+                    <div id="hamburgerLine3"
+                        class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobileOverlay"
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
+
+<!-- Mobile Navigation Menu -->
+<div id="mobileMenu"
+    class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-primary">GDS School</span>
+            </div>
+            <button id="closeMobileMenu"
+                class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Items -->
+        <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="space-y-1">
+                <a href="index.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Home</span>
+                </a>
+                <a href="About.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>About</span>
+                </a>
+                <a href="Curriculum.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Curriculum</span>
+                </a>
+                <a href="Event.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Events</span>
+                </a>
+                <a href="Contact_Us.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Footer -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <div class="text-center">
+                <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+                <div class="flex justify-center space-x-4">
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-facebook-f text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-twitter text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-instagram text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-linkedin-in text-primary text-sm"></i>
+                    </a>
+                </div>
+                <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
             </div>
         </div>
-    </header>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Functionality
+    class MobileMenu {
+        constructor() {
+            this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            this.mobileMenu = document.getElementById('mobileMenu');
+            this.mobileOverlay = document.getElementById('mobileOverlay');
+            this.closeMobileMenu = document.getElementById('closeMobileMenu');
+            this.hamburgerLines = [
+                document.getElementById('hamburgerLine1'),
+                document.getElementById('hamburgerLine2'),
+                document.getElementById('hamburgerLine3')
+            ];
+            this.isMenuOpen = false;
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+
+            this.init();
+        }
+
+        init() {
+            this.bindEvents();
+            this.setActivePageLink();
+        }
+
+        bindEvents() {
+            // Menu toggle events
+            this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+            this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
+            this.mobileOverlay.addEventListener('click', () => this.closeMenu());
+
+            // Navigation link events
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(() => this.closeMenu(), 200);
+                });
+            });
+
+            // Window resize event
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Keyboard events
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Touch events for swipe gestures
+            this.mobileMenu.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+            });
+
+            this.mobileMenu.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+            });
+        }
+
+        toggleMenu() {
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu() {
+            this.isMenuOpen = true;
+
+            // Show menu and overlay
+            this.mobileMenu.classList.remove('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-0', 'invisible');
+            this.mobileOverlay.classList.add('opacity-100', 'visible');
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+
+            // Animate hamburger to X
+            this.animateHamburgerToX();
+        }
+
+        closeMenu() {
+            this.isMenuOpen = false;
+
+            // Hide menu and overlay
+            this.mobileMenu.classList.add('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-100', 'visible');
+            this.mobileOverlay.classList.add('opacity-0', 'invisible');
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+
+            // Animate X back to hamburger
+            this.animateXToHamburger();
+        }
+
+        animateHamburgerToX() {
+            this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            this.hamburgerLines[1].style.opacity = '0';
+            this.hamburgerLines[1].style.transform = 'scale(0)';
+            this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        animateXToHamburger() {
+            this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+            this.hamburgerLines[1].style.opacity = '1';
+            this.hamburgerLines[1].style.transform = 'scale(1)';
+            this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+        }
+
+        handleSwipe() {
+            const swipeThreshold = 100;
+            if (this.touchStartX - this.touchEndX > swipeThreshold) {
+                // Swiped left (close menu)
+                this.closeMenu();
+            }
+        }
+
+        setActivePageLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
+
+            allNavLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    // Desktop nav
+                    if (link.closest('nav.hidden')) {
+                        link.classList.add('text-accent');
+                        link.classList.remove('text-gray-700');
+                    }
+                    // Mobile nav
+                    if (link.classList.contains('mobile-nav-link')) {
+                        link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
+                        link.classList.remove('text-gray-700', 'border-transparent');
+                    }
+                }
+            });
+        }
+    }
+
+    // Initialize mobile menu when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        new MobileMenu();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Custom CSS for enhanced animations and responsiveness */
+
+    /* Hamburger animation improvements */
+    #hamburgerLine1,
+    #hamburgerLine2,
+    #hamburgerLine3 {
+        transform-origin: center;
+        will-change: transform, opacity;
+    }
+
+    /* Mobile menu enhancements */
+    #mobileMenu {
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Mobile nav link hover effects */
+    .mobile-nav-link {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(242, 169, 0, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .mobile-nav-link:hover::before {
+        left: 100%;
+    }
+
+    /* Smooth overlay transitions */
+    #mobileOverlay {
+        backdrop-filter: blur(2px);
+    }
+
+    /* Focus states for accessibility */
+    button:focus-visible,
+    .mobile-nav-link:focus-visible {
+        outline: 2px solid #F2A900;
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        #mobileMenu {
+            width: 100vw;
+        }
+    }
+
+    /* Header scroll effect */
+    .header-scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+    }
+
+    /* Animation delays for staggered effect */
+    .mobile-nav-link:nth-child(1) {
+        transition-delay: 0ms;
+    }
+
+    .mobile-nav-link:nth-child(2) {
+        transition-delay: 50ms;
+    }
+
+    .mobile-nav-link:nth-child(3) {
+        transition-delay: 100ms;
+    }
+
+    .mobile-nav-link:nth-child(4) {
+        transition-delay: 150ms;
+    }
+
+    .mobile-nav-link:nth-child(5) {
+        transition-delay: 200ms;
+    }
+</style>
     <!-- Hero Banner - Featured Event -->
     <section id="heroSection" class="relative bg-gradient-to-r from-primary to-[#2A4A4E] py-20">
         <div id="heroBg" class="absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
@@ -585,96 +926,91 @@
     </script>
 
     <footer class="bg-primary text-white">
-    <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Brand Section -->
-        <div>
-          <div class="flex items-center mb-6">
-            <div class="bg-accent p-2.5 rounded-md mr-4">
-              <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent p-2.5 rounded-md mr-4">
+                            <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <span class="text-xl font-bold">GDS Public School</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and character development.</p>
+                    <div class="flex space-x-3">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
+                            <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>info@gdspublicschool.edu</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Follow Us -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational insights.</p>
+                    <div class="flex space-x-3">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <span class="text-xl font-bold">GDS Public School</span>
-          </div>
-          <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and
-            character development.</p>
-          <div class="flex space-x-3">
-            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
-              <i class="fab fa-facebook-f text-lg"></i>
-            </a>
-            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
-              <i class="fab fa-twitter text-lg"></i>
-            </a>
-            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
-              <i class="fab fa-instagram text-lg"></i>
-            </a>
-            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in text-lg"></i>
-            </a>
-          </div>
+            
+            <!-- Copyright Section -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                </div>
+            </div>
         </div>
+    </footer>
 
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
-          <ul class="space-y-4 text-gray-400">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-              <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
-              <span>+1 (555) 123-4567</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-              <span>info@gdspublicschool.edu</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Follow Us -->
-        <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational
-            insights.</p>
-          <div class="flex space-x-3">
-            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
-              aria-label="Facebook">
-              <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
-            </a>
-            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
-              aria-label="Twitter">
-              <i class="fab fa-twitter" style="font-size: 18px;"></i>
-            </a>
-            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
-              aria-label="Instagram">
-              <i class="fab fa-instagram" style="font-size: 18px;"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright Section -->
-      <div class="mt-12 pt-8 border-t border-gray-700">
-        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  
 </body>
 
 </html>

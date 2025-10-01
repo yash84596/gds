@@ -4,433 +4,1447 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>GDS Public School</title>
+  <title>GDS Public School - Curriculum</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script>
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
           colors: {
-            primary: '#1F3A3D',
-            accent: '#F2A900',
-            'background-light': '#E5E5E5',
-            'text-light': '#1F3A3D',
-            'background-dark': '#112224', // A darker shade for dark mode
-            'text-dark': '#E5E5E5',
+            primary: "#1F3A3D",
+            accent: "#F2A900",
+            "background-light": "#F8FAFC",
+            "background-dark": "#121212",
+            "text-light": "#1F3A3D",
+            "text-dark": "#E5E5E5",
+            "text-gray": "#64748B",
+            "card-light": "#FFFFFF",
+            "card-dark": "#1E1E1E"
           },
           fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: "0.75rem",
           },
         },
       },
     };
   </script>
-  <style>
-    .active-tab {
-      background-color: #F2A900 !important;
-      color: #1F3A3D !important;
-    }
-  </style>
 </head>
 
-<body class="bg-white dark:bg-background-dark text-text-light dark:text-text-dark font-sans">
-  <div class="bg-background-light dark:bg-background-dark">
-    <header class="bg-primary text-white">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-          <img alt="GDS Public School logo" class="h-10 w-10 mr-2"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy3fLQOgZ_y-v8F6cJtwucoUPRW0nLuhd51CXjl_Jdf8-_xN-g7iOubbZOMqoYAB43_7lc-lTwOwgxXwaU1s39qrfheMPvCmUnoSmkAKXG-g5_qaM1vK8izN2I_agqElKwsCORNlbFwNd1P0dxlCLQjzXXC-jzSk3WymEt6IPr_NWm8FIX1HMb1d6EK2j9Lt1uftLH6g0TrRwfBE9EK9F1eUHITiVB1cJ5RPkh4auvJVGvP44YBAnNiw48Rp-8Zl63I3_zWQGtUpg" />
-          <span class="text-xl font-bold">GDS Public School</span>
+<body class="bg-white font-sans">
+  
+  <header
+    class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-primary">GDS Public School</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    href="Curriculum.html">Curriculum</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
+                    Us</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn"
+                class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                    <div id="hamburgerLine1"
+                        class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                    <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                    </div>
+                    <div id="hamburgerLine3"
+                        class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                </div>
+            </button>
         </div>
-        <nav class="hidden md:flex items-center space-x-6">
-          <a class="hover:text-accent" href="#">Home</a>
-          <a class="hover:text-accent" href="About.html">About</a>
-          <a class="text-accent font-bold" href="Curriculum.html">Curriculum</a>
-          <a class="hover:text-accent" href="Events.html">Events</a>
-          <a class="hover:text-accent" href="Contact_Us.html">Contact Us</a>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobileOverlay"
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
+
+<!-- Mobile Navigation Menu -->
+<div id="mobileMenu"
+    class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-primary">GDS School</span>
+            </div>
+            <button id="closeMobileMenu"
+                class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Items -->
+        <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="space-y-1">
+                <a href="index.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Home</span>
+                </a>
+                <a href="About.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>About</span>
+                </a>
+                <a href="Curriculum.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Curriculum</span>
+                </a>
+                <a href="Event.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Events</span>
+                </a>
+                <a href="Contact_Us.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
         </nav>
-        <button class="md:hidden">
-          <span class="material-icons">
-            menu
-          </span>
-        </button>
+
+        <!-- Mobile Menu Footer -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <div class="text-center">
+                <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+                <div class="flex justify-center space-x-4">
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-facebook-f text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-twitter text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-instagram text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-linkedin-in text-primary text-sm"></i>
+                    </a>
+                </div>
+                <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Functionality
+    class MobileMenu {
+        constructor() {
+            this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            this.mobileMenu = document.getElementById('mobileMenu');
+            this.mobileOverlay = document.getElementById('mobileOverlay');
+            this.closeMobileMenu = document.getElementById('closeMobileMenu');
+            this.hamburgerLines = [
+                document.getElementById('hamburgerLine1'),
+                document.getElementById('hamburgerLine2'),
+                document.getElementById('hamburgerLine3')
+            ];
+            this.isMenuOpen = false;
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+
+            this.init();
+        }
+
+        init() {
+            this.bindEvents();
+            this.setActivePageLink();
+        }
+
+        bindEvents() {
+            // Menu toggle events
+            this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+            this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
+            this.mobileOverlay.addEventListener('click', () => this.closeMenu());
+
+            // Navigation link events
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(() => this.closeMenu(), 200);
+                });
+            });
+
+            // Window resize event
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Keyboard events
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Touch events for swipe gestures
+            this.mobileMenu.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+            });
+
+            this.mobileMenu.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+            });
+        }
+
+        toggleMenu() {
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu() {
+            this.isMenuOpen = true;
+
+            // Show menu and overlay
+            this.mobileMenu.classList.remove('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-0', 'invisible');
+            this.mobileOverlay.classList.add('opacity-100', 'visible');
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+
+            // Animate hamburger to X
+            this.animateHamburgerToX();
+        }
+
+        closeMenu() {
+            this.isMenuOpen = false;
+
+            // Hide menu and overlay
+            this.mobileMenu.classList.add('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-100', 'visible');
+            this.mobileOverlay.classList.add('opacity-0', 'invisible');
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+
+            // Animate X back to hamburger
+            this.animateXToHamburger();
+        }
+
+        animateHamburgerToX() {
+            this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            this.hamburgerLines[1].style.opacity = '0';
+            this.hamburgerLines[1].style.transform = 'scale(0)';
+            this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        animateXToHamburger() {
+            this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+            this.hamburgerLines[1].style.opacity = '1';
+            this.hamburgerLines[1].style.transform = 'scale(1)';
+            this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+        }
+
+        handleSwipe() {
+            const swipeThreshold = 100;
+            if (this.touchStartX - this.touchEndX > swipeThreshold) {
+                // Swiped left (close menu)
+                this.closeMenu();
+            }
+        }
+
+        setActivePageLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
+
+            allNavLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    // Desktop nav
+                    if (link.closest('nav.hidden')) {
+                        link.classList.add('text-accent');
+                        link.classList.remove('text-gray-700');
+                    }
+                    // Mobile nav
+                    if (link.classList.contains('mobile-nav-link')) {
+                        link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
+                        link.classList.remove('text-gray-700', 'border-transparent');
+                    }
+                }
+            });
+        }
+    }
+
+    // Initialize mobile menu when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        new MobileMenu();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Custom CSS for enhanced animations and responsiveness */
+
+    /* Hamburger animation improvements */
+    #hamburgerLine1,
+    #hamburgerLine2,
+    #hamburgerLine3 {
+        transform-origin: center;
+        will-change: transform, opacity;
+    }
+
+    /* Mobile menu enhancements */
+    #mobileMenu {
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Mobile nav link hover effects */
+    .mobile-nav-link {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(242, 169, 0, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .mobile-nav-link:hover::before {
+        left: 100%;
+    }
+
+    /* Smooth overlay transitions */
+    #mobileOverlay {
+        backdrop-filter: blur(2px);
+    }
+
+    /* Focus states for accessibility */
+    button:focus-visible,
+    .mobile-nav-link:focus-visible {
+        outline: 2px solid #F2A900;
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        #mobileMenu {
+            width: 100vw;
+        }
+    }
+
+    /* Header scroll effect */
+    .header-scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+    }
+
+    /* Animation delays for staggered effect */
+    .mobile-nav-link:nth-child(1) {
+        transition-delay: 0ms;
+    }
+
+    .mobile-nav-link:nth-child(2) {
+        transition-delay: 50ms;
+    }
+
+    .mobile-nav-link:nth-child(3) {
+        transition-delay: 100ms;
+    }
+
+    .mobile-nav-link:nth-child(4) {
+        transition-delay: 150ms;
+    }
+
+    .mobile-nav-link:nth-child(5) {
+        transition-delay: 200ms;
+    }
+</style>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center bg-no-repeat text-white pt-20"
+    style="height: 70vh; background-image: linear-gradient(rgba(31, 58, 61, 0.8), rgba(31, 58, 61, 0.8)), url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80');">
+    <div class="flex flex-col justify-center h-full">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Our Academic Programs</h1>
+        <p class="text-xl md:text-2xl max-w-4xl mx-auto opacity-95 drop-shadow-md leading-relaxed">
+          Comprehensive curriculum designed to nurture critical thinking, creativity, and a lifelong love of learning,
+          from pre-school through to high school
+        </p>
       </div>
-    </header>
-    <main>
-      <section class="relative bg-cover bg-center h-96"
-        style="background-image: url('image-23c52e89-1383-4a66-b33a-9e120f2694b7');">
-        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
-        <div
-          class="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
-          <h1 class="text-4xl md:text-5xl font-bold">Our Academic Programs</h1>
-          <p class="mt-4 max-w-2xl">Comprehensive curriculum designed to nurture critical thinking, creativity, and a
-            lifelong love of learning, from pre-school through to high school.</p>
-        </div>
-      </section>
-      <section class="py-16 bg-white dark:bg-background-dark">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-primary dark:text-white">Academic <span
-                class="text-accent">Programs</span></h2>
-            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Structured learning pathways that build
-              upon each other to create well-rounded, successful individuals.</p>
+    </div>
+  </section>
+
+  <!-- Academic Programs Section -->
+  <!-- <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary mb-4">Academic <span class="text-accent">Programs</span></h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+          Structured learning pathways that build upon each other to create well-rounded, successful individuals
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8"> -->
+  <!-- Primary Education -->
+  <!-- <div
+          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="text-center mb-6">
+            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
+              <i class="fas fa-child text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Primary Education (K-5)</h3>
+            <div class="text-accent font-bold text-lg mb-4">5 Years</div>
+            <p class="mb-6">Foundation years focusing on core literacy, numeracy, and social-emotional development in a
+              nurturing environment.</p>
           </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
-              <div class="flex-grow">
-                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
-                  <span class="material-icons text-3xl">school</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Primary Education (K-5)</h3>
-                <p class="mb-6">Foundation years focusing on core literacy, numeracy, and social-emotional development
-                  in a nurturing environment.</p>
-              </div>
-              <div class="mt-auto">
-                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
-                  href="#">View Curriculum</a>
-                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
-                  href="#">Apply Now</a>
-              </div>
-            </div>
-            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
-              <div class="flex-grow">
-                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
-                  <span class="material-icons text-3xl">menu_book</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Middle School (6-8)</h3>
-                <p class="mb-6">Transitional years building critical thinking, problem-solving, and collaborative skills
-                  to prepare for higher education.</p>
-              </div>
-              <div class="mt-auto">
-                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
-                  href="#">View Curriculum</a>
-                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
-                  href="#">Apply Now</a>
-              </div>
-            </div>
-            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
-              <div class="flex-grow">
-                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
-                  <span class="material-icons text-3xl">public</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">High School (9-12)</h3>
-                <p class="mb-6">College preparatory program with advanced placement (AP) courses and specialized tracks
-                  for career readiness.</p>
-              </div>
-              <div class="mt-auto">
-                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
-                  href="#">View Curriculum</a>
-                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
-                  href="#">Apply Now</a>
-              </div>
-            </div>
+          <div class="space-y-4">
+            <button
+              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
+              View Curriculum
+            </button>
+            <button
+              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
+              Apply Now
+            </button>
           </div>
-        </div>
-      </section>
-      <section class="py-16 bg-background-light dark:bg-background-dark">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-primary dark:text-white">Detailed <span class="text-accent">Course
-                Breakdown</span></h2>
-            <p class="mt-2 text-gray-600 dark:text-gray-300">Explore the comprehensive subjects and learning objectives
-              for each academic level.</p>
-          </div>
-          <div class="flex justify-center mb-8">
-            <div class="flex space-x-1 bg-primary p-1 rounded-md">
-              <button class="tab-button active-tab px-4 py-2 text-sm font-medium text-white rounded-md">Primary
-                Education</button>
-              <button class="tab-button px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 rounded-md">Middle
-                School</button>
-              <button class="tab-button px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 rounded-md">High
-                School</button>
+        </div> -->
+
+  <!-- Middle School -->
+  <!-- <div
+          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="text-center mb-6">
+            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
+              <i class="fas fa-book text-3xl"></i>
             </div>
+            <h3 class="text-2xl font-bold mb-4">Middle School (6-8)</h3>
+            <div class="text-accent font-bold text-lg mb-4">3 Years</div>
+            <p class="mb-6">Transitional years building critical thinking, problem-solving, and collaborative skills to
+              prepare for higher education.</p>
           </div>
-          <div id="course-content">
-            <div class="bg-white dark:bg-primary p-8 rounded-lg shadow-lg">
-              <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-primary dark:text-white">Primary Education (K-5)</h3>
-                <div class="flex space-x-1 bg-gray-200 dark:bg-gray-700 p-1 rounded-md">
-                  <button class="px-3 py-1 text-sm font-medium bg-accent text-primary rounded-md">First Half</button>
-                  <button
-                    class="px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md">Second
-                    Half</button>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">translate</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">English Language Arts</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">calculate</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Mathematics Fundamentals</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">science</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Science Exploration</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">groups</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Social Studies</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">palette</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Art &amp; Creativity</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">fitness_center</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Physical Education</span>
-                </div>
-                <div class="flex items-center">
-                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
-                    <span class="material-icons">music_note</span>
-                  </div>
-                  <span class="text-gray-800 dark:text-white">Music &amp; Movement</span>
-                </div>
-              </div>
-            </div>
+          <div class="space-y-4">
+            <button
+              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
+              View Curriculum
+            </button>
+            <button
+              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
+              Apply Now
+            </button>
           </div>
-        </div>
-      </section>
-      <section class="py-16 bg-white dark:bg-background-dark">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-primary dark:text-white">Curriculum <span
-                class="text-accent">Highlights</span></h2>
-            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Innovative teaching methods and unique
-              features that set our academic programs apart.</p>
+        </div> -->
+
+  <!-- High School -->
+  <!-- <div
+          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div class="text-center mb-6">
+            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
+              <i class="fas fa-graduation-cap text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">High School (9-12)</h3>
+            <div class="text-accent font-bold text-lg mb-4">4 Years</div>
+            <p class="mb-6">College preparatory program with advanced placement (AP) courses and specialized tracks for
+              career readiness.</p>
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">construction</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Hands-On Learning</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Project-based activities and practical exercises for
-                exploratory learning.</p>
-            </div>
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">public</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Global Perspective</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Cultural immersion programs and exchange opportunities with
-                partner schools abroad.</p>
-            </div>
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">desktop_mac</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Technology Integration</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Digital literacy and coding programs integrated into the core
-                curriculum.</p>
-            </div>
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">business_center</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Industry Partnerships</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Real-world connections through internships and guest speaker
-                series.</p>
-            </div>
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">psychology</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Personalized Learning</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Adaptive curriculum tailored to individual student needs and
-                learning styles.</p>
-            </div>
-            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
-              <div class="flex items-center mb-3">
-                <div class="bg-accent text-primary p-2 rounded-full mr-4">
-                  <span class="material-icons">emoji_events</span>
-                </div>
-                <h3 class="text-lg font-bold text-primary dark:text-white">Excellence Recognition</h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-300">Merit-based programs and competitions to motivate and reward
-                achievement.</p>
-            </div>
+          <div class="space-y-4">
+            <button
+              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
+              View Curriculum
+            </button>
+            <button
+              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
+              Apply Now
+            </button>
           </div>
-        </div>
-      </section>
-      <section class="py-16 bg-background-light dark:bg-background-dark">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-primary dark:text-white">Our Expert <span
-                class="text-accent">Faculty</span></h2>
-            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Dedicated educators and subject matter
-              experts committed to student success.</p>
-          </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
-              <img alt="Dr. Amanda Williams" class="w-full h-56 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCQ9y2nMSEyEHt_ooTLYXIbGbS7fVy_3y5YFGrvpahfn3YeHf1w3otSVl2edKHAZffJc1pO30hVTx8oNPycBn1xA4HxVpRiF5OyZz_2ekFNEBkSBOpCLln8RZ9MzI6g88dPQ_WjJfAa8-dA9KMXTc7-Whau8K7REBmpIy59-jVMolSJGP8rCmSxhow3mP8xOe1HdZnEoZ9go7HYhEcxj6JhUBSBTLHAdR8OfrNXllH2oXiMkCxV7wZueGZRVhbCngN2UcX8fWmgto" />
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-primary dark:text-white">Dr. Amanda Williams</h3>
-                <p class="text-accent font-semibold mb-2">Head of Sciences</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Ph.D. in Chemistry, with 15 years of teaching
-                  experience. Expert in inquiry-based educational methodology.</p>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
-              <img alt="Prof. David Kumar" class="w-full h-56 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9IYezvpEPz7NxDyU4Ky10P7ynkNN5Bf_njxor2soAMIiacxkqI0FoXpMun167-Wo1wYMmUHmIU-0AmpH_r7LOH1W5ny-wzqlkujWZcl16MCmRb1CKPXLAJZ7CmuuNuTD7upTP5_Qei-shjNDqdjpPVb7JbW-um5nJAApSkjh3jH1X70fWQzKrOfMCws9MnpTTvwp8wLfZ-BHcp3ty6U6KNZ_h_dnvHV1KEIn-gmzTVJ8-1gXiMMOa2n2-zr0vfhbNOrdIeOuUqno" />
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-primary dark:text-white">Prof. David Kumar</h3>
-                <p class="text-accent font-semibold mb-2">Mathematics Department</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Masters in Applied Mathematics, specializing in
-                  interactive learning techniques and student engagement.</p>
-              </div>
-            </div>
-            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
-              <img alt="Ms. Lisa Thompson" class="w-full h-56 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI-lJkCtWY8Xdmcrd3YlQKQYZ2P1aHbtgSUzwYUyFjKviACIfHqGJqlVcXrEdmFbwj95XAw1hRlmziY6J8HKjTknMwAGWzb5HhoyWGS2NFYrKFa40_2zP7j1vIAnuU3xG8Hb_-e87FKCm_mrGIByfWzqbJa66maI86d9oIFyCbfX_gF866sJpRq3ksIzFZmF0rmPysJOpmTJw6ZxhJVQXOcZyhN8jOeuzlolSf394GRc8RXdPIDqSrnv2grZh5E1m676N81ZHy96o" />
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-primary dark:text-white">Ms. Lisa Thompson</h3>
-                <p class="text-accent font-semibold mb-2">Language Arts Coordinator</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">M.A. in English Literature. Expertise in creative
-                  writing and curriculum design for primary school.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-          <div class="bg-accent text-primary rounded-full p-4 inline-block mb-6">
-            <span class="material-icons text-4xl">download</span>
-          </div>
-          <h2 class="text-3xl font-bold mb-4">Download Full Curriculum</h2>
-          <p class="max-w-2xl mx-auto mb-8">Get detailed information about our comprehensive academic programs, course
-            descriptions, and learning objectives.</p>
-          <div class="flex justify-center space-x-4">
-            <a class="bg-accent text-primary font-bold py-3 px-6 rounded-md hover:bg-yellow-600 transition duration-300 flex items-center"
-              href="#">
-              <span class="material-icons mr-2">picture_as_pdf</span>
-              Download Curriculum PDF
-            </a>
-            <a class="bg-gray-700 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-600 transition duration-300 flex items-center"
-              href="#">
-              <span class="material-icons mr-2">event</span>
-              Schedule Campus Tour
-            </a>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-background-light dark:bg-background-dark">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl font-bold text-primary dark:text-white">Ready to Begin Your Academic Journey?</h2>
-          <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">Join our community of learners and
-            discover your potential through our comprehensive academic programs.</p>
-          <div class="flex justify-center space-x-4">
-            <a class="bg-accent text-primary font-bold py-3 px-6 rounded-md hover:bg-yellow-600 transition duration-300"
-              href="#">Apply for Admission</a>
-            <a class="bg-primary text-white font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-300"
-              href="#">Contact Admissions</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="bg-primary text-white">
-      <div class="container mx-auto px-4 py-12">
-        <div class="grid md:grid-cols-4 gap-8">
-          <div>
-            <div class="flex items-center mb-4">
-              <img alt="GDS Public School logo" class="h-10 w-10 mr-2"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP2uwP_grIHb_i9BSvV2C7YZE6mhi-ZRIUBHYUKMCDAquOjNEeHvx_zcEdg-8g73EtpUtDlQpxdt4C0MQN0JPZ0RcJNnstYeifMQ683s-uskspDWnqx5KYwXDGhphbfOsJVRPb29J7rLBbKpztYiJEVtn4ga_W4gm13c4NlyoU_mKIXh9F1CjUNUAdSwpmUQqEXPiA7c0ddvvtiJa-YNaXxi5v-2VNzpiipsIrGJZyZ-jG_LleszMwugBGygkN6txNz8wjBHeSIXM" />
-              <span class="text-xl font-bold">GDS Public School</span>
-            </div>
-            <p class="text-gray-400 text-sm">Building tomorrow's leaders through education that inspires and empowers.
-            </p>
-            <div class="flex space-x-4 mt-4">
-              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">facebook</span></a>
-              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
-              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
-              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a class="text-gray-400 hover:text-accent" href="#">Home</a></li>
-              <li><a class="text-gray-400 hover:text-accent" href="#">About</a></li>
-              <li><a class="text-gray-400 hover:text-accent" href="#">Admissions</a></li>
-              <li><a class="text-gray-400 hover:text-accent" href="#">Events</a></li>
-              <li><a class="text-gray-400 hover:text-accent" href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-4">Contact Info</h4>
-            <ul class="space-y-3 text-sm text-gray-400">
-              <li class="flex items-start">
-                <span class="material-icons text-accent mr-2">location_on</span>
-                <span>123 Education Lane<br />Knowledge City, 12345</span>
-              </li>
-              <li class="flex items-center">
-                <span class="material-icons text-accent mr-2">email</span>
-                <span>info@gdspublicschool.edu</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-4">Follow Us</h4>
-            <p class="text-gray-400 text-sm mb-4">Stay updated with our latest news, events, and educational insights.
-            </p>
-            <div class="flex space-x-2">
-              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
-                  class="material-icons text-sm">facebook</span></a>
-              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
-                  class="material-icons text-sm">public</span></a>
-              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
-                  class="material-icons text-sm">public</span></a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400 flex justify-between flex-col md:flex-row">
-          <p>© 2023 GDS Public School. All rights reserved.</p>
-          <p>Website Builder</p>
         </div>
       </div>
-    </footer>
+    </div>
+  </section> -->
+
+  <!-- 2 -->
+  <!-- Academic Programs Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+          Academic <span class="text-accent">Programs</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Structured learning pathways that build upon each other to create well-rounded, college-ready graduates
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8" id="programsGrid">
+        <!-- Programs will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Details Modal -->
+  <div id="programModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-8">
+        <div class="flex items-center justify-between mb-6">
+          <h3 id="modalTitle" class="text-3xl font-bold text-primary"></h3>
+          <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 cursor-pointer">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-bold text-primary mb-4">Program Overview</h4>
+            <p id="modalDescription" class="text-gray-600 mb-6 leading-relaxed"></p>
+
+            <div class="bg-accent/10 rounded-lg p-4 mb-6">
+              <h5 class="font-bold text-primary mb-2">Program Duration</h5>
+              <p id="modalDuration" class="text-accent font-semibold"></p>
+            </div>
+
+            <div class="bg-primary/10 rounded-lg p-4">
+              <h5 class="font-bold text-primary mb-2">Key Features</h5>
+              <ul id="modalFeatures" class="space-y-2">
+                <!-- Features will be populated -->
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold text-primary mb-4">Core Subjects</h4>
+            <div id="modalSubjects" class="space-y-3">
+              <!-- Subjects will be populated -->
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-4 mt-8 justify-center">
+          <button onclick="applyNow()"
+            class="bg-accent text-primary px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
+            Apply Now
+          </button>
+          <button onclick="closeModal()"
+            class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Application Success Modal -->
+  <div id="applicationModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 text-center">
+      <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fas fa-check text-white text-2xl"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-primary mb-4">Application Submitted!</h3>
+      <p class="text-gray-600 mb-6">
+        Thank you for your interest in our program. Our admissions team will contact you within 2-3 business days.
+      </p>
+      <button onclick="closeApplicationModal()"
+        class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
+        Close
+      </button>
+    </div>
+  </div>
+
   <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
-        button.classList.add('active-tab');
-        // Add logic here to change course content
+    // Programs data
+    const programs = {
+      elementary: {
+        title: "Elementary Program",
+        duration: "Kindergarten - Grade 5",
+        description: "Building strong foundational skills in literacy, numeracy, and critical thinking through engaging, hands-on learning experiences.",
+        features: [
+          "Small class sizes (15-20 students)",
+          "Integrated STEAM curriculum",
+          "Character development focus",
+          "Individualized learning plans"
+        ],
+        subjects: [
+          { name: "English Language Arts", icon: "fas fa-book-open" },
+          { name: "Mathematics", icon: "fas fa-calculator" },
+          { name: "Science Discovery", icon: "fas fa-microscope" },
+          { name: "Social Studies", icon: "fas fa-globe" },
+          { name: "Arts & Music", icon: "fas fa-palette" },
+          { name: "Physical Education", icon: "fas fa-running" }
+        ]
+      },
+      middle: {
+        title: "Middle School Program",
+        duration: "Grades 6-8",
+        description: "Developing academic excellence and personal growth through challenging coursework and leadership opportunities.",
+        features: [
+          "Advanced academic tracks",
+          "Leadership development programs",
+          "Technology integration",
+          "Extracurricular activities"
+        ],
+        subjects: [
+          { name: "Advanced Mathematics", icon: "fas fa-square-root-alt" },
+          { name: "Science & Lab Work", icon: "fas fa-flask" },
+          { name: "Literature & Writing", icon: "fas fa-pen-fancy" },
+          { name: "World History", icon: "fas fa-landmark" },
+          { name: "Computer Science", icon: "fas fa-laptop-code" },
+          { name: "Foreign Languages", icon: "fas fa-language" }
+        ]
+      },
+      high: {
+        title: "High School Program",
+        duration: "Grades 9-12",
+        description: "Preparing students for college and career success through rigorous academics, AP courses, and real-world experiences.",
+        features: [
+          "Advanced Placement (AP) courses",
+          "College counseling services",
+          "Internship opportunities",
+          "Research projects"
+        ],
+        subjects: [
+          { name: "AP Sciences", icon: "fas fa-atom" },
+          { name: "AP Mathematics", icon: "fas fa-infinity" },
+          { name: "AP Literature", icon: "fas fa-graduation-cap" },
+          { name: "AP History", icon: "fas fa-university" },
+          { name: "Research Methods", icon: "fas fa-search" },
+          { name: "Career Preparation", icon: "fas fa-briefcase" }
+        ]
+      }
+    };
+
+    let activeProgram = null;
+
+    // Initialize programs
+    document.addEventListener('DOMContentLoaded', function () {
+      renderPrograms();
+    });
+
+    // Render programs grid
+    function renderPrograms() {
+      const programsGrid = document.getElementById('programsGrid');
+      programsGrid.innerHTML = '';
+
+      Object.entries(programs).forEach(([key, program]) => {
+        const programCard = document.createElement('div');
+        programCard.className = 'bg-primary rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 transition-transform duration-300';
+
+        programCard.innerHTML = `
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">${program.title}</h3>
+                        <div class="text-accent font-semibold mb-4">${program.duration}</div>
+                        <p class="text-white/80 mb-6 leading-relaxed">${program.description}</p>
+                        <div class="space-y-3">
+                            <button 
+                                onclick="setActiveProgram('${key}')"
+                                class="w-full bg-accent text-primary font-semibold py-3 px-6 rounded-lg hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap"
+                            >
+                                View Curriculum
+                            </button>
+                            <button 
+                                onclick="applyNow('${key}')"
+                                class="w-full border-2 border-accent text-accent font-semibold py-3 px-6 rounded-lg hover:bg-accent hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                            >
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+        programsGrid.appendChild(programCard);
       });
+    }
+
+    // Set active program and show modal
+    function setActiveProgram(programKey) {
+      activeProgram = programKey;
+      const program = programs[programKey];
+
+      // Populate modal content
+      document.getElementById('modalTitle').textContent = program.title;
+      document.getElementById('modalDescription').textContent = program.description;
+      document.getElementById('modalDuration').textContent = program.duration;
+
+      // Populate features
+      const featuresContainer = document.getElementById('modalFeatures');
+      featuresContainer.innerHTML = '';
+      program.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center text-gray-600';
+        li.innerHTML = `
+                    <i class="fas fa-check text-accent mr-2"></i>
+                    ${feature}
+                `;
+        featuresContainer.appendChild(li);
+      });
+
+      // Populate subjects
+      const subjectsContainer = document.getElementById('modalSubjects');
+      subjectsContainer.innerHTML = '';
+      program.subjects.forEach(subject => {
+        const subjectDiv = document.createElement('div');
+        subjectDiv.className = 'flex items-center p-3 bg-gray-50 rounded-lg';
+        subjectDiv.innerHTML = `
+                    <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-3">
+                        <i class="${subject.icon} text-primary text-sm"></i>
+                    </div>
+                    <span class="font-medium text-gray-700">${subject.name}</span>
+                `;
+        subjectsContainer.appendChild(subjectDiv);
+      });
+
+      // Show modal
+      document.getElementById('programModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close program modal
+    function closeModal() {
+      document.getElementById('programModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      activeProgram = null;
+    }
+
+    // Apply now function
+    function applyNow(programKey = null) {
+      if (programKey) {
+        activeProgram = programKey;
+      }
+
+      // Close program modal if open
+      closeModal();
+
+      // Show application modal
+      document.getElementById('applicationModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close application modal
+    function closeApplicationModal() {
+      document.getElementById('applicationModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modals when clicking outside
+    document.addEventListener('click', function (e) {
+      if (e.target.id === 'programModal') {
+        closeModal();
+      }
+      if (e.target.id === 'applicationModal') {
+        closeApplicationModal();
+      }
+    });
+
+    // Close modals with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeApplicationModal();
+      }
     });
   </script>
 
+  <style>
+    /* Custom animations and transitions */
+    .transform.hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    /* Smooth transitions for all interactive elements */
+    * {
+      transition-property: transform, box-shadow, background-color, border-color, color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+    }
+
+    /* Modal animations */
+    #programModal,
+    #applicationModal {
+      backdrop-filter: blur(4px);
+    }
+
+    /* Custom scrollbar for modal */
+    #programModal>div {
+      scrollbar-width: thin;
+      scrollbar-color: #F2A900 #f1f5f9;
+    }
+
+    #programModal>div::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #programModal>div::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 3px;
+    }
+
+    #programModal>div::-webkit-scrollbar-thumb {
+      background: #F2A900;
+      border-radius: 3px;
+    }
+  </style>
+  <!-- 2 -->
+
+  <!-- Detailed Course Breakdown Section -->
+  <!-- <section class="py-20 bg-[#E8E8E8]">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary mb-4">Detailed <span class="text-accent">Course Breakdown</span></h2>
+        <p class="text-xl text-text-gray">
+          Explore the comprehensive subjects and learning objectives for each academic level
+        </p>
+      </div> -->
+
+  <!-- Tab Navigation -->
+  <!-- <div class="flex justify-center mb-12">
+        <div class="bg-primary p-1 rounded-lg">
+          <button id="primary-tab"
+            class="tab-button px-6 py-3 text-white rounded-lg bg-accent font-medium transition-all duration-300">
+            Primary Education
+          </button>
+          <button id="middle-tab"
+            class="tab-button px-6 py-3 text-white rounded-lg hover:bg-gray-700 font-medium transition-all duration-300">
+            Middle School
+          </button>
+          <button id="high-tab"
+            class="tab-button px-6 py-3 text-white rounded-lg hover:bg-gray-700 font-medium transition-all duration-300">
+            High School
+          </button>
+        </div>
+      </div> -->
+  <!-- Tab Navigation -->
+  <!-- <div class="flex justify-center mb-12">
+        <div class="flex bg-gray-200 p-1 rounded-full gap-3">
+          <button id="primary-tab"
+            class="tab-button px-8 py-3 bg-accent text-primary rounded-full font-medium transition-all duration-300 shadow-md">
+            Primary Education
+          </button>
+          <button id="middle-tab"
+            class="tab-button px-8 py-3 bg-white text-gray-600 hover:text-primary rounded-full font-medium transition-all duration-300 hover:shadow-sm">
+            Middle School
+          </button>
+          <button id="high-tab"
+            class="tab-button px-8 py-3 bg-white text-gray-600 hover:text-primary rounded-full font-medium transition-all duration-300 hover:shadow-sm">
+            High School
+          </button>
+        </div>
+      </div> -->
+
+  <!-- Enhanced JavaScript for Tab functionality -->
+  <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const tabButtons = document.querySelectorAll('.tab-button');
+
+          tabButtons.forEach(button => {
+            button.addEventListener('click', function () {
+              // Remove active classes from all buttons
+              tabButtons.forEach(btn => {
+                btn.classList.remove('bg-accent', 'text-primary', 'shadow-md');
+                btn.classList.add('bg-white', 'text-gray-600');
+              });
+
+              // Add active classes to clicked button
+              this.classList.remove('bg-white', 'text-gray-600');
+              this.classList.add('bg-accent', 'text-primary', 'shadow-md');
+
+              // Update content based on selection (if needed)
+              const contentTitle = document.querySelector('h3');
+              if (contentTitle) {
+                if (this.id === 'primary-tab') {
+                  contentTitle.textContent = 'Primary Education (K-5)';
+                } else if (this.id === 'middle-tab') {
+                  contentTitle.textContent = 'Middle School (6-8)';
+                } else if (this.id === 'high-tab') {
+                  contentTitle.textContent = 'High School (9-12)';
+                }
+              }
+            });
+          });
+        });
+      </script> -->
+
+
+  <!-- Course Content -->
+  <!-- <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-3xl font-bold text-primary">Primary Education (K-5)</h3>
+          <div class="bg-light-gray p-1 rounded-lg">
+            <button class="px-4 py-2 bg-accent text-primary rounded-lg font-medium">First Half</button>
+            <button class="px-4 py-2 text-text-gray hover:bg-gray-200 rounded-lg font-medium">Second Half</button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-language text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">English Language Arts</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-calculator text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Mathematics Fundamentals</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-flask text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Science Exploration</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-users text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Social Studies</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-palette text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Art & Creativity</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-running text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Physical Education</span>
+          </div>
+
+          <div class="flex items-center p-4 bg-light-gray/50 rounded-lg">
+            <div class="bg-accent text-primary rounded-full p-3 mr-4">
+              <i class="fas fa-music text-xl"></i>
+            </div>
+            <span class="font-medium text-primary">Music & Movement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!--  -->
+  <!-- Detailed Course Breakdown Section -->
+  <section class="py-16 bg-[#E8E8E8]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-primary mb-4">
+          Detailed <span class="text-accent">Course Breakdown</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+          Explore the comprehensive subjects and learning objectives for each academic level
+        </p>
+      </div>
+
+      <!-- Program Tabs -->
+      <div class="flex flex-wrap justify-center mb-8 gap-2">
+        <button id="primary-btn" onclick="setActiveProgram('primary')"
+          class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-accent text-primary shadow-md">
+          Primary Education
+        </button>
+        <button id="middle-btn" onclick="setActiveProgram('middle')"
+          class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-primary hover:bg-accent/10">
+          Middle School
+        </button>
+        <button id="high-btn" onclick="setActiveProgram('high')"
+          class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-primary hover:bg-accent/10">
+          High School
+        </button>
+      </div>
+
+      <!-- Course Content -->
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 max-w-6xl mx-auto">
+        <h3 id="program-title" class="text-3xl md:text-4xl font-bold text-primary mb-8 text-center">
+          Primary Education (K-5)
+        </h3>
+
+        <!-- Semester Tabs -->
+        <div class="flex justify-center mb-10 gap-2 bg-gray-100 p-1 rounded-full max-w-sm mx-auto">
+          <button id="first-semester-btn" onclick="setActiveSemester('first')"
+            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary">
+            First Half
+          </button>
+          <button id="second-semester-btn" onclick="setActiveSemester('second')"
+            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm">
+            Second Half
+          </button>
+        </div>
+
+        <!-- Subject List -->
+        <div id="subject-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Subjects will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Course breakdown programs data
+    const coursePrograms = {
+      primary: {
+        title: 'Primary Education (K-5)',
+        subjects: {
+          first: [
+            'English Language Arts',
+            'Mathematics Fundamentals',
+            'Science Exploration',
+            'Social Studies',
+            'Art & Creativity',
+            'Physical Education',
+            'Music & Movement'
+          ],
+          second: [
+            'Advanced Reading & Writing',
+            'Mathematical Problem Solving',
+            'Environmental Science',
+            'Cultural Studies',
+            'Visual Arts',
+            'Sports & Games',
+            'Drama & Performance'
+          ]
+        }
+      },
+      middle: {
+        title: 'Middle School (6-8)',
+        subjects: {
+          first: [
+            'Advanced English Literature',
+            'Algebra & Geometry',
+            'Biology & Chemistry',
+            'World History',
+            'Computer Science Basics',
+            'Foreign Languages',
+            'Leadership Skills'
+          ],
+          second: [
+            'Creative Writing & Communication',
+            'Advanced Mathematics',
+            'Physics & Earth Science',
+            'Geography & Economics',
+            'Digital Literacy',
+            'Cultural Exchange',
+            'Community Service'
+          ]
+        }
+      },
+      high: {
+        title: 'High School (9-12)',
+        subjects: {
+          first: [
+            'AP English Literature',
+            'Calculus & Statistics',
+            'Advanced Sciences (Physics/Chemistry/Biology)',
+            'World History & Government',
+            'Computer Programming',
+            'Business Studies',
+            'Research Methodology'
+          ],
+          second: [
+            'Academic Writing & Rhetoric',
+            'Advanced Mathematics',
+            'Laboratory Sciences',
+            'Economics & Psychology',
+            'Technology Innovation',
+            'Entrepreneurship',
+            'College Preparation'
+          ]
+        }
+      }
+    };
+
+    let activeSemester = 'second';
+
+    function setActiveProgram(program) {
+      activeProgram = program;
+
+      // Update program tab styles
+      const programButtons = ['primary-btn', 'middle-btn', 'high-btn'];
+      programButtons.forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        if (btnId === program + '-btn') {
+          btn.className = 'px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-accent text-primary shadow-md';
+        } else {
+          btn.className = 'px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-primary hover:bg-accent/10';
+        }
+      });
+
+      // Update title
+      document.getElementById('program-title').textContent = coursePrograms[program].title;
+
+      // Update subjects
+      updateSubjects();
+    }
+
+    function setActiveSemester(semester) {
+      activeSemester = semester;
+
+      // Update semester tab styles
+      const firstBtn = document.getElementById('first-semester-btn');
+      const secondBtn = document.getElementById('second-semester-btn');
+
+      if (semester === 'first') {
+        firstBtn.className = 'px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm';
+        secondBtn.className = 'px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary';
+      } else {
+        firstBtn.className = 'px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary';
+        secondBtn.className = 'px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm';
+      }
+
+      // Update subjects
+      updateSubjects();
+    }
+
+    function updateSubjects() {
+      const subjectGrid = document.getElementById('subject-grid');
+      const subjects = coursePrograms[activeProgram].subjects[activeSemester];
+
+      subjectGrid.innerHTML = '';
+
+      subjects.forEach(subject => {
+        const subjectElement = document.createElement('div');
+        subjectElement.className = 'flex items-center p-4 bg-light-gray rounded-xl transition-all duration-300 hover:shadow-md border border-gray-200 group cursor-pointer';
+        subjectElement.innerHTML = `
+                    <div class="bg-accent text-primary rounded-full p-3 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-check text-sm"></i>
+                    </div>
+                    <span class="text-gray-700 font-medium group-hover:text-primary transition-colors duration-300">${subject}</span>
+                `;
+        subjectGrid.appendChild(subjectElement);
+      });
+    }
+
+    // Initialize with default state (Primary Education, Second Half)
+    document.addEventListener('DOMContentLoaded', function () {
+      updateSubjects();
+    });
+  </script>
+  <!--  -->
+
+  <!-- Curriculum Highlights Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary mb-4">Curriculum <span class="text-accent">Highlights</span></h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+          Innovative teaching methods and unique features that set our academic programs apart
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-hands text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Hands-On Learning</h3>
+          </div>
+          <p class="text-text-gray">Project-based activities and practical exercises for exploratory learning.</p>
+        </div>
+
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-globe text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Global Perspective</h3>
+          </div>
+          <p class="text-text-gray">Cultural immersion programs and exchange opportunities with partner schools abroad.
+          </p>
+        </div>
+
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-laptop-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Technology Integration</h3>
+          </div>
+          <p class="text-text-gray">Digital literacy and coding programs integrated into the core curriculum.</p>
+        </div>
+
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-handshake text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Industry Partnerships</h3>
+          </div>
+          <p class="text-text-gray">Real-world connections through internships and guest speaker series.</p>
+        </div>
+
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-user-cog text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Personalized Learning</h3>
+          </div>
+          <p class="text-text-gray">Adaptive curriculum tailored to individual student needs and learning styles.</p>
+        </div>
+
+        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-accent text-primary p-3 rounded-full mr-4">
+              <i class="fas fa-trophy text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary">Excellence Recognition</h3>
+          </div>
+          <p class="text-text-gray">Merit-based programs and competitions to motivate and reward achievement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Section -->
+  <section class="py-20 bg-[#E8E8E8]">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-primary mb-4">Our Expert <span class="text-accent">Faculty</span></h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+          Dedicated educators and subject matter experts committed to student success
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Faculty Member 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="aspect-w-4 aspect-h-3">
+            <img alt="Dr. Amanda Williams" class="w-full h-64 object-cover"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">Dr. Amanda Williams</h3>
+            <p class="text-accent font-semibold mb-3">Head of Sciences</p>
+            <p class="text-text-gray text-sm">Ph.D. in Chemistry, with 15 years of teaching experience. Expert in
+              inquiry-based educational methodology.</p>
+          </div>
+        </div>
+
+        <!-- Faculty Member 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="aspect-w-4 aspect-h-3">
+            <img alt="Prof. David Kumar" class="w-full h-64 object-cover"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">Prof. David Kumar</h3>
+            <p class="text-accent font-semibold mb-3">Mathematics Department</p>
+            <p class="text-text-gray text-sm">Masters in Applied Mathematics, specializing in interactive learning
+              techniques and student engagement.</p>
+          </div>
+        </div>
+
+        <!-- Faculty Member 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="aspect-w-4 aspect-h-3">
+            <img alt="Ms. Lisa Thompson" class="w-full h-64 object-cover"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop&crop=face" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-primary mb-2">Ms. Lisa Thompson</h3>
+            <p class="text-accent font-semibold mb-3">Language Arts Coordinator</p>
+            <p class="text-text-gray text-sm">M.A. in English Literature. Expertise in creative writing and curriculum
+              design for primary school.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6 text-center">
+      <div class="bg-accent text-primary rounded-full p-6 inline-block mb-8">
+        <i class="fas fa-download text-4xl"></i>
+      </div>
+      <h2 class="text-4xl font-bold mb-4">Download Full Curriculum</h2>
+      <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+        Get detailed information about our comprehensive academic programs, course descriptions, and learning objectives
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a class="inline-flex items-center bg-accent text-primary font-bold py-4 px-8 rounded-lg hover:bg-accent/90 transform hover:scale-105 transition-all duration-300 shadow-lg"
+          href="#">
+          <i class="fas fa-file-pdf mr-3 text-xl"></i>
+          <span class="text-lg">Download Curriculum PDF</span>
+        </a>
+        <a class="inline-flex items-center bg-gray-700 text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-600 transform hover:scale-105 transition-all duration-300"
+          href="#">
+          <i class="fas fa-calendar-alt mr-3 text-xl"></i>
+          <span class="text-lg">Schedule Campus Tour</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-light-gray">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-4">Ready to Begin Your Academic Journey?</h2>
+      <p class="text-xl text-text-gray max-w-3xl mx-auto mb-10">
+        Join our community of learners and discover your potential through our comprehensive academic programs
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a class="inline-flex items-center bg-accent text-primary font-bold py-4 px-8 rounded-lg hover:bg-accent/90 transform hover:scale-105 transition-all duration-300 shadow-lg"
+          href="#">
+          <span class="text-lg">Apply for Admission</span>
+          <i class="fas fa-arrow-right ml-3"></i>
+        </a>
+        <a class="inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg hover:bg-primary/90 transform hover:scale-105 transition-all duration-300"
+          href="#">
+          <i class="fas fa-phone mr-3"></i>
+          <span class="text-lg">Contact Admissions</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-primary text-white">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Section -->
+        <div>
+          <div class="flex items-center mb-6">
+            <div class="bg-accent p-2.5 rounded-md mr-4">
+              <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+            </div>
+            <span class="text-xl font-bold">GDS Public School</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and
+            character development.</p>
+          <div class="flex space-x-3">
+            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
+              <i class="fab fa-facebook-f text-lg"></i>
+            </a>
+            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
+              <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
+              <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
+              <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
+              <span>info@gdspublicschool.edu</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div>
+          <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational
+            insights.</p>
+          <div class="flex space-x-3">
+            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
+              aria-label="Facebook">
+              <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+            </a>
+            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
+              aria-label="Twitter">
+              <i class="fab fa-twitter" style="font-size: 18px;"></i>
+            </a>
+            <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
+              aria-label="Instagram">
+              <i class="fab fa-instagram" style="font-size: 18px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="mt-12 pt-8 border-t border-gray-700">
+        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

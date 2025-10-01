@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>About Our School - GDS Public School</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -35,321 +37,717 @@
     </script>
 </head>
 
-<body class="bg-background-light text-text-light font-sans">
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
+<!-- <body class="bg-background-light text-text-light font-sans"> -->
+<!-- Header -->
+<!-- <header
+        class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <div class="bg-accent p-2 rounded-lg mr-3">
+            <div class="flex justify-between items-center"> -->
+<!-- Logo -->
+<!-- <div class="flex items-center">
+                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
                         <i class="fas fa-graduation-cap text-primary text-xl"></i>
                     </div>
                     <span class="text-xl font-bold text-primary">GDS Public School</span>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a class="text-text-gray hover:text-primary transition-colors" href="#">Home</a>
-                    <a class="text-primary font-medium" href="#">About</a>
-                    <a class="text-text-gray hover:text-primary transition-colors" href="#">Curriculum</a>
-                    <a class="text-text-gray hover:text-primary transition-colors" href="#">Events</a>
-                    <a class="text-text-gray hover:text-primary transition-colors" href="#">Contact Us</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-text-gray">
+                </div> -->
+
+<!-- Navigation -->
+<!-- <nav class="hidden md:flex items-center space-x-8">
+                    <a class="hover:text-accent transition-colors font-medium" href="index.html">Home</a>
+                    <a class="hover:text-accent transition-colors font-medium" href="About.html">About</a>
+                    <a class="hover:text-accent transition-colors font-medium" href="Curriculum.html">Curriculum</a>
+                    <a class="hover:text-accent transition-colors font-medium" href="Event.html">Events</a>
+                    <a class="hover:text-accent transition-colors font-medium" href="Contact_Us.html">Contact Us</a>
+                </nav> -->
+
+<!-- Mobile Menu Button -->
+<!-- <button
+                    class="md:hidden text-text-gray hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-    </header>
+    </header> -->
+<!-- Header -->
+<header
+    class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                </div>
+                <span class="text-xl font-bold text-primary">GDS Public School</span>
+            </div>
 
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center bg-no-repeat text-white" style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('img/about/23d3230086be581156e271b6d445bf6d.jpg');">
-        <div class="container mx-auto px-6 pb-20 py-40">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6">About Our School</h1>
-                <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                    Nurturing minds, building futures, and creating tomorrow's leaders through excellence in education
-                </p>
-                <a class="inline-flex items-center bg-accent text-primary font-semibold px-8 py-3 rounded-lg hover:bg-accent/90 transition-colors" href="#">
-                    <span>Schedule a Visit</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    href="Curriculum.html">Curriculum</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
+                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
+                    Us</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn"
+                class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                    <div id="hamburgerLine1"
+                        class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                    <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                    </div>
+                    <div id="hamburgerLine3"
+                        class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobileOverlay"
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
+
+<!-- Mobile Navigation Menu -->
+<div id="mobileMenu"
+    class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
+            <div class="flex items-center">
+                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                    <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                </div>
+                <span class="text-lg font-bold text-primary">GDS School</span>
+            </div>
+            <button id="closeMobileMenu"
+                class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Items -->
+        <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="space-y-1">
+                <a href="index.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Home</span>
                 </a>
+                <a href="About.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>About</span>
+                </a>
+                <a href="Curriculum.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Curriculum</span>
+                </a>
+                <a href="Event.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i
+                        class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Events</span>
+                </a>
+                <a href="Contact_Us.html"
+                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                    <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Footer -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <div class="text-center">
+                <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+                <div class="flex justify-center space-x-4">
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-facebook-f text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-twitter text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-instagram text-primary text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                        <i class="fab fa-linkedin-in text-primary text-sm"></i>
+                    </a>
+                </div>
+                <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Functionality
+    class MobileMenu {
+        constructor() {
+            this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            this.mobileMenu = document.getElementById('mobileMenu');
+            this.mobileOverlay = document.getElementById('mobileOverlay');
+            this.closeMobileMenu = document.getElementById('closeMobileMenu');
+            this.hamburgerLines = [
+                document.getElementById('hamburgerLine1'),
+                document.getElementById('hamburgerLine2'),
+                document.getElementById('hamburgerLine3')
+            ];
+            this.isMenuOpen = false;
+            this.touchStartX = 0;
+            this.touchEndX = 0;
+
+            this.init();
+        }
+
+        init() {
+            this.bindEvents();
+            this.setActivePageLink();
+        }
+
+        bindEvents() {
+            // Menu toggle events
+            this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+            this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
+            this.mobileOverlay.addEventListener('click', () => this.closeMenu());
+
+            // Navigation link events
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(() => this.closeMenu(), 200);
+                });
+            });
+
+            // Window resize event
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Keyboard events
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isMenuOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Touch events for swipe gestures
+            this.mobileMenu.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+            });
+
+            this.mobileMenu.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+            });
+        }
+
+        toggleMenu() {
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu() {
+            this.isMenuOpen = true;
+
+            // Show menu and overlay
+            this.mobileMenu.classList.remove('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-0', 'invisible');
+            this.mobileOverlay.classList.add('opacity-100', 'visible');
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+
+            // Animate hamburger to X
+            this.animateHamburgerToX();
+        }
+
+        closeMenu() {
+            this.isMenuOpen = false;
+
+            // Hide menu and overlay
+            this.mobileMenu.classList.add('translate-x-full');
+            this.mobileOverlay.classList.remove('opacity-100', 'visible');
+            this.mobileOverlay.classList.add('opacity-0', 'invisible');
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+
+            // Animate X back to hamburger
+            this.animateXToHamburger();
+        }
+
+        animateHamburgerToX() {
+            this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            this.hamburgerLines[1].style.opacity = '0';
+            this.hamburgerLines[1].style.transform = 'scale(0)';
+            this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        animateXToHamburger() {
+            this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+            this.hamburgerLines[1].style.opacity = '1';
+            this.hamburgerLines[1].style.transform = 'scale(1)';
+            this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+        }
+
+        handleSwipe() {
+            const swipeThreshold = 100;
+            if (this.touchStartX - this.touchEndX > swipeThreshold) {
+                // Swiped left (close menu)
+                this.closeMenu();
+            }
+        }
+
+        setActivePageLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
+
+            allNavLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    // Desktop nav
+                    if (link.closest('nav.hidden')) {
+                        link.classList.add('text-accent');
+                        link.classList.remove('text-gray-700');
+                    }
+                    // Mobile nav
+                    if (link.classList.contains('mobile-nav-link')) {
+                        link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
+                        link.classList.remove('text-gray-700', 'border-transparent');
+                    }
+                }
+            });
+        }
+    }
+
+    // Initialize mobile menu when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        new MobileMenu();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Custom CSS for enhanced animations and responsiveness */
+
+    /* Hamburger animation improvements */
+    #hamburgerLine1,
+    #hamburgerLine2,
+    #hamburgerLine3 {
+        transform-origin: center;
+        will-change: transform, opacity;
+    }
+
+    /* Mobile menu enhancements */
+    #mobileMenu {
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Mobile nav link hover effects */
+    .mobile-nav-link {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(242, 169, 0, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .mobile-nav-link:hover::before {
+        left: 100%;
+    }
+
+    /* Smooth overlay transitions */
+    #mobileOverlay {
+        backdrop-filter: blur(2px);
+    }
+
+    /* Focus states for accessibility */
+    button:focus-visible,
+    .mobile-nav-link:focus-visible {
+        outline: 2px solid #F2A900;
+        outline-offset: 2px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        #mobileMenu {
+            width: 100vw;
+        }
+    }
+
+    /* Header scroll effect */
+    .header-scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+    }
+
+    /* Animation delays for staggered effect */
+    .mobile-nav-link:nth-child(1) {
+        transition-delay: 0ms;
+    }
+
+    .mobile-nav-link:nth-child(2) {
+        transition-delay: 50ms;
+    }
+
+    .mobile-nav-link:nth-child(3) {
+        transition-delay: 100ms;
+    }
+
+    .mobile-nav-link:nth-child(4) {
+        transition-delay: 150ms;
+    }
+
+    .mobile-nav-link:nth-child(5) {
+        transition-delay: 200ms;
+    }
+</style>
+
+
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center bg-no-repeat text-white"
+    style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('img/about/23d3230086be581156e271b6d445bf6d.jpg');">
+    <div class="container mx-auto px-6 pb-20 py-40">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">About Our School</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Nurturing minds, building futures, and creating tomorrow's leaders through excellence in education
+            </p>
+            <a class="inline-flex items-center bg-accent text-primary font-semibold px-8 py-3 rounded-lg hover:bg-accent/90 transition-colors"
+                href="#">
+                <span>Schedule a Visit</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<main>
+    <!-- Mission & Vision Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div>
+                    <h2 class="text-4xl font-bold text-primary mb-12">Our Mission & Vision</h2>
+
+                    <!-- Mission Card -->
+                    <div class="bg-accent/10 border-l-4 border-accent p-8 rounded-lg mb-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Mission</h3>
+                        <p class="text-text-gray leading-relaxed">
+                            To provide quality education that empowers students to become confident, creative, and
+                            compassionate individuals who contribute positively to society while achieving their
+                            full potential.
+                        </p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="bg-primary/5 border-l-4 border-primary p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Vision</h3>
+                        <p class="text-text-gray leading-relaxed">
+                            To be a leading educational institution that nurtures global citizens equipped with
+                            21st-century skills, values, and knowledge to excel in an ever-changing world.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div>
+                    <img alt="Happy students learning together"
+                        class="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
+                </div>
             </div>
         </div>
     </section>
 
-    <main>
-        <!-- Mission & Vision Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <!-- Content -->
-                    <div>
-                        <h2 class="text-4xl font-bold text-primary mb-12">Our Mission & Vision</h2>
-                        
-                        <!-- Mission Card -->
-                        <div class="bg-accent/10 border-l-4 border-accent p-8 rounded-lg mb-8">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Mission</h3>
-                            <p class="text-text-gray leading-relaxed">
-                                To provide quality education that empowers students to become confident, creative, and compassionate individuals who contribute positively to society while achieving their full potential.
-                            </p>
-                        </div>
-
-                        <!-- Vision Card -->
-                        <div class="bg-primary/5 border-l-4 border-primary p-8 rounded-lg">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Vision</h3>
-                            <p class="text-text-gray leading-relaxed">
-                                To be a leading educational institution that nurtures global citizens equipped with 21st-century skills, values, and knowledge to excel in an ever-changing world.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Image -->
-                    <div>
-                        <img alt="Happy students learning together" 
-                             class="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-                             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                    </div>
-                </div>
+    <!-- History Section -->
+    <section class="py-20 bg-background-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Our Rich History</h2>
+                <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    Established in 1985, GDS Public School has been a beacon of educational excellence for over
+                    three decades.
+                </p>
             </div>
-        </section>
 
-        <!-- History Section -->
-        <section class="py-20 bg-background-light">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Rich History</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
-                        Established in 1985, GDS Public School has been a beacon of educational excellence for over three decades.
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1985 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-flag text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-accent mb-4">1985</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Founded with a vision to provide quality education to the community, we started with just 50
+                        students and 5 teachers.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- 1985 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-flag text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-bold text-accent mb-4">1985</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Founded with a vision to provide quality education to the community, we started with just 50 students and 5 teachers.
-                        </p>
+                <!-- 2000 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-primary text-2xl"></i>
                     </div>
-
-                    <!-- 2000 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-trophy text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-bold text-accent mb-4">2000</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Achieved significant milestones in student excellence and expanded to include senior secondary education.
-                        </p>
-                    </div>
-
-                    <!-- Today -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-users text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-bold text-accent mb-4">Today</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Serving over 1200 students with modern facilities, innovative teaching methods, and global partnerships.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Core Values Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Core Values</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
-                        The principles that guide everything we do at GDS Public School
+                    <h3 class="text-3xl font-bold text-accent mb-4">2000</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Achieved significant milestones in student excellence and expanded to include senior
+                        secondary education.
                     </p>
                 </div>
 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Compassion -->
-                    <div class="text-center group">
-                        <div class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-heart text-accent group-hover:text-primary text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Compassion</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Fostering empathy, kindness, and understanding in all our interactions
-                        </p>
+                <!-- Today -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-primary text-2xl"></i>
                     </div>
-
-                    <!-- Excellence -->
-                    <div class="text-center group">
-                        <div class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-star text-accent group-hover:text-primary text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Excellence</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Striving for the highest standards in academics, character, and personal growth.
-                        </p>
-                    </div>
-
-                    <!-- Innovation -->
-                    <div class="text-center group">
-                        <div class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-lightbulb text-accent group-hover:text-primary text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Innovation</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Embracing creativity, critical thinking, and modern teaching methodologies.
-                        </p>
-                    </div>
-
-                    <!-- Integrity -->
-                    <div class="text-center group">
-                        <div class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-shield-alt text-accent group-hover:text-primary text-3xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Integrity</h3>
-                        <p class="text-text-gray leading-relaxed">
-                            Building character through honesty, responsibility, and ethical behavior.
-                        </p>
-                    </div>
+                    <h3 class="text-3xl font-bold text-accent mb-4">Today</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Serving over 1200 students with modern facilities, innovative teaching methods, and global
+                        partnerships.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Leadership Team Section -->
-        <section class="py-20 bg-background-light">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Leadership Team</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
-                        Experienced educators and administrators dedicated to student success
+    <!-- Core Values Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Our Core Values</h2>
+                <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    The principles that guide everything we do at GDS Public School
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Compassion -->
+                <div class="text-center group">
+                    <div
+                        class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-heart text-accent group-hover:text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Compassion</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Fostering empathy, kindness, and understanding in all our interactions
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Dr. Sarah Johnson -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <img alt="Dr. Sarah Johnson, Principal" 
-                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
-                             src="https://images.unsplash.com/photo-1494790108755-2616b612b47b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Dr. Sarah Johnson</h3>
-                        <p class="text-accent font-semibold mb-4">Principal</p>
-                        <p class="text-text-gray leading-relaxed">
-                            With over 20 years in education, Dr. Johnson brings visionary leadership and a passion for student-centered learning to our school community.
-                        </p>
+                <!-- Excellence -->
+                <div class="text-center group">
+                    <div
+                        class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-star text-accent group-hover:text-primary text-3xl"></i>
                     </div>
-
-                    <!-- Mr. Michael Chen -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <img alt="Mr. Michael Chen, Academic Director" 
-                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
-                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Mr. Michael Chen</h3>
-                        <p class="text-accent font-semibold mb-4">Academic Director</p>
-                        <p class="text-text-gray leading-relaxed">
-                            Mr. Chen oversees curriculum development and academic excellence, ensuring our programs meet the highest educational benchmarks.
-                        </p>
-                    </div>
-
-                    <!-- Ms. Emily Rodriguez -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                        <img alt="Ms. Emily Rodriguez, Student Affairs Coordinator" 
-                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
-                             src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Ms. Emily Rodriguez</h3>
-                        <p class="text-accent font-semibold mb-4">Student Affairs Coordinator</p>
-                        <p class="text-text-gray leading-relaxed">
-                            Ms. Rodriguez focuses on student well-being, extracurricular activities, and creating a supportive school environment for all students.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Enhanced Achievements Section with Advanced Animations -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4 fade-in">Our Achievements</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto fade-in" style="animation-delay: 0.2s;">
-                        Recognition and awards that reflect our commitment to educational excellence
+                    <h3 class="text-xl font-bold text-primary mb-3">Excellence</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Striving for the highest standards in academics, character, and personal growth.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Graduation Rate -->
-                    <div class="text-center achievement-card" data-delay="0">
-                        <div class="icon-wrapper mb-4">
-                            <i class="fas fa-graduation-cap text-3xl text-accent"></i>
-                        </div>
-                        <div class="text-6xl font-bold text-accent mb-2 number-display">
-                            <span class="counter" data-target="98" data-suffix="%">0</span>
-                        </div>
-                        <p class="text-text-gray font-medium">Graduation Rate</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="98%"></div>
-                        </div>
+                <!-- Innovation -->
+                <div class="text-center group">
+                    <div
+                        class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-lightbulb text-accent group-hover:text-primary text-3xl"></i>
                     </div>
-                    
-                    <!-- National Awards -->
-                    <div class="text-center achievement-card" data-delay="200">
-                        <div class="icon-wrapper mb-4">
-                            <i class="fas fa-trophy text-3xl text-accent"></i>
-                        </div>
-                        <div class="text-6xl font-bold text-accent mb-2 number-display">
-                            <span class="counter" data-target="15" data-suffix="+">0</span>
-                        </div>
-                        <p class="text-text-gray font-medium">National Awards</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="90%"></div>
-                        </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Innovation</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Embracing creativity, critical thinking, and modern teaching methodologies.
+                    </p>
+                </div>
+
+                <!-- Integrity -->
+                <div class="text-center group">
+                    <div
+                        class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-shield-alt text-accent group-hover:text-primary text-3xl"></i>
                     </div>
-                    
-                    <!-- Students Enrolled -->
-                    <div class="text-center achievement-card" data-delay="400">
-                        <div class="icon-wrapper mb-4">
-                            <i class="fas fa-users text-3xl text-accent"></i>
-                        </div>
-                        <div class="text-6xl font-bold text-accent mb-2 number-display">
-                            <span class="counter" data-target="1200" data-suffix="+">0</span>
-                        </div>
-                        <p class="text-text-gray font-medium">Students Enrolled</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="100%"></div>
-                        </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Integrity</h3>
+                    <p class="text-text-gray leading-relaxed">
+                        Building character through honesty, responsibility, and ethical behavior.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="py-20 bg-background-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">Our Leadership Team</h2>
+                <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    Experienced educators and administrators dedicated to student success
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dr. Sarah Johnson -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <img alt="Dr. Sarah Johnson, Principal"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
+                    <h3 class="text-xl font-bold text-primary mb-2">Dr. Sarah Johnson</h3>
+                    <p class="text-accent font-semibold mb-4">Principal</p>
+                    <p class="text-text-gray leading-relaxed">
+                        With over 20 years in education, Dr. Johnson brings visionary leadership and a passion for
+                        student-centered learning to our school community.
+                    </p>
+                </div>
+
+                <!-- Mr. Michael Chen -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <img alt="Mr. Michael Chen, Academic Director"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
+                    <h3 class="text-xl font-bold text-primary mb-2">Mr. Michael Chen</h3>
+                    <p class="text-accent font-semibold mb-4">Academic Director</p>
+                    <p class="text-text-gray leading-relaxed">
+                        Mr. Chen oversees curriculum development and academic excellence, ensuring our programs meet
+                        the highest educational benchmarks.
+                    </p>
+                </div>
+
+                <!-- Ms. Emily Rodriguez -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <img alt="Ms. Emily Rodriguez, Student Affairs Coordinator"
+                        class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" />
+                    <h3 class="text-xl font-bold text-primary mb-2">Ms. Emily Rodriguez</h3>
+                    <p class="text-accent font-semibold mb-4">Student Affairs Coordinator</p>
+                    <p class="text-text-gray leading-relaxed">
+                        Ms. Rodriguez focuses on student well-being, extracurricular activities, and creating a
+                        supportive school environment for all students.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enhanced Achievements Section with Advanced Animations -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4 fade-in">Our Achievements</h2>
+                <p class="text-xl text-text-gray max-w-3xl mx-auto fade-in" style="animation-delay: 0.2s;">
+                    Recognition and awards that reflect our commitment to educational excellence
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Graduation Rate -->
+                <div class="text-center achievement-card" data-delay="0">
+                    <div class="icon-wrapper mb-4">
+                        <i class="fas fa-graduation-cap text-3xl text-accent"></i>
                     </div>
-                    
-                    <!-- College Acceptance -->
-                    <div class="text-center achievement-card" data-delay="600">
-                        <div class="icon-wrapper mb-4">
-                            <i class="fas fa-university text-3xl text-accent"></i>
-                        </div>
-                        <div class="text-6xl font-bold text-accent mb-2 number-display">
-                            <span class="counter" data-target="85" data-suffix="%">0</span>
-                        </div>
-                        <p class="text-text-gray font-medium">College Acceptance</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-width="85%"></div>
-                        </div>
+                    <div class="text-6xl font-bold text-accent mb-2 number-display">
+                        <span class="counter" data-target="98" data-suffix="%">0</span>
+                    </div>
+                    <p class="text-text-gray font-medium">Graduation Rate</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="98%"></div>
+                    </div>
+                </div>
+
+                <!-- National Awards -->
+                <div class="text-center achievement-card" data-delay="200">
+                    <div class="icon-wrapper mb-4">
+                        <i class="fas fa-trophy text-3xl text-accent"></i>
+                    </div>
+                    <div class="text-6xl font-bold text-accent mb-2 number-display">
+                        <span class="counter" data-target="15" data-suffix="+">0</span>
+                    </div>
+                    <p class="text-text-gray font-medium">National Awards</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="90%"></div>
+                    </div>
+                </div>
+
+                <!-- Students Enrolled -->
+                <div class="text-center achievement-card" data-delay="400">
+                    <div class="icon-wrapper mb-4">
+                        <i class="fas fa-users text-3xl text-accent"></i>
+                    </div>
+                    <div class="text-6xl font-bold text-accent mb-2 number-display">
+                        <span class="counter" data-target="1200" data-suffix="+">0</span>
+                    </div>
+                    <p class="text-text-gray font-medium">Students Enrolled</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="100%"></div>
+                    </div>
+                </div>
+
+                <!-- College Acceptance -->
+                <div class="text-center achievement-card" data-delay="600">
+                    <div class="icon-wrapper mb-4">
+                        <i class="fas fa-university text-3xl text-accent"></i>
+                    </div>
+                    <div class="text-6xl font-bold text-accent mb-2 number-display">
+                        <span class="counter" data-target="85" data-suffix="%">0</span>
+                    </div>
+                    <p class="text-text-gray font-medium">College Acceptance</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="85%"></div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Enhanced CSS -->
-        <style>
+    <!-- Enhanced CSS -->
+    <style>
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -357,8 +755,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .fade-in {
@@ -385,7 +790,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.6s;
         }
 
@@ -443,212 +848,221 @@
             transition: width 2s ease-out;
             transition-delay: 1s;
         }
-        </style>
+    </style>
 
-        <!-- Enhanced JavaScript -->
-        <script>
-            // Enhanced Counter Animation with More Features
-            function animateCounter(counter, target, duration = 2000) {
-                const suffix = counter.getAttribute('data-suffix') || '';
-                const startValue = 0;
-                const startTime = performance.now();
-                
-                counter.classList.add('counting');
-                
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    // Enhanced easing function
-                    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-                    let currentValue;
-                    
-                    if (target >= 1000) {
-                        currentValue = Math.floor(startValue + (target - startValue) * easeOutCubic);
-                    } else {
-                        currentValue = Math.floor(startValue + (target - startValue) * easeOutCubic);
-                    }
-                    
-                    counter.textContent = currentValue.toLocaleString() + suffix;
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.classList.remove('counting');
-                        // Add final pulse effect
-                        counter.style.transform = 'scale(1.1)';
-                        setTimeout(() => {
-                            counter.style.transform = 'scale(1)';
-                        }, 200);
-                    }
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Enhanced Counter Animation with More Features
+        function animateCounter(counter, target, duration = 2000) {
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const startValue = 0;
+            const startTime = performance.now();
+
+            counter.classList.add('counting');
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Enhanced easing function
+                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                let currentValue;
+
+                if (target >= 1000) {
+                    currentValue = Math.floor(startValue + (target - startValue) * easeOutCubic);
+                } else {
+                    currentValue = Math.floor(startValue + (target - startValue) * easeOutCubic);
                 }
-                
-                requestAnimationFrame(updateCounter);
+
+                counter.textContent = currentValue.toLocaleString() + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.classList.remove('counting');
+                    // Add final pulse effect
+                    counter.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        counter.style.transform = 'scale(1)';
+                    }, 200);
+                }
             }
 
-            // Enhanced Intersection Observer
-            const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            };
+            requestAnimationFrame(updateCounter);
+        }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const card = entry.target;
-                        const counter = card.querySelector('.counter');
-                        const progressFill = card.querySelector('.progress-fill');
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        const delay = parseInt(card.getAttribute('data-delay')) || 0;
-                        
-                        // Animate card entrance
-                        setTimeout(() => {
-                            card.classList.add('animate');
-                        }, delay);
-                        
-                        // Animate counter
-                        setTimeout(() => {
-                            animateCounter(counter, target);
-                        }, delay + 600);
-                        
-                        // Animate progress bar
-                        setTimeout(() => {
-                            if (progressFill) {
-                                progressFill.style.width = progressFill.getAttribute('data-width');
-                            }
-                        }, delay + 800);
-                        
-                        observer.unobserve(card);
-                    }
-                });
-            }, observerOptions);
+        // Enhanced Intersection Observer
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            // Initialize animations
-            document.addEventListener('DOMContentLoaded', () => {
-                const achievementCards = document.querySelectorAll('.achievement-card');
-                achievementCards.forEach(card => observer.observe(card));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const counter = card.querySelector('.counter');
+                    const progressFill = card.querySelector('.progress-fill');
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const delay = parseInt(card.getAttribute('data-delay')) || 0;
+
+                    // Animate card entrance
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, delay);
+
+                    // Animate counter
+                    setTimeout(() => {
+                        animateCounter(counter, target);
+                    }, delay + 600);
+
+                    // Animate progress bar
+                    setTimeout(() => {
+                        if (progressFill) {
+                            progressFill.style.width = progressFill.getAttribute('data-width');
+                        }
+                    }, delay + 800);
+
+                    observer.unobserve(card);
+                }
             });
+        }, observerOptions);
 
-            // Add scroll-triggered reveal for title
-            const titleObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const achievementCards = document.querySelectorAll('.achievement-card');
+            achievementCards.forEach(card => observer.observe(card));
+        });
+
+        // Add scroll-triggered reveal for title
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
             });
+        });
 
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.animationPlayState = 'paused';
-                titleObserver.observe(el);
-            });
-            </script>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            titleObserver.observe(el);
+        });
+    </script>
 
 
-        <!-- Call to Action Section -->
-        <section class="py-20 bg-gradient-to-r from-primary to-primary/90 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-6">Join Our School Community</h2>
-                <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
-                    Discover how GDS Public School can help your child reach their full potential in a nurturing and challenging environment.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a class="inline-flex items-center justify-center bg-accent text-primary font-semibold px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors" href="#">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>Schedule a Visit</span>
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-primary/90 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Join Our School Community</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+                Discover how GDS Public School can help your child reach their full potential in a nurturing and
+                challenging environment.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a class="inline-flex items-center justify-center bg-accent text-primary font-semibold px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors"
+                    href="#">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span>Schedule a Visit</span>
+                </a>
+                <a class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors"
+                    href="#">
+                    <i class="fas fa-download mr-2"></i>
+                    <span>Download Brochure</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-primary text-white">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Brand Section -->
+            <div>
+                <div class="flex items-center mb-6">
+                    <div class="bg-accent p-2.5 rounded-md mr-4">
+                        <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+                    </div>
+                    <span class="text-xl font-bold">GDS Public School</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
+                    education and character development.</p>
+                <div class="flex space-x-3">
+                    <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f text-lg"></i>
                     </a>
-                    <a class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors" href="#">
-                        <i class="fas fa-download mr-2"></i>
-                        <span>Download Brochure</span>
+                    <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="bg-primary text-white">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Brand Section -->
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="bg-accent p-2.5 rounded-md mr-4">
-                            <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
-                        </div>
-                        <span class="text-xl font-bold">GDS Public School</span>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and character development.</p>
-                    <div class="flex space-x-3">
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
-                            <i class="fab fa-facebook-f text-lg"></i>
-                        </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
-                            <i class="fab fa-twitter text-lg"></i>
-                        </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Info -->
-                <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
-                    <ul class="space-y-4 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-                            <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-                            <span>info@gdspublicschool.edu</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Follow Us -->
-                <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational insights.</p>
-                    <div class="flex space-x-3">
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Facebook">
-                            <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
-                        </a>
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Twitter">
-                            <i class="fab fa-twitter" style="font-size: 18px;"></i>
-                        </a>
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram" style="font-size: 18px;"></i>
-                        </a>
-                    </div>
-                </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
+                    <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
+                    <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
+                    <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
+                    <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+                </ul>
             </div>
-            
-            <!-- Copyright Section -->
-            <div class="mt-12 pt-8 border-t border-gray-700">
-                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
+                        <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
+                        <span>info@gdspublicschool.edu</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div>
+                <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
+                    educational insights.</p>
+                <div class="flex space-x-3">
+                    <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                        href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                    </a>
+                    <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                        href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter" style="font-size: 18px;"></i>
+                    </a>
+                    <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                        href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <!-- Copyright Section -->
+        <div class="mt-12 pt-8 border-t border-gray-700">
+            <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
+
 </html>
