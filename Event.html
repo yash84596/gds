@@ -15,792 +15,725 @@
                 extend: {
                     colors: {
                         primary: "#1F3A3D",
-                        accent: "#F2A900",
-                        "background-light": "#F8FAFC",
-                        "background-dark": "#121212",
-                        "text-light": "#1F3A3D",
-                        "text-dark": "#E5E5E5",
-                        "text-gray": "#64748B",
-                        "card-light": "#FFFFFF",
-                        "card-dark": "#1E1E1E"
+                        accent: "#F2A900"
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.75rem",
-                    },
+                    }
                 },
             },
         };
     </script>
 </head>
 
-<body class="min-h-screen bg-white">
+<body class="bg-white font-sans">
     <header
-    class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
-    <div class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
-                    <i class="fas fa-graduation-cap text-primary text-xl"></i>
+        class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                        <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary">GDS Public School</span>
                 </div>
-                <span class="text-xl font-bold text-primary">GDS Public School</span>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Curriculum.html">Curriculum</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Event.html">Events</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Contact_Us.html">Contact
+                        Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn"
+                    class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                        <div id="hamburgerLine1"
+                            class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                        </div>
+                        <div id="hamburgerLine2"
+                            class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                        </div>
+                        <div id="hamburgerLine3"
+                            class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobileOverlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden">
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu"
+        class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex flex-col h-full">
+            <!-- Mobile Menu Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
+                <div class="flex items-center">
+                    <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
+                        <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                    </div>
+                    <span class="text-lg font-bold text-primary">GDS School</span>
+                </div>
+                <button id="closeMobileMenu"
+                    class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
             </div>
 
-            <!-- Navigation -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
-                <a class="hover:text-accent transition-colors font-medium text-gray-700"
-                    href="Curriculum.html">Curriculum</a>
-                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
-                <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
-                    Us</a>
+            <!-- Mobile Menu Items -->
+            <nav class="flex-1 py-4 overflow-y-auto">
+                <div class="space-y-1">
+                    <a href="index.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="About.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i
+                            class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="Curriculum.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i
+                            class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Curriculum</span>
+                    </a>
+                    <a href="Event.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i
+                            class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Events</span>
+                    </a>
+                    <a href="Contact_Us.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i
+                            class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </div>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn"
-                class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
-                <div class="w-6 h-6 flex flex-col justify-center items-center relative">
-                    <div id="hamburgerLine1"
-                        class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+            <!-- Mobile Menu Footer -->
+            <div class="p-6 border-t border-gray-100 bg-gray-50">
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-facebook-f text-primary text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-twitter text-primary text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-instagram text-primary text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
+                            <i class="fab fa-linkedin-in text-primary text-sm"></i>
+                        </a>
                     </div>
-                    <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
-                    </div>
-                    <div id="hamburgerLine3"
-                        class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
-                    </div>
+                    <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
                 </div>
-            </button>
-        </div>
-    </div>
-</header>
-
-<!-- Mobile Navigation Overlay -->
-<div id="mobileOverlay"
-    class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 md:hidden"></div>
-
-<!-- Mobile Navigation Menu -->
-<div id="mobileMenu"
-    class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-    <div class="flex flex-col h-full">
-        <!-- Mobile Menu Header -->
-        <div class="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50">
-            <div class="flex items-center">
-                <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
-                    <i class="fas fa-graduation-cap text-primary text-lg"></i>
-                </div>
-                <span class="text-lg font-bold text-primary">GDS School</span>
-            </div>
-            <button id="closeMobileMenu"
-                class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-accent rounded-lg p-2 transition-colors duration-300">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Items -->
-        <nav class="flex-1 py-4 overflow-y-auto">
-            <div class="space-y-1">
-                <a href="index.html"
-                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                    <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                    <span>Home</span>
-                </a>
-                <a href="About.html"
-                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                    <i
-                        class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                    <span>About</span>
-                </a>
-                <a href="Curriculum.html"
-                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                    <i
-                        class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                    <span>Curriculum</span>
-                </a>
-                <a href="Event.html"
-                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                    <i
-                        class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                    <span>Events</span>
-                </a>
-                <a href="Contact_Us.html"
-                    class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                    <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                    <span>Contact Us</span>
-                </a>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu Footer -->
-        <div class="p-6 border-t border-gray-100 bg-gray-50">
-            <div class="text-center">
-                <div class="text-sm text-gray-500 mb-3">Connect with us</div>
-                <div class="flex justify-center space-x-4">
-                    <a href="#"
-                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
-                        <i class="fab fa-facebook-f text-primary text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
-                        <i class="fab fa-twitter text-primary text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
-                        <i class="fab fa-instagram text-primary text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
-                        <i class="fab fa-linkedin-in text-primary text-sm"></i>
-                    </a>
-                </div>
-                <div class="text-xs text-gray-400 mt-3">© 2025 GDS Public School</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Mobile Menu Functionality
-    class MobileMenu {
-        constructor() {
-            this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            this.mobileMenu = document.getElementById('mobileMenu');
-            this.mobileOverlay = document.getElementById('mobileOverlay');
-            this.closeMobileMenu = document.getElementById('closeMobileMenu');
-            this.hamburgerLines = [
-                document.getElementById('hamburgerLine1'),
-                document.getElementById('hamburgerLine2'),
-                document.getElementById('hamburgerLine3')
-            ];
-            this.isMenuOpen = false;
-            this.touchStartX = 0;
-            this.touchEndX = 0;
-
-            this.init();
-        }
-
-        init() {
-            this.bindEvents();
-            this.setActivePageLink();
-        }
-
-        bindEvents() {
-            // Menu toggle events
-            this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
-            this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
-            this.mobileOverlay.addEventListener('click', () => this.closeMenu());
-
-            // Navigation link events
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    setTimeout(() => this.closeMenu(), 200);
-                });
-            });
-
-            // Window resize event
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 768 && this.isMenuOpen) {
-                    this.closeMenu();
-                }
-            });
-
-            // Keyboard events
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.isMenuOpen) {
-                    this.closeMenu();
-                }
-            });
-
-            // Touch events for swipe gestures
-            this.mobileMenu.addEventListener('touchstart', (e) => {
-                this.touchStartX = e.changedTouches[0].screenX;
-            });
-
-            this.mobileMenu.addEventListener('touchend', (e) => {
-                this.touchEndX = e.changedTouches[0].screenX;
-                this.handleSwipe();
-            });
-        }
-
-        toggleMenu() {
-            if (this.isMenuOpen) {
-                this.closeMenu();
-            } else {
-                this.openMenu();
-            }
-        }
-
-        openMenu() {
-            this.isMenuOpen = true;
-
-            // Show menu and overlay
-            this.mobileMenu.classList.remove('translate-x-full');
-            this.mobileOverlay.classList.remove('opacity-0', 'invisible');
-            this.mobileOverlay.classList.add('opacity-100', 'visible');
-
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-
-            // Animate hamburger to X
-            this.animateHamburgerToX();
-        }
-
-        closeMenu() {
-            this.isMenuOpen = false;
-
-            // Hide menu and overlay
-            this.mobileMenu.classList.add('translate-x-full');
-            this.mobileOverlay.classList.remove('opacity-100', 'visible');
-            this.mobileOverlay.classList.add('opacity-0', 'invisible');
-
-            // Restore body scroll
-            document.body.style.overflow = 'auto';
-
-            // Animate X back to hamburger
-            this.animateXToHamburger();
-        }
-
-        animateHamburgerToX() {
-            this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            this.hamburgerLines[1].style.opacity = '0';
-            this.hamburgerLines[1].style.transform = 'scale(0)';
-            this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        }
-
-        animateXToHamburger() {
-            this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
-            this.hamburgerLines[1].style.opacity = '1';
-            this.hamburgerLines[1].style.transform = 'scale(1)';
-            this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
-        }
-
-        handleSwipe() {
-            const swipeThreshold = 100;
-            if (this.touchStartX - this.touchEndX > swipeThreshold) {
-                // Swiped left (close menu)
-                this.closeMenu();
-            }
-        }
-
-        setActivePageLink() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
-
-            allNavLinks.forEach(link => {
-                const linkHref = link.getAttribute('href');
-                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
-                    // Desktop nav
-                    if (link.closest('nav.hidden')) {
-                        link.classList.add('text-accent');
-                        link.classList.remove('text-gray-700');
-                    }
-                    // Mobile nav
-                    if (link.classList.contains('mobile-nav-link')) {
-                        link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
-                        link.classList.remove('text-gray-700', 'border-transparent');
-                    }
-                }
-            });
-        }
-    }
-
-    // Initialize mobile menu when DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        new MobileMenu();
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-</script>
-
-<style>
-    /* Custom CSS for enhanced animations and responsiveness */
-
-    /* Hamburger animation improvements */
-    #hamburgerLine1,
-    #hamburgerLine2,
-    #hamburgerLine3 {
-        transform-origin: center;
-        will-change: transform, opacity;
-    }
-
-    /* Mobile menu enhancements */
-    #mobileMenu {
-        backdrop-filter: blur(10px);
-        box-shadow: -10px 0 25px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Mobile nav link hover effects */
-    .mobile-nav-link {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .mobile-nav-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(242, 169, 0, 0.1), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .mobile-nav-link:hover::before {
-        left: 100%;
-    }
-
-    /* Smooth overlay transitions */
-    #mobileOverlay {
-        backdrop-filter: blur(2px);
-    }
-
-    /* Focus states for accessibility */
-    button:focus-visible,
-    .mobile-nav-link:focus-visible {
-        outline: 2px solid #F2A900;
-        outline-offset: 2px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 480px) {
-        #mobileMenu {
-            width: 100vw;
-        }
-    }
-
-    /* Header scroll effect */
-    .header-scrolled {
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-    }
-
-    /* Animation delays for staggered effect */
-    .mobile-nav-link:nth-child(1) {
-        transition-delay: 0ms;
-    }
-
-    .mobile-nav-link:nth-child(2) {
-        transition-delay: 50ms;
-    }
-
-    .mobile-nav-link:nth-child(3) {
-        transition-delay: 100ms;
-    }
-
-    .mobile-nav-link:nth-child(4) {
-        transition-delay: 150ms;
-    }
-
-    .mobile-nav-link:nth-child(5) {
-        transition-delay: 200ms;
-    }
-</style>
-    <!-- Hero Banner - Featured Event -->
-    <section id="heroSection" class="relative bg-gradient-to-r from-primary to-[#2A4A4E] py-20">
-        <div id="heroBg" class="absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
-        <div class="absolute inset-0 bg-primary/50"></div>
-        <div class="relative max-w-7xl mx-auto pt-20 px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-block bg-accent text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                        Featured Event
-                    </div>
-                    <h1 id="featuredTitle" class="text-4xl md:text-5xl font-bold text-white mb-6"></h1>
-                    <div class="flex items-center text-white/90 mb-4">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span id="featuredDate" class="mr-6"></span>
-                        <i class="fas fa-clock mr-2"></i>
-                        <span id="featuredTime"></span>
-                    </div>
-                    <div class="flex items-center text-white/90 mb-6">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        <span id="featuredLocation" class="mr-4"></span>
-                        <span id="featuredType" class="px-3 py-1 rounded-full text-xs font-medium"></span>
-                    </div>
-                    <p id="featuredDescription" class="text-white/90 text-lg mb-8 leading-relaxed"></p>
-                    <div class="flex gap-4">
-                        <button onclick="handleRegister('featured')"
-                            class="bg-accent text-primary px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
-                            Register Now
-                        </button>
-                        <button onclick="addToCalendar('featured')"
-                            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors cursor-pointer whitespace-nowrap">
-                            Add to Calendar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filters -->
-    <section class="py-8 bg-gray-50 border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
-                <!-- Category Filters -->
-                <div class="flex flex-wrap gap-2" id="categoryFilters">
-                    <!-- Category buttons will be generated by JavaScript -->
-                </div>
-
-                <!-- Time Filters -->
-                <div class="flex gap-2">
-                    <button id="upcomingBtn" onclick="setTimeFilter('upcoming')"
-                        class="px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-primary text-white">
-                        Upcoming Events
-                    </button>
-                    <button id="pastBtn" onclick="setTimeFilter('past')"
-                        class="px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-white text-gray-600 hover:bg-gray-100">
-                        Past Events
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Events Grid -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 id="eventsTitle" class="text-3xl md:text-4xl font-bold text-primary mb-4">Upcoming Events</h2>
-                <p id="eventsSubtitle" class="text-xl text-gray-600 max-w-3xl mx-auto">Join us for exciting educational
-                    events and activities</p>
-            </div>
-
-            <div id="eventsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Events will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Event Support & Contact</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Need help with event registration or have questions?
-                    Our team is here to assist you</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-headset text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">General Support</h3>
-                    <p class="text-gray-600 mb-4">For general event inquiries and registration assistance</p>
-                    <p class="text-accent font-medium">events@gdsschool.edu</p>
-                    <p class="text-gray-600">+1 (555) 123-4567</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-calendar-check text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">Event Coordination</h3>
-                    <p class="text-gray-600 mb-4">For event planning and coordination matters</p>
-                    <p class="text-accent font-medium">Ms. Emily Rodriguez</p>
-                    <p class="text-gray-600">coordinator@gdsschool.edu</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-question-circle text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">FAQs & Help</h3>
-                    <p class="text-gray-600 mb-4">Quick answers to common questions</p>
-                    <button class="text-accent font-medium hover:underline cursor-pointer">View FAQ Section</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Form Modal -->
-    <div id="registrationModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
-        <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-2xl font-bold text-primary">Event Registration</h3>
-                    <button onclick="closeRegistrationModal()" class="text-gray-400 hover:text-gray-600 cursor-pointer">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-
-                <div class="mb-6">
-                    <h4 id="modalEventTitle" class="font-semibold text-primary mb-2"></h4>
-                    <div class="flex items-center text-gray-600 text-sm mb-2">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span id="modalEventDate"></span>
-                    </div>
-                    <div class="flex items-center text-gray-600 text-sm">
-                        <i class="fas fa-clock mr-2"></i>
-                        <span id="modalEventTime"></span>
-                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
-                        <span id="modalEventLocation"></span>
-                    </div>
-                </div>
-
-                <form class="space-y-4" onsubmit="submitRegistration(event)">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                        <input type="text" name="fullname" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                            placeholder="Enter your full name">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                        <input type="email" name="email" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                            placeholder="Enter your email address">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        <input type="tel" name="phone" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                            placeholder="Enter your phone number">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Relationship to School</label>
-                        <select name="relationship"
-                            class="w-full px-3 py-2 pr-8 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm">
-                            <option value="parent">Parent</option>
-                            <option value="student">Student</option>
-                            <option value="teacher">Teacher</option>
-                            <option value="community">Community Member</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements or
-                            Notes</label>
-                        <textarea name="notes" rows="3" maxlength="500"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm resize-none"
-                            placeholder="Any special requirements or additional information (max 500 characters)"></textarea>
-                    </div>
-
-                    <div class="flex gap-3 pt-4">
-                        <button type="button" onclick="closeRegistrationModal()"
-                            class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer whitespace-nowrap">
-                            Cancel
-                        </button>
-                        <button type="submit"
-                            class="flex-1 bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
-                            Register Now
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
 
     <script>
-        // Data
-        const categories = [
-            { id: 'all', name: 'All Events' },
-            { id: 'workshops', name: 'Workshops' },
-            { id: 'seminars', name: 'Seminars' },
-            { id: 'webinars', name: 'Webinars' },
-            { id: 'cultural', name: 'Cultural Events' },
-            { id: 'competitions', name: 'Competitions' }
-        ];
+        // Mobile Menu Functionality
+        class MobileMenu {
+            constructor() {
+                this.mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                this.mobileMenu = document.getElementById('mobileMenu');
+                this.mobileOverlay = document.getElementById('mobileOverlay');
+                this.closeMobileMenu = document.getElementById('closeMobileMenu');
+                this.hamburgerLines = [
+                    document.getElementById('hamburgerLine1'),
+                    document.getElementById('hamburgerLine2'),
+                    document.getElementById('hamburgerLine3')
+                ];
+                this.isMenuOpen = false;
 
-        const upcomingEvents = [
-            {
-                id: 1,
-                title: "Science Innovation Fair 2024",
-                date: "2024-03-15",
-                time: "09:00 AM",
-                category: "competitions",
-                location: "Main Auditorium",
-                type: "onsite",
-                description: "Annual science fair showcasing student innovations and research projects. Students will present their scientific discoveries and compete for awards.",
-                image: "img/event/b53d431f1d259aa465cbbd7ab0cc1260.jpg",
-                featured: true,
-                coordinator: "Dr. Sarah Johnson",
-                email: "science@gdsschool.edu"
-            },
-            {
-                id: 2,
-                title: "Parent-Teacher Conference",
-                date: "2024-03-20",
-                time: "02:00 PM",
-                category: "seminars",
-                location: "School Campus",
-                type: "onsite",
-                description: "Quarterly meeting between parents and teachers to discuss student progress and academic development.",
-                image: "https://readdy.ai/api/search-image?query=Professional%20parent%20teacher%20conference%20meeting%20in%20classroom%2C%20educators%20discussing%20student%20progress%2C%20collaborative%20educational%20environment%2C%20academic%20consultation%20setting&width=400&height=250&seq=parent-teacher&orientation=landscape",
-                featured: false,
-                coordinator: "Ms. Emily Rodriguez",
-                email: "admin@gdsschool.edu"
-            },
-            {
-                id: 3,
-                title: "Digital Learning Workshop",
-                date: "2024-03-25",
-                time: "10:00 AM",
-                category: "workshops",
-                location: "Online Platform",
-                type: "online",
-                description: "Interactive workshop on modern digital learning tools and techniques for enhanced student engagement.",
-                image: "https://readdy.ai/api/search-image?query=Modern%20digital%20classroom%20with%20students%20using%20tablets%20and%20computers%2C%20interactive%20learning%20technology%2C%20educational%20innovation%2C%20collaborative%20online%20learning%20environment&width=400&height=250&seq=digital-workshop&orientation=landscape",
-                featured: false,
-                coordinator: "Mr. Michael Chen",
-                email: "tech@gdsschool.edu"
+
+                this.init();
             }
-        ];
 
-        const pastEvents = [
-            {
-                id: 6,
-                title: "Mathematics Olympiad 2023",
-                date: "2023-12-10",
-                category: "competitions",
-                description: "Regional mathematics competition where our students won 3 gold medals.",
-                image: "https://readdy.ai/api/search-image?query=Students%20celebrating%20mathematics%20competition%20victory%20with%20medals%20and%20trophies%2C%20academic%20achievement%20ceremony%2C%20proud%20young%20mathematicians%2C%20educational%20success&width=400&height=250&seq=math-olympiad&orientation=landscape",
-                achievements: "3 Gold Medals, 5 Silver Medals"
-            },
-            {
-                id: 7,
-                title: "Environmental Awareness Campaign",
-                date: "2023-11-15",
-                category: "workshops",
-                description: "Community workshop on environmental conservation and sustainability practices.",
-                image: "https://readdy.ai/api/search-image?query=Students%20participating%20in%20environmental%20awareness%20activities%2C%20tree%20planting%20and%20recycling%20workshop%2C%20green%20education%20initiative%2C%20eco-friendly%20school%20program&width=400&height=250&seq=environment-workshop&orientation=landscape",
-                achievements: "Planted 200 trees, Recycled 500kg waste"
+            init() {
+                this.bindEvents();
+                this.setActivePageLink();
             }
-        ];
 
-        // State variables
-        let selectedCategory = 'all';
-        let selectedTimeFilter = 'upcoming';
-        let currentSelectedEvent = null;
+            bindEvents() {
+                // Menu toggle events
+                this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+                this.closeMobileMenu.addEventListener('click', () => this.closeMenu());
+                this.mobileOverlay.addEventListener('click', () => this.closeMenu());
 
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function () {
-            initializePage();
+                // Navigation link events
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        setTimeout(() => this.closeMenu(), 200);
+                    });
+                });
+
+                // Window resize event
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && this.isMenuOpen) {
+                        this.closeMenu();
+                    }
+                });
+
+                // Keyboard events
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isMenuOpen) {
+                        this.closeMenu();
+                    }
+                });
+
+
+            }
+
+            toggleMenu() {
+                if (this.isMenuOpen) {
+                    this.closeMenu();
+                } else {
+                    this.openMenu();
+                }
+            }
+
+            openMenu() {
+                this.isMenuOpen = true;
+
+                // Show menu and overlay
+                this.mobileMenu.classList.remove('translate-x-full');
+                this.mobileOverlay.classList.remove('opacity-0', 'invisible');
+                this.mobileOverlay.classList.add('opacity-100', 'visible');
+
+                // Prevent body scroll
+                document.body.style.overflow = 'hidden';
+
+                // Animate hamburger to X
+                this.animateHamburgerToX();
+            }
+
+            closeMenu() {
+                this.isMenuOpen = false;
+
+                // Hide menu and overlay
+                this.mobileMenu.classList.add('translate-x-full');
+                this.mobileOverlay.classList.remove('opacity-100', 'visible');
+                this.mobileOverlay.classList.add('opacity-0', 'invisible');
+
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+
+                // Animate X back to hamburger
+                this.animateXToHamburger();
+            }
+
+            animateHamburgerToX() {
+                this.hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                this.hamburgerLines[1].style.opacity = '0';
+                this.hamburgerLines[1].style.transform = 'scale(0)';
+                this.hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            }
+
+            animateXToHamburger() {
+                this.hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)';
+                this.hamburgerLines[1].style.opacity = '1';
+                this.hamburgerLines[1].style.transform = 'scale(1)';
+                this.hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)';
+            }
+
+
+
+            setActivePageLink() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const allNavLinks = document.querySelectorAll('nav a[href], .mobile-nav-link[href]');
+
+                allNavLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                        // Desktop nav
+                        if (link.closest('nav.hidden')) {
+                            link.classList.add('text-accent');
+                            link.classList.remove('text-gray-700');
+                        }
+                        // Mobile nav
+                        if (link.classList.contains('mobile-nav-link')) {
+                            link.classList.add('text-accent', 'bg-accent/5', 'border-accent');
+                            link.classList.remove('text-gray-700', 'border-transparent');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize mobile menu when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MobileMenu();
         });
 
-        function initializePage() {
-            updateFeaturedEvent();
-            updateCategoryButtons();
-            updateTimeButtons();
-            updateEventsGrid();
-        }
 
-        function updateFeaturedEvent() {
-            const featuredEvent = upcomingEvents.find(event => event.featured);
-            if (featuredEvent) {
-                document.getElementById('heroBg').style.backgroundImage = `url(${featuredEvent.image})`;
-                document.getElementById('featuredTitle').textContent = featuredEvent.title;
-                document.getElementById('featuredDate').textContent = new Date(featuredEvent.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-                document.getElementById('featuredTime').textContent = featuredEvent.time;
-                document.getElementById('featuredLocation').textContent = featuredEvent.location;
-                document.getElementById('featuredDescription').textContent = featuredEvent.description;
+    </script>
 
-                const typeSpan = document.getElementById('featuredType');
-                typeSpan.textContent = featuredEvent.type === 'online' ? 'Online' : 'On-site';
-                typeSpan.className = `px-3 py-1 rounded-full text-xs font-medium ${featuredEvent.type === 'online' ? 'bg-blue-500/20 text-blue-200' : 'bg-green-500/20 text-green-200'}`;
+    <style>
+        @media (max-width: 480px) {
+            #mobileMenu {
+                width: 100vw;
             }
         }
+    </style>
+    <main class="pt-16 sm:pt-20 overflow-x-hidden w-full">
+        <div class="overflow-x-hidden w-full">
 
-        function setSelectedCategory(categoryId) {
-            selectedCategory = categoryId;
-            updateCategoryButtons();
-            updateEventsGrid();
-        }
+            <!-- Hero Banner - Featured Event -->
+            <section id="heroSection" class="relative bg-gradient-to-r from-primary to-[#2A4A4E] py-12 sm:py-16 lg:py-10">
+                <div id="heroBg" class="absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
+                <div class="absolute inset-0 bg-primary/50"></div>
+                <div class="relative max-w-7xl mx-auto pt-8 sm:pt-12 lg:pt-3 px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div class="text-center lg:text-left">
+                            <div
+                                class="inline-block bg-accent text-primary px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
+                                Featured Event
+                            </div>
+                            <h1 id="featuredTitle"
+                                class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                            </h1>
+                            <div class="flex flex-col sm:flex-row sm:items-center text-white/90 mb-4 gap-2 sm:gap-0">
+                                <div class="flex items-center justify-center lg:justify-start">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span id="featuredDate" class="text-sm sm:text-base mr-0 sm:mr-6"></span>
+                                </div>
+                                <div class="flex items-center justify-center lg:justify-start">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span id="featuredTime" class="text-sm sm:text-base"></span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-center text-white/90 mb-6 gap-2 sm:gap-0">
+                                <div class="flex items-center justify-center lg:justify-start">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span id="featuredLocation" class="text-sm sm:text-base mr-0 sm:mr-4"></span>
+                                </div>
+                                <span id="featuredType"
+                                    class="px-3 py-1 rounded-full text-xs font-medium mx-auto sm:mx-0 w-fit"></span>
+                            </div>
+                            <p id="featuredDescription"
+                                class="text-white/90 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed"></p>
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                                <button onclick="handleRegister('featured')"
+                                    class="bg-accent text-primary px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer text-sm sm:text-base">
+                                    Register Now
+                                </button>
+                                <button onclick="addToCalendar('featured')"
+                                    class="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors cursor-pointer text-sm sm:text-base">
+                                    Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        function setTimeFilter(timeFilter) {
-            selectedTimeFilter = timeFilter;
-            updateTimeButtons();
-            updateEventsGrid();
-        }
+            <!-- Filters -->
+            <section class="py-6 sm:py-8 bg-gray-50 border-b">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row gap-4 sm:gap-6 items-center justify-between">
+                        <!-- Category Filters -->
+                        <div class="w-full lg:w-auto">
+                            <div class="flex flex-wrap gap-2 justify-center lg:justify-start" id="categoryFilters">
+                                <!-- Category buttons will be generated by JavaScript -->
+                            </div>
+                        </div>
 
-        function updateCategoryButtons() {
-            const categoryFilters = document.getElementById('categoryFilters');
-            categoryFilters.innerHTML = '';
+                        <!-- Time Filters -->
+                        <div class="flex gap-2 w-full sm:w-auto justify-center">
+                            <button id="upcomingBtn" onclick="setTimeFilter('upcoming')"
+                                class="flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors cursor-pointer bg-primary text-white">
+                                Upcoming Events
+                            </button>
+                            <button id="pastBtn" onclick="setTimeFilter('past')"
+                                class="flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors cursor-pointer bg-white text-gray-600 hover:bg-gray-100">
+                                Past Events
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            categories.forEach(category => {
-                const button = document.createElement('button');
-                button.onclick = () => setSelectedCategory(category.id);
+            <!-- Events Grid -->
+            <section class="py-12 sm:py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-8 sm:mb-12">
+                        <h2 id="eventsTitle"
+                            class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">Upcoming Events
+                        </h2>
+                        <p id="eventsSubtitle"
+                            class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">Join us for
+                            exciting educational
+                            events and activities</p>
+                    </div>
 
-                const isSelected = selectedCategory === category.id;
-                button.className = `px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${isSelected ? 'bg-accent text-primary' : 'bg-white text-gray-600 hover:bg-gray-100'
-                    }`;
+                    <div id="eventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                        <!-- Events will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
 
-                button.textContent = category.name;
-                categoryFilters.appendChild(button);
-            });
-        }
+            <!-- Contact Section -->
+            <section class="py-12 sm:py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-8 sm:mb-12">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">Event Support &
+                            Contact</h2>
+                        <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">Need help with
+                            event registration or have questions?
+                            Our team is here to assist you</p>
+                    </div>
 
-        function updateTimeButtons() {
-            const upcomingBtn = document.getElementById('upcomingBtn');
-            const pastBtn = document.getElementById('pastBtn');
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-headset text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">General Support</h3>
+                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For general event inquiries and
+                                registration assistance</p>
+                            <p class="text-accent font-medium text-sm sm:text-base break-all">events@gdsschool.edu</p>
+                            <p class="text-gray-600 text-sm sm:text-base">+1 (555) 123-4567</p>
+                        </div>
 
-            if (selectedTimeFilter === 'upcoming') {
-                upcomingBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-primary text-white';
-                pastBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-white text-gray-600 hover:bg-gray-100';
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-calendar-check text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">Event Coordination
+                            </h3>
+                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For event planning and
+                                coordination matters</p>
+                            <p class="text-accent font-medium text-sm sm:text-base">Ms. Emily Rodriguez</p>
+                            <p class="text-gray-600 text-sm sm:text-base break-all">coordinator@gdsschool.edu</p>
+                        </div>
 
-                document.getElementById('eventsTitle').textContent = 'Upcoming Events';
-                document.getElementById('eventsSubtitle').textContent = 'Join us for exciting educational events and activities';
-            } else {
-                upcomingBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-white text-gray-600 hover:bg-gray-100';
-                pastBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-primary text-white';
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-question-circle text-white text-lg sm:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">FAQs & Help</h3>
+                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Quick answers to common questions
+                            </p>
+                            <button
+                                class="text-accent font-medium hover:underline cursor-pointer text-sm sm:text-base">View
+                                FAQ Section</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                document.getElementById('eventsTitle').textContent = 'Past Events & Achievements';
-                document.getElementById('eventsSubtitle').textContent = 'Celebrating our successful events and student achievements';
-            }
-        }
+            <!-- Registration Form Modal -->
+            <div id="registrationModal"
+                class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
+                <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto mx-4">
+                    <div class="p-4 sm:p-6">
+                        <div class="flex items-center justify-between mb-4 sm:mb-6">
+                            <h3 class="text-lg sm:text-2xl font-bold text-primary">Event Registration</h3>
+                            <button onclick="closeRegistrationModal()"
+                                class="text-gray-400 hover:text-gray-600 cursor-pointer p-2">
+                                <i class="fas fa-times text-lg sm:text-2xl"></i>
+                            </button>
+                        </div>
 
-        function updateEventsGrid() {
-            const eventsGrid = document.getElementById('eventsGrid');
-            const events = selectedTimeFilter === 'upcoming' ? getFilteredUpcomingEvents() : pastEvents;
+                        <div class="mb-4 sm:mb-6">
+                            <h4 id="modalEventTitle" class="font-semibold text-primary mb-2 text-sm sm:text-base"></h4>
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center text-gray-600 text-xs sm:text-sm mb-2 gap-1 sm:gap-0">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2"></i>
+                                    <span id="modalEventDate"></span>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center text-gray-600 text-xs sm:text-sm gap-1 sm:gap-0">
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span id="modalEventTime"></span>
+                                </div>
+                                <div class="flex items-center sm:ml-4">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span id="modalEventLocation"></span>
+                                </div>
+                            </div>
+                        </div>
 
-            eventsGrid.innerHTML = '';
+                        <form class="space-y-4" onsubmit="submitRegistration(event)">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" name="fullname" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                                    placeholder="Enter your full name">
+                            </div>
 
-            events.forEach(event => {
-                const eventCard = createEventCard(event);
-                eventsGrid.appendChild(eventCard);
-            });
-        }
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" name="email" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                                    placeholder="Enter your email address">
+                            </div>
 
-        function getFilteredUpcomingEvents() {
-            return upcomingEvents.filter(event => {
-                if (selectedCategory !== 'all' && event.category !== selectedCategory) {
-                    return false;
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" name="phone" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                                    placeholder="Enter your phone number">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Relationship to
+                                    School</label>
+                                <select name="relationship"
+                                    class="w-full px-3 py-2 pr-8 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm">
+                                    <option value="parent">Parent</option>
+                                    <option value="student">Student</option>
+                                    <option value="teacher">Teacher</option>
+                                    <option value="community">Community Member</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements or
+                                    Notes</label>
+                                <textarea name="notes" rows="3" maxlength="500"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm resize-none"
+                                    placeholder="Any special requirements or additional information (max 500 characters)"></textarea>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                                <button type="button" onclick="closeRegistrationModal()"
+                                    class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer text-sm sm:text-base">
+                                    Cancel
+                                </button>
+                                <button type="submit"
+                                    class="flex-1 bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer text-sm sm:text-base">
+                                    Register Now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Data
+                const categories = [
+                    { id: 'all', name: 'All Events' },
+                    { id: 'workshops', name: 'Workshops' },
+                    { id: 'seminars', name: 'Seminars' },
+                    { id: 'webinars', name: 'Webinars' },
+                    { id: 'cultural', name: 'Cultural Events' },
+                    { id: 'competitions', name: 'Competitions' }
+                ];
+
+                const upcomingEvents = [
+                    {
+                        id: 1,
+                        title: "Science Innovation Fair 2024",
+                        date: "2024-03-15",
+                        time: "09:00 AM",
+                        category: "competitions",
+                        location: "Main Auditorium",
+                        type: "onsite",
+                        description: "Annual science fair showcasing student innovations and research projects. Students will present their scientific discoveries and compete for awards.",
+                        image: "img/event/b53d431f1d259aa465cbbd7ab0cc1260.jpg",
+                        featured: true,
+                        coordinator: "Dr. Sarah Johnson",
+                        email: "science@gdsschool.edu"
+                    },
+                    {
+                        id: 2,
+                        title: "Parent-Teacher Conference",
+                        date: "2024-03-20",
+                        time: "02:00 PM",
+                        category: "seminars",
+                        location: "School Campus",
+                        type: "onsite",
+                        description: "Quarterly meeting between parents and teachers to discuss student progress and academic development.",
+                        image: "https://readdy.ai/api/search-image?query=Professional%20parent%20teacher%20conference%20meeting%20in%20classroom%2C%20educators%20discussing%20student%20progress%2C%20collaborative%20educational%20environment%2C%20academic%20consultation%20setting&width=400&height=250&seq=parent-teacher&orientation=landscape",
+                        featured: false,
+                        coordinator: "Ms. Emily Rodriguez",
+                        email: "admin@gdsschool.edu"
+                    },
+                    {
+                        id: 3,
+                        title: "Digital Learning Workshop",
+                        date: "2024-03-25",
+                        time: "10:00 AM",
+                        category: "workshops",
+                        location: "Online Platform",
+                        type: "online",
+                        description: "Interactive workshop on modern digital learning tools and techniques for enhanced student engagement.",
+                        image: "https://readdy.ai/api/search-image?query=Modern%20digital%20classroom%20with%20students%20using%20tablets%20and%20computers%2C%20interactive%20learning%20technology%2C%20educational%20innovation%2C%20collaborative%20online%20learning%20environment&width=400&height=250&seq=digital-workshop&orientation=landscape",
+                        featured: false,
+                        coordinator: "Mr. Michael Chen",
+                        email: "tech@gdsschool.edu"
+                    }
+                ];
+
+                const pastEvents = [
+                    {
+                        id: 6,
+                        title: "Mathematics Olympiad 2023",
+                        date: "2023-12-10",
+                        category: "competitions",
+                        description: "Regional mathematics competition where our students won 3 gold medals.",
+                        image: "https://readdy.ai/api/search-image?query=Students%20celebrating%20mathematics%20competition%20victory%20with%20medals%20and%20trophies%2C%20academic%20achievement%20ceremony%2C%20proud%20young%20mathematicians%2C%20educational%20success&width=400&height=250&seq=math-olympiad&orientation=landscape",
+                        achievements: "3 Gold Medals, 5 Silver Medals"
+                    },
+                    {
+                        id: 7,
+                        title: "Environmental Awareness Campaign",
+                        date: "2023-11-15",
+                        category: "workshops",
+                        description: "Community workshop on environmental conservation and sustainability practices.",
+                        image: "https://readdy.ai/api/search-image?query=Students%20participating%20in%20environmental%20awareness%20activities%2C%20tree%20planting%20and%20recycling%20workshop%2C%20green%20education%20initiative%2C%20eco-friendly%20school%20program&width=400&height=250&seq=environment-workshop&orientation=landscape",
+                        achievements: "Planted 200 trees, Recycled 500kg waste"
+                    }
+                ];
+
+                // State variables
+                let selectedCategory = 'all';
+                let selectedTimeFilter = 'upcoming';
+                let currentSelectedEvent = null;
+
+                // Initialize page
+                document.addEventListener('DOMContentLoaded', function () {
+                    initializePage();
+                });
+
+                function initializePage() {
+                    updateFeaturedEvent();
+                    updateCategoryButtons();
+                    updateTimeButtons();
+                    updateEventsGrid();
                 }
-                return true;
-            });
-        }
 
-        function createEventCard(event) {
-            const card = document.createElement('div');
-            card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow';
+                function updateFeaturedEvent() {
+                    const featuredEvent = upcomingEvents.find(event => event.featured);
+                    if (featuredEvent) {
+                        document.getElementById('heroBg').style.backgroundImage = `url(${featuredEvent.image})`;
+                        document.getElementById('featuredTitle').textContent = featuredEvent.title;
+                        document.getElementById('featuredDate').textContent = new Date(featuredEvent.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                        document.getElementById('featuredTime').textContent = featuredEvent.time;
+                        document.getElementById('featuredLocation').textContent = featuredEvent.location;
+                        document.getElementById('featuredDescription').textContent = featuredEvent.description;
 
-            const categoryColor = getCategoryColor(event.category);
-            const categoryName = categories.find(c => c.id === event.category)?.name || event.category;
+                        const typeSpan = document.getElementById('featuredType');
+                        typeSpan.textContent = featuredEvent.type === 'online' ? 'Online' : 'On-site';
+                        typeSpan.className = `px-3 py-1 rounded-full text-xs font-medium ${featuredEvent.type === 'online' ? 'bg-blue-500/20 text-blue-200' : 'bg-green-500/20 text-green-200'}`;
+                    }
+                }
 
-            if (selectedTimeFilter === 'upcoming') {
-                card.innerHTML = `
+                function setSelectedCategory(categoryId) {
+                    selectedCategory = categoryId;
+                    updateCategoryButtons();
+                    updateEventsGrid();
+                }
+
+                function setTimeFilter(timeFilter) {
+                    selectedTimeFilter = timeFilter;
+                    updateTimeButtons();
+                    updateEventsGrid();
+                }
+
+                function updateCategoryButtons() {
+                    const categoryFilters = document.getElementById('categoryFilters');
+                    categoryFilters.innerHTML = '';
+
+                    categories.forEach(category => {
+                        const button = document.createElement('button');
+                        button.onclick = () => setSelectedCategory(category.id);
+
+                        const isSelected = selectedCategory === category.id;
+                        button.className = `px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors cursor-pointer ${isSelected ? 'bg-accent text-primary' : 'bg-white text-gray-600 hover:bg-gray-100'
+                            }`;
+
+                        button.textContent = category.name;
+                        categoryFilters.appendChild(button);
+                    });
+                }
+
+                function updateTimeButtons() {
+                    const upcomingBtn = document.getElementById('upcomingBtn');
+                    const pastBtn = document.getElementById('pastBtn');
+
+                    if (selectedTimeFilter === 'upcoming') {
+                        upcomingBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-primary text-white';
+                        pastBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-white text-gray-600 hover:bg-gray-100';
+
+                        document.getElementById('eventsTitle').textContent = 'Upcoming Events';
+                        document.getElementById('eventsSubtitle').textContent = 'Join us for exciting educational events and activities';
+                    } else {
+                        upcomingBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-white text-gray-600 hover:bg-gray-100';
+                        pastBtn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer whitespace-nowrap bg-primary text-white';
+
+                        document.getElementById('eventsTitle').textContent = 'Past Events & Achievements';
+                        document.getElementById('eventsSubtitle').textContent = 'Celebrating our successful events and student achievements';
+                    }
+                }
+
+                function updateEventsGrid() {
+                    const eventsGrid = document.getElementById('eventsGrid');
+                    const events = selectedTimeFilter === 'upcoming' ? getFilteredUpcomingEvents() : pastEvents;
+
+                    eventsGrid.innerHTML = '';
+
+                    events.forEach(event => {
+                        const eventCard = createEventCard(event);
+                        eventsGrid.appendChild(eventCard);
+                    });
+                }
+
+                function getFilteredUpcomingEvents() {
+                    return upcomingEvents.filter(event => {
+                        if (selectedCategory !== 'all' && event.category !== selectedCategory) {
+                            return false;
+                        }
+                        return true;
+                    });
+                }
+
+                function createEventCard(event) {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow';
+
+                    const categoryColor = getCategoryColor(event.category);
+                    const categoryName = categories.find(c => c.id === event.category)?.name || event.category;
+
+                    if (selectedTimeFilter === 'upcoming') {
+                        card.innerHTML = `
                     <img src="${event.image}" alt="${event.title}" class="w-full h-48 object-cover object-top">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
@@ -819,16 +752,17 @@
                             <span>${event.location}</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-6 line-clamp-3">${event.description}</p>
-                        <div class="flex gap-2">
-                            <button onclick="handleRegister(${event.id})" class="flex-1 bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap text-sm">Register</button>
-                            <button onclick="addToCalendar(${event.id})" class="px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors cursor-pointer">
-                                <i class="fas fa-calendar-plus"></i>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <button onclick="handleRegister(${event.id})" class="flex-1 bg-accent text-primary px-3 sm:px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer text-xs sm:text-sm">Register</button>
+                            <button onclick="addToCalendar(${event.id})" class="px-3 sm:px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors cursor-pointer text-xs sm:text-sm">
+                                <i class="fas fa-calendar-plus mr-1 sm:mr-0"></i>
+                                <span class="sm:hidden">Add to Calendar</span>
                             </button>
                         </div>
                     </div>
                 `;
-            } else {
-                card.innerHTML = `
+                    } else {
+                        card.innerHTML = `
                     <img src="${event.image}" alt="${event.title}" class="w-full h-48 object-cover object-top">
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
@@ -848,82 +782,84 @@
                         ` : ''}
                     </div>
                 `;
-            }
+                    }
 
-            return card;
-        }
+                    return card;
+                }
 
-        function getCategoryColor(category) {
-            const colors = {
-                workshops: 'bg-blue-100 text-blue-800',
-                seminars: 'bg-green-100 text-green-800',
-                webinars: 'bg-purple-100 text-purple-800',
-                cultural: 'bg-pink-100 text-pink-800',
-                competitions: 'bg-orange-100 text-orange-800'
-            };
-            return colors[category] || 'bg-gray-100 text-gray-800';
-        }
+                function getCategoryColor(category) {
+                    const colors = {
+                        workshops: 'bg-blue-100 text-blue-800',
+                        seminars: 'bg-green-100 text-green-800',
+                        webinars: 'bg-purple-100 text-purple-800',
+                        cultural: 'bg-pink-100 text-pink-800',
+                        competitions: 'bg-orange-100 text-orange-800'
+                    };
+                    return colors[category] || 'bg-gray-100 text-gray-800';
+                }
 
-        function handleRegister(eventId) {
-            let event;
-            if (eventId === 'featured') {
-                event = upcomingEvents.find(e => e.featured);
-            } else {
-                event = upcomingEvents.find(e => e.id === eventId);
-            }
+                function handleRegister(eventId) {
+                    let event;
+                    if (eventId === 'featured') {
+                        event = upcomingEvents.find(e => e.featured);
+                    } else {
+                        event = upcomingEvents.find(e => e.id === eventId);
+                    }
 
-            if (event) {
-                currentSelectedEvent = event;
-                showRegistrationModal(event);
-            }
-        }
+                    if (event) {
+                        currentSelectedEvent = event;
+                        showRegistrationModal(event);
+                    }
+                }
 
-        function showRegistrationModal(event) {
-            document.getElementById('modalEventTitle').textContent = event.title;
-            document.getElementById('modalEventDate').textContent = new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-            document.getElementById('modalEventTime').textContent = event.time;
-            document.getElementById('modalEventLocation').textContent = event.location;
+                function showRegistrationModal(event) {
+                    document.getElementById('modalEventTitle').textContent = event.title;
+                    document.getElementById('modalEventDate').textContent = new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                    document.getElementById('modalEventTime').textContent = event.time;
+                    document.getElementById('modalEventLocation').textContent = event.location;
 
-            document.getElementById('registrationModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+                    document.getElementById('registrationModal').classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
 
-        function closeRegistrationModal() {
-            document.getElementById('registrationModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            currentSelectedEvent = null;
-        }
+                function closeRegistrationModal() {
+                    document.getElementById('registrationModal').classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                    currentSelectedEvent = null;
+                }
 
-        function submitRegistration(e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
+                function submitRegistration(e) {
+                    e.preventDefault();
+                    const formData = new FormData(e.target);
 
-            // Simulate form submission
-            alert('Registration submitted successfully! You will receive a confirmation email shortly.');
-            closeRegistrationModal();
+                    // Simulate form submission
+                    alert('Registration submitted successfully! You will receive a confirmation email shortly.');
+                    closeRegistrationModal();
 
-            // Reset form
-            e.target.reset();
-        }
+                    // Reset form
+                    e.target.reset();
+                }
 
-        function addToCalendar(eventId) {
-            let event;
-            if (eventId === 'featured') {
-                event = upcomingEvents.find(e => e.featured);
-            } else {
-                event = upcomingEvents.find(e => e.id === eventId);
-            }
+                function addToCalendar(eventId) {
+                    let event;
+                    if (eventId === 'featured') {
+                        event = upcomingEvents.find(e => e.featured);
+                    } else {
+                        event = upcomingEvents.find(e => e.id === eventId);
+                    }
 
-            if (event) {
-                const startDate = new Date(`${event.date}T${event.time}`);
-                const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000)); // 2 hours later
+                    if (event) {
+                        const startDate = new Date(`${event.date}T${event.time}`);
+                        const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000)); // 2 hours later
 
-                const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${startDate.toISOString().replace(/-/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/-/g, '').split('.')[0]}Z&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
+                        const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${startDate.toISOString().replace(/-/g, '').split('.')[0]}Z/${endDate.toISOString().replace(/-/g, '').split('.')[0]}Z&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(event.location)}`;
 
-                window.open(googleCalendarUrl, '_blank');
-            }
-        }
-    </script>
+                        window.open(googleCalendarUrl, '_blank');
+                    }
+                }
+            </script>
+        </div>
+    </main>
 
     <footer class="bg-primary text-white">
         <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
@@ -936,23 +872,28 @@
                         </div>
                         <span class="text-xl font-bold">GDS Public School</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and character development.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
+                        education and character development.</p>
                     <div class="flex space-x-3">
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Facebook">
                             <i class="fab fa-facebook-f text-lg"></i>
                         </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Twitter">
                             <i class="fab fa-twitter text-lg"></i>
                         </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="Instagram">
                             <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
+                            aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
                     <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
@@ -964,7 +905,7 @@
                         <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Contact Info -->
                 <div>
                     <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
@@ -983,25 +924,29 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Follow Us -->
                 <div>
                     <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational insights.</p>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
+                        educational insights.</p>
                     <div class="flex space-x-3">
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Facebook">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Facebook">
                             <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
                         </a>
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Twitter">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Twitter">
                             <i class="fab fa-twitter" style="font-size: 18px;"></i>
                         </a>
-                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Instagram">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
+                            href="#" aria-label="Instagram">
                             <i class="fab fa-instagram" style="font-size: 18px;"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Copyright Section -->
             <div class="mt-12 pt-8 border-t border-gray-700">
                 <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
