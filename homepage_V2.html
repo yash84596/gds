@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GDS Public School</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1F3A3D",
+                        accent: "#F2A900",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#121212", // A common dark mode background
+                        "text-light": "#1F3A3D",
+                        "text-dark": "#E5E5E5",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-primary text-text-light dark:text-text-dark font-sans">
+    <!-- <header class="relative bg-cover bg-center text-white" style="background-image: url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');">
+        <div class="absolute inset-0 bg-primary opacity-60"></div>
+        <div class="relative z-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="bg-accent p-2 rounded-md mr-3">
+                            <span class="material-icons text-primary" style="font-size: 24px;">school</span>
+                        </div>
+                        <span class="text-xl font-bold">GDS Public School</span>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="hover:text-accent" href="#">Home</a>
+                        <a class="hover:text-accent" href="About.html">About</a>
+                        <a class="hover:text-accent" href="Curriculum.html">Curriculum</a>
+                        <a class="hover:text-accent" href="Events.html">Events</a>
+                        <a class="hover:text-accent" href="Contact_Us.html">Contact Us</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button class="text-white">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </nav> -->
+    <!-- <nav class="hidden md:flex items-center space-x-8">
+                    <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">Home</a>
+                    <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">About</a>
+                    <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent"
+                        href="#">Curriculum</a>
+                    <a class="text-accent font-bold" href="#">Events</a>
+                    <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">Contact
+                        Us</a>
+                </nav> -->
+    <!-- </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-48">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public
+                        School</span></h1>
+                <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence
+                    in education, character building, and holistic development.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                    href="#">
+                    Begin Your Legacy <span class="align-middle">→</span>
+                </a>
+            </div>
+        </div>
+    </header> -->
+    <!-- <header class="relative bg-cover bg-center text-white" style="background-image: url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');"> -->
+    <!-- White Navigation Bar -->
+    <!-- <div class="bg-white shadow-md"> -->
+    <!-- <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4"> -->
+    <!-- <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-10 sm:py-16 lg:py-24">
+
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="bg-accent p-2 rounded-md mr-3">
+                            <span class="material-icons text-primary" style="font-size: 24px;">school</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">GDS Public School</span>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="text-primary hover:text-accent" href="#">Home</a>
+                        <a class="text-primary hover:text-accent" href="About.html">About</a>
+                        <a class="text-primary hover:text-accent" href="Curriculum.html">Curriculum</a>
+                        <a class="text-primary hover:text-accent" href="Events.html">Events</a>
+                        <a class="text-primary hover:text-accent" href="Contact_Us.html">Contact Us</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button class="text-primary">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div> -->
+
+    <!-- Hero Section with Background Image -->
+    <!-- <div class="absolute inset-0 bg-primary opacity-60" style="top: 80px;"></div>
+        <div class="relative z-10" style="padding-top: 80px;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-48">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public School</span></h1>
+                <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300" href="#">
+                    Begin Your Legacy <span class="align-middle">→</span>
+                </a>
+            </div>
+        </div>
+    </header> -->
+    <!-- <header class="relative bg-cover bg-center text-white" style="background-image: url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');"> -->
+    <!-- White Navigation Bar -->
+    <!-- <div class="bg-white shadow-md">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="bg-accent p-2 rounded-md mr-3">
+                            <span class="material-icons text-primary" style="font-size: 24px;">school</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">GDS Public School</span>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="text-primary hover:text-accent" href="#">Home</a>
+                        <a class="text-primary hover:text-accent" href="About.html">About</a>
+                        <a class="text-primary hover:text-accent" href="Curriculum.html">Curriculum</a>
+                        <a class="text-primary hover:text-accent" href="Events.html">Events</a>
+                        <a class="text-primary hover:text-accent" href="Contact_Us.html">Contact Us</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button class="text-primary">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div> -->
+
+    <!-- Hero Section with Background Image -->
+    <!-- <div class="absolute inset-0 bg-primary opacity-60" style="top: 80px;"></div>
+        <div class="relative z-10" style="padding-top: 80px;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-10 sm:py-16 lg:py-24">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public School</span></h1>
+                <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300" href="#">
+                    Begin Your Legacy <span class="align-middle">→</span>
+                </a>
+            </div>
+        </div>
+    </header> -->
+    <header class="relative bg-cover bg-center text-white" style="background-image: url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');">
+        <!-- Fixed Sticky Navigation Bar -->
+        <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="bg-accent p-2 rounded-md mr-3">
+                            <span class="material-icons text-primary" style="font-size: 24px;">school</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">GDS Public School</span>
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="text-primary hover:text-accent" href="#">Home</a>
+                        <a class="text-primary hover:text-accent" href="About.html">About</a>
+                        <a class="text-primary hover:text-accent" href="try_curriculum.html">Curriculum</a>
+                        <a class="text-primary hover:text-accent" href="Events.html">Events</a>
+                        <a class="text-primary hover:text-accent" href="Contact_Us.html">Contact Us</a>
+                    </nav>
+                    <div class="md:hidden">
+                        <button class="text-primary">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Hero Section with Background Image -->
+        <div class="absolute inset-0 bg-primary opacity-60"></div>
+        <div class="relative z-10" style="padding-top: 80px;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-40">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public
+                        School</span></h1>
+                <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence
+                    in education, character building, and holistic development.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                    href="#">
+                    Begin Your Legacy <span class="align-middle">→</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 sm:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Where <span class="text-accent">Tradition Meets
+                    Tomorrow</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Combining generations of
+                educational excellence with innovative teaching methods, creating leaders who will shape the future.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Master Educators Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/93e257f037532e6683d5adce6af32d44.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">person</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Master Educators</h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">World-class faculty with decades of
+                            experience and commitment to educational excellence and student development.</p>
+                    </div>
+                </div>
+
+                <!-- Timeless Spaces Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/0353073c46e078d3731e50415647e495.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">schedule</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Timeless Spaces</h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">State-of-the-art facilities that
+                            blend traditional
+                            values with modern learning environments and cutting-edge technology.</p>
+                    </div>
+                </div>
+
+                <!-- Connected Learning Card -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="h-48 bg-cover bg-center relative"
+                        style="background-image: url('img/0c0a23580e20b828bb88a191377a52f7.jpg');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <span class="material-icons text-white">public</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Connected Learning
+                        </h3>
+                        <p class="text-gray-600 text-left text-sm leading-relaxed">Global curriculum and international
+                            partnerships that prepare students for success in an interconnected world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-background-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Our <span class="text-accent">Living
+                    Curriculum</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Where every subject comes alive
+                through discovery, nurturing innovative human beings in grades K-12.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Sciences & Mathematics Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Modern science laboratory with equipment and experiments" class="w-full h-56 object-cover"
+                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">science</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Sciences & Mathematics</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Discover the wonders of nature, explore
+                            advanced mathematical concepts, and develop critical thinking through hands-on experiments.
+                        </p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+
+                <!-- Languages & Stories Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Beautiful library interior with classic architecture and bookshelves"
+                        class="w-full h-56 object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7j1HF3XiPiB7uQt9IgAIajeUYRAuSwDPgs1Thx9QflfXM6w2xSdbeNuqxOApUChLi-O8pl_EXTSUpPUnH1RZEucCJlYCEtjUQKbjSPIzxRbDfEtEdED7b26-cI46svyMjy_hfDjahqToU15S-NR-HZKvQbBSFP4BGhy7qV9Dm0bn18ufbBRBodB7rPbXldrFfsa7J_Q_b392KrlKU0cSdEgiB-wnhbRQ054FyuHXgreNo0DTWB08355HwxI-1P_awwsn3aphqMhsL" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">book</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Languages & Stories</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Master multiple languages, dive into
+                            world
+                            literature, and develop exceptional communication and creative writing skills.</p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+
+                <!-- Arts & Heritage Card -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <img alt="Colorful art classroom with student artwork and creative displays"
+                        class="w-full h-56 object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtTRhVWgVL1SwiLlW3Mt7KSmkhE9BaBcRGS9GeCuESKCrW6S_VCdOa0wyDctR7ePxp5ut_uWK-ovI2H-JQX03ehi0v0srECthVEQy_OYA9PdxewQqzhlZh0FFBl6ac60grNDIqM3mwi8XG_zNgvjvpNX6-V4Ni80ON5C7uG0OH7QfBi-YfyZNEBArTVwci_kfS_kt9HvAj-TbUMMshtFJMdcS_tEDNGs4yseoilsxEBPRumzl__xorcDSNk3ngDC0M4vkJn6IM3I10" />
+                    <div class="p-6 relative">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            <span class="material-icons text-white text-xl">palette</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Arts & Heritage</h3>
+                        <p class="text-gray-600 text-left leading-relaxed mb-4">Celebrate creativity through visual
+                            arts,
+                            music, drama, and cultural studies that connect past traditions with future innovations.</p>
+                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
+                            href="#">Explore Journey →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Button -->
+            <div class="text-center">
+                <a class="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg text-lg"
+                    href="#">
+                    Discover Our Complete Journey →
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="bg-cover bg-center" style="background-image: url('img/15bb93b129fb5b3909ed28b2b58e5249.jpg');">
+        <div class="bg-primary bg-opacity-80 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h2 class="text-3xl sm:text-5xl font-bold">Ready to Join Our <span class="text-accent">School
+                        Family?</span></h2>
+                <p class="mt-4 text-lg max-w-3xl mx-auto">Take the first step towards an exceptional educational
+                    journey. Our admissions team is here to guide you through the process.</p>
+                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                    href="#">
+                    Apply for Admission
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary text-white">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent p-2.5 rounded-md mr-4">
+                            <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
+                        </div>
+                        <span class="text-xl font-bold">GDS Public School</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and character development.</p>
+                    <div class="flex space-x-3">
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
+                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
+                            <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
+                            <span>info@gdspublicschool.edu</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Follow Us -->
+                <div>
+                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational insights.</p>
+                    <div class="flex space-x-3">
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" style="font-size: 18px;"></i>
+                        </a>
+                        <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" style="font-size: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright Section -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

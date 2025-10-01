@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GDS Public School Events</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;family=Montserrat:wght@700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1F3A3D",
+                        accent: "#F2A900",
+                        "background-light": "#E5E5E5",
+                        "background-dark": "#121212", // A common dark mode background
+                        "text-light": "#1F3A3D",
+                        "text-dark": "#E5E5E5",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E1E1E"
+                    },
+                    fontFamily: {
+                        'sans': ['Lato', 'sans-serif'],
+                        'display': ['Montserrat', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'DEFAULT': '0.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans">
+    <div class="bg-card-light dark:bg-card-dark shadow-md">
+        <header class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-accent rounded-md flex items-center justify-center mr-3">
+                    <span class="material-icons text-white">school</span>
+                </div>
+                <h1 class="text-xl font-bold text-primary dark:text-accent">GDS Public School</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">Home</a>
+                <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">About</a>
+                <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent"
+                    href="#">Curriculum</a>
+                <a class="text-accent font-bold" href="#">Events</a>
+                <a class="text-primary dark:text-text-dark hover:text-accent dark:hover:text-accent" href="#">Contact
+                    Us</a>
+            </nav>
+            <button class="md:hidden text-primary dark:text-text-dark">
+                <span class="material-icons">menu</span>
+            </button>
+        </header>
+    </div>
+    <main>
+        <section class="relative bg-cover bg-center text-white"
+            style="background-image: url('image-science-fair-students-with-projects.jpg');">
+            <div class="absolute inset-0 bg-primary opacity-70"></div>
+            <div class="container mx-auto px-6 py-20 md:py-32 relative z-10">
+                <div class="max-w-2xl">
+                    <span class="text-accent font-bold text-sm">Featured Event</span>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold mt-2">Science Innovation Fair 2024</h2>
+                    <div class="flex items-center space-x-4 mt-4 text-gray-200">
+                        <div class="flex items-center">
+                            <span class="material-icons text-sm mr-2">event</span>
+                            <span>Friday, March 15, 2024</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="material-icons text-sm mr-2">schedule</span>
+                            <span>09:00 AM</span>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg">
+                        Annual science fair showcasing student innovations and research projects. Students will present
+                        their scientific discoveries and compete for awards.
+                    </p>
+                    <div class="mt-8 flex space-x-4">
+                        <a class="bg-accent text-primary font-bold py-3 px-6 rounded-md hover:bg-yellow-400 transition"
+                            href="#">Register Now</a>
+                        <a class="bg-gray-700 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-600 transition"
+                            href="#">Add to Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-card-light dark:bg-card-dark py-4 shadow-sm">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex flex-wrap space-x-2 md:space-x-4 mb-4 md:mb-0">
+                        <button class="py-2 px-4 rounded-full bg-primary text-white text-sm">All Events</button>
+                        <button
+                            class="py-2 px-4 rounded-full text-sm text-primary dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">Workshops</button>
+                        <button
+                            class="py-2 px-4 rounded-full text-sm text-primary dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">Seminars</button>
+                        <button
+                            class="py-2 px-4 rounded-full text-sm text-primary dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">Webinars</button>
+                        <button
+                            class="py-2 px-4 rounded-full text-sm text-primary dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">Cultural
+                            Events</button>
+                        <button
+                            class="py-2 px-4 rounded-full text-sm text-primary dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-700">Competitions</button>
+                    </div>
+                    <div class="flex space-x-1 border border-primary/20 dark:border-text-dark/20 rounded-full p-1">
+                        <button class="py-1 px-4 rounded-full bg-primary text-white text-sm">Upcoming Events</button>
+                        <button class="py-1 px-4 rounded-full text-sm text-primary dark:text-text-dark">Past
+                            Events</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-primary dark:text-accent">Upcoming
+                        Events</h2>
+                    <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">Join us for exciting educational events and
+                        activities</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <img alt="Students presenting at a science fair" class="w-full h-48 object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKbLew1dm_hI_6jLKmSv_8mkwCc0GmxKAaGi2-IuGM0zPaJ85iV_bZNY2v_ipvMGDeHBxzgSZnFNmnu2dd_wK9_auAj3chprnu7_pOaT2vvIICT-g_QwmfA_xgc5W8fmu0BTnOFt29a-RXM7CHCYLwPD0qddfzW2IE0YpTxjVXfjFquHFKckE7o06Q2q-tokW45nwpyVpSPYdf8yMlv5fvt5o2y93YtAabfERDm0l2dQL7hVgvFhz9E3-86jvV3oP0P0bbZezN2U" />
+                            <span
+                                class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">On-site</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-primary dark:text-accent font-bold text-sm">Workshop</span>
+                            <h3 class="text-xl font-bold mt-2 text-primary dark:text-text-dark">Science Innovation Fair
+                                2024</h3>
+                            <div class="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">event</span>
+                                    <span>Mar 15, 2024</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">schedule</span>
+                                    <span>09:00 AM</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300 text-sm">Annual science fair showcasing
+                                student innovations. Students present their scientific discoveries and compete for
+                                awards.</p>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a class="bg-primary text-white font-bold py-2 px-6 rounded-md hover:bg-opacity-90 transition"
+                                    href="#">Register</a>
+                                <button
+                                    class="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <span class="material-icons text-xl">bookmark_border</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <img alt="A teacher speaking with a parent in a classroom" class="w-full h-48 object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2DmCSCGTyISm_BSUgoK_Z_VifyAaTf7X7wOvcZ_3tt5ARjxSpLK2mIFCIen09omalHFi4dYxKIZ-2snjDmJ6tNA0qxh_g3Y2xeNoDWF0Mrsnt-dTofkrdKVNN_4TTsmw2wHkCm9a4Dj7RaHVJkU9Uj9H7koMs8aOnrekq8uk41vr1hz4Reyx3WG3yDKUjLOoma3u_lVzFqBbN6GdVD5C5DJqbDqECnVPq3Oul1htU1jhlACj25qNY_HC94sHEJYbZjz6H0aarn9E" />
+                            <span
+                                class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">On-site</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-primary dark:text-accent font-bold text-sm">Conference</span>
+                            <h3 class="text-xl font-bold mt-2 text-primary dark:text-text-dark">Parent-Teacher
+                                Conference</h3>
+                            <div class="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">event</span>
+                                    <span>Mar 20, 2024</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">schedule</span>
+                                    <span>02:00 PM</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300 text-sm">Quarterly meeting between parents
+                                and teachers to discuss student progress and academic development.</p>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a class="bg-primary text-white font-bold py-2 px-6 rounded-md hover:bg-opacity-90 transition"
+                                    href="#">Register</a>
+                                <button
+                                    class="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <span class="material-icons text-xl">bookmark_border</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <img alt="Students using computers in a modern classroom" class="w-full h-48 object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIs9Xe7BuJJGZa79h0U8FYX20Z2WHOetQSvUfDYoSIsFNvVKMQb0-zHVo0ggQjniln5tvWVhHctUDR3sR82C_Nj7QXC-saKmorgHH1TMjyXAetOzDM7fO9isXk9oNVcXPARNeiukpM6iNIYje8r5ihWl987qY2a1B4-WlgK429wniXkrmU3R6ub1XuW7DQxx58QHI7hSobExEkFVAxVhW83MN1ZdXDM7qI86FW5TfNvg2CI-a4QWpq8AcKXcFv47DxceOWZlQBcQk" />
+                            <span
+                                class="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Online</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-primary dark:text-accent font-bold text-sm">Workshop</span>
+                            <h3 class="text-xl font-bold mt-2 text-primary dark:text-text-dark">Digital Learning
+                                Workshop</h3>
+                            <div class="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">event</span>
+                                    <span>Mar 25, 2024</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">schedule</span>
+                                    <span>10:00 AM</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300 text-sm">Interactive workshop on modern
+                                digital learning tools and platforms to enhance student engagement.</p>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a class="bg-accent text-primary font-bold py-2 px-6 rounded-md hover:bg-yellow-400 transition"
+                                    href="#">Register</a>
+                                <button
+                                    class="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <span class="material-icons text-xl">bookmark_border</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <img alt="Students performing a cultural dance on stage" class="w-full h-48 object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKbLew1dm_hI_6jLKmSv_8mkwCc0GmxKAaGi2-IuGM0zPaJ85iV_bZNY2v_ipvMGDeHBxzgSZnFNmnu2dd_wK9_auAj3chprnu7_pOaT2vvIICT-g_QwmfA_xgc5W8fmu0BTnOFt29a-RXM7CHCYLwPD0qddfzW2IE0YpTxjVXfjFquHFKckE7o06Q2q-tokW45nwpyVpSPYdf8yMlv5fvt5o2y93YtAabfERDm0l2dQL7hVgvFhz9E3-86jvV3oP0P0bbZezN2U" />
+                            <span
+                                class="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">On-site</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-primary dark:text-accent font-bold text-sm">Cultural Events</span>
+                            <h3 class="text-xl font-bold mt-2 text-primary dark:text-text-dark">Annual Cultural Festival
+                            </h3>
+                            <div class="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">event</span>
+                                    <span>Apr 05, 2024</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">location_on</span>
+                                    <span>School Grounds</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300 text-sm">A vibrant day filled with
+                                performances, food stalls, and cultural exhibitions by students and staff.</p>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a class="bg-primary text-white font-bold py-2 px-6 rounded-md hover:bg-opacity-90 transition"
+                                    href="#">Register</a>
+                                <button
+                                    class="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <span class="material-icons text-xl">bookmark_border</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card-light dark:bg-card-dark rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative">
+                            <img alt="Students participating in an online webinar" class="w-full h-48 object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ijcxkMXnlPj5rnEiptG7WX2IVv23QSMUgCgySlWvn2svVjxVgnFeR8t0Xi-m9NDceY8XBwpICWUqBJz9D4w5cv3SPR0p9kuOkafkf_eodB8UYBYby2Xh3Co9uxrFzjR_SRHbSqsutFw7dcZNsN3Ek668WwGzpcrR9A15VK15vQfcwndMky0kQexjGjk8Uad754GG1RTLYuE2EEglbpi4NpR9JyCKv9Wt3HkqjbZqTcgmBCleJJyrIiYhSh9ytXJ-qBJ8HW52Dac" />
+                            <span
+                                class="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Online</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-primary dark:text-accent font-bold text-sm">Webinar</span>
+                            <h3 class="text-xl font-bold mt-2 text-primary dark:text-text-dark">Career Guidance Webinar
+                            </h3>
+                            <div class="flex items-center space-x-4 mt-2 text-gray-500 dark:text-gray-400 text-sm">
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">event</span>
+                                    <span>Apr 12, 2024</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">schedule</span>
+                                    <span>04:00 PM</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="material-icons text-base mr-1">videocam</span>
+                                    <span>Zoom Platform</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-gray-300 text-sm">Expert insights on career paths and
+                                higher education opportunities for senior students.</p>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a class="bg-primary text-white font-bold py-2 px-6 rounded-md hover:bg-opacity-90 transition"
+                                    href="#">Register</a>
+                                <button
+                                    class="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-md flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <span class="material-icons text-xl">bookmark_border</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-card-light dark:bg-card-dark py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-primary dark:text-accent">Event Support
+                        &amp; Contact</h2>
+                    <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">Need help with event registration or have
+                        questions? Our team is here to assist you</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-yellow-50/50 dark:bg-card-dark border border-yellow-200 dark:border-gray-700 rounded-lg p-8 text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full mx-auto flex items-center justify-center">
+                            <span class="material-icons text-3xl">support_agent</span>
+                        </div>
+                        <h3 class="text-xl font-bold mt-6 text-primary dark:text-text-dark">General Support</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">For general event inquiries and registration
+                            assistance</p>
+                        <a class="block mt-4 font-bold text-accent hover:underline"
+                            href="mailto:events@gdspublicschool.edu">events@gdspublicschool.edu</a>
+                        <p class="mt-1 text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                    </div>
+                    <div
+                        class="bg-yellow-50/50 dark:bg-card-dark border border-yellow-200 dark:border-gray-700 rounded-lg p-8 text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full mx-auto flex items-center justify-center">
+                            <span class="material-icons text-3xl">event_seat</span>
+                        </div>
+                        <h3 class="text-xl font-bold mt-6 text-primary dark:text-text-dark">Event Coordination</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">For event partnership and coordination matters
+                        </p>
+                        <p class="mt-4 font-bold text-primary dark:text-text-dark">Ms. Emily Rodriguez</p>
+                        <a class="block text-accent hover:underline"
+                            href="mailto:coordinator@gdspublicschool.edu">coordinator@gdspublicschool.edu</a>
+                    </div>
+                    <div
+                        class="bg-yellow-50/50 dark:bg-card-dark border border-yellow-200 dark:border-gray-700 rounded-lg p-8 text-center">
+                        <div
+                            class="w-16 h-16 bg-accent text-primary rounded-full mx-auto flex items-center justify-center">
+                            <span class="material-icons text-3xl">quiz</span>
+                        </div>
+                        <h3 class="text-xl font-bold mt-6 text-primary dark:text-text-dark">FAQs &amp; Help</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">Quick answers to common questions</p>
+                        <a class="block mt-4 font-bold text-accent hover:underline" href="#">View FAQ Section</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent rounded-md flex items-center justify-center mr-3">
+                            <span class="material-icons text-primary">school</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">GDS Public School</h2>
+                    </div>
+                    <p class="mt-4 text-gray-300 text-sm">Building tomorrow's leaders through excellence in education
+                        and character development.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a class="text-gray-300 hover:text-accent" href="#"><svg aria-hidden="true" class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    fill-rule="evenodd"></path>
+                            </svg></a>
+                        <a class="text-gray-300 hover:text-accent" href="#"><svg aria-hidden="true" class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                </path>
+                            </svg></a>
+                        <a class="text-gray-300 hover:text-accent" href="#"><svg aria-hidden="true" class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.16 6.837 9.48.5.09.68-.22.68-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 01.1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.72c0 .27.18.58.69.49A10 10 0 0022 12C22 6.477 17.523 2 12 2z"
+                                    fill-rule="evenodd"></path>
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Quick Links</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a class="text-gray-300 hover:text-accent" href="#">Home</a></li>
+                        <li><a class="text-gray-300 hover:text-accent" href="#">About</a></li>
+                        <li><a class="text-gray-300 hover:text-accent" href="#">Admissions</a></li>
+                        <li><a class="text-gray-300 hover:text-accent" href="#">Events</a></li>
+                        <li><a class="text-gray-300 hover:text-accent" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Contact Info</h3>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <span class="material-icons text-accent mr-3">location_on</span>
+                            <span class="text-gray-300">123 Education Street<br />Knowledge City, ST 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-accent mr-3">phone</span>
+                            <span class="text-gray-300">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="material-icons text-accent mr-3">email</span>
+                            <span class="text-gray-300">info@gdspublicschool.edu</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white">Follow Us</h3>
+                    <p class="mt-4 text-gray-300 text-sm">Stay updated with our latest news, events, and educational
+                        insights.</p>
+                    <div class="flex space-x-3 mt-4">
+                        <a class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-primary hover:bg-yellow-400"
+                            href="#">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-primary hover:bg-yellow-400"
+                            href="#">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-primary hover:bg-yellow-400"
+                            href="#">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.16 6.837 9.48.5.09.68-.22.68-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 01.1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.72c0 .27.18.58.69.49A10 10 0 0022 12C22 6.477 17.523 2 12 2z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>© 2024 GDS Public School. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Website Builder</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

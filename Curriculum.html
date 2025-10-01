@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GDS Public School</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1F3A3D',
+            accent: '#F2A900',
+            'background-light': '#E5E5E5',
+            'text-light': '#1F3A3D',
+            'background-dark': '#112224', // A darker shade for dark mode
+            'text-dark': '#E5E5E5',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .active-tab {
+      background-color: #F2A900 !important;
+      color: #1F3A3D !important;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-background-dark text-text-light dark:text-text-dark font-sans">
+  <div class="bg-background-light dark:bg-background-dark">
+    <header class="bg-primary text-white">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img alt="GDS Public School logo" class="h-10 w-10 mr-2"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy3fLQOgZ_y-v8F6cJtwucoUPRW0nLuhd51CXjl_Jdf8-_xN-g7iOubbZOMqoYAB43_7lc-lTwOwgxXwaU1s39qrfheMPvCmUnoSmkAKXG-g5_qaM1vK8izN2I_agqElKwsCORNlbFwNd1P0dxlCLQjzXXC-jzSk3WymEt6IPr_NWm8FIX1HMb1d6EK2j9Lt1uftLH6g0TrRwfBE9EK9F1eUHITiVB1cJ5RPkh4auvJVGvP44YBAnNiw48Rp-8Zl63I3_zWQGtUpg" />
+          <span class="text-xl font-bold">GDS Public School</span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a class="hover:text-accent" href="#">Home</a>
+          <a class="hover:text-accent" href="About.html">About</a>
+          <a class="text-accent font-bold" href="Curriculum.html">Curriculum</a>
+          <a class="hover:text-accent" href="Events.html">Events</a>
+          <a class="hover:text-accent" href="Contact_Us.html">Contact Us</a>
+        </nav>
+        <button class="md:hidden">
+          <span class="material-icons">
+            menu
+          </span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="relative bg-cover bg-center h-96"
+        style="background-image: url('image-23c52e89-1383-4a66-b33a-9e120f2694b7');">
+        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div
+          class="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold">Our Academic Programs</h1>
+          <p class="mt-4 max-w-2xl">Comprehensive curriculum designed to nurture critical thinking, creativity, and a
+            lifelong love of learning, from pre-school through to high school.</p>
+        </div>
+      </section>
+      <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary dark:text-white">Academic <span
+                class="text-accent">Programs</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Structured learning pathways that build
+              upon each other to create well-rounded, successful individuals.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
+              <div class="flex-grow">
+                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
+                  <span class="material-icons text-3xl">school</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Primary Education (K-5)</h3>
+                <p class="mb-6">Foundation years focusing on core literacy, numeracy, and social-emotional development
+                  in a nurturing environment.</p>
+              </div>
+              <div class="mt-auto">
+                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
+                  href="#">View Curriculum</a>
+                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
+                  href="#">Apply Now</a>
+              </div>
+            </div>
+            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
+              <div class="flex-grow">
+                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
+                  <span class="material-icons text-3xl">menu_book</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Middle School (6-8)</h3>
+                <p class="mb-6">Transitional years building critical thinking, problem-solving, and collaborative skills
+                  to prepare for higher education.</p>
+              </div>
+              <div class="mt-auto">
+                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
+                  href="#">View Curriculum</a>
+                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
+                  href="#">Apply Now</a>
+              </div>
+            </div>
+            <div class="bg-primary text-white p-8 rounded-lg shadow-lg text-center flex flex-col">
+              <div class="flex-grow">
+                <div class="bg-accent text-primary rounded-full p-3 inline-block mb-4">
+                  <span class="material-icons text-3xl">public</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">High School (9-12)</h3>
+                <p class="mb-6">College preparatory program with advanced placement (AP) courses and specialized tracks
+                  for career readiness.</p>
+              </div>
+              <div class="mt-auto">
+                <a class="block bg-accent text-primary font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition duration-300 mb-2"
+                  href="#">View Curriculum</a>
+                <a class="block bg-gray-700 text-white font-bold py-2 px-4 rounded-md hover:bg-gray-600 transition duration-300"
+                  href="#">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary dark:text-white">Detailed <span class="text-accent">Course
+                Breakdown</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">Explore the comprehensive subjects and learning objectives
+              for each academic level.</p>
+          </div>
+          <div class="flex justify-center mb-8">
+            <div class="flex space-x-1 bg-primary p-1 rounded-md">
+              <button class="tab-button active-tab px-4 py-2 text-sm font-medium text-white rounded-md">Primary
+                Education</button>
+              <button class="tab-button px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 rounded-md">Middle
+                School</button>
+              <button class="tab-button px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 rounded-md">High
+                School</button>
+            </div>
+          </div>
+          <div id="course-content">
+            <div class="bg-white dark:bg-primary p-8 rounded-lg shadow-lg">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-primary dark:text-white">Primary Education (K-5)</h3>
+                <div class="flex space-x-1 bg-gray-200 dark:bg-gray-700 p-1 rounded-md">
+                  <button class="px-3 py-1 text-sm font-medium bg-accent text-primary rounded-md">First Half</button>
+                  <button
+                    class="px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-md">Second
+                    Half</button>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">translate</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">English Language Arts</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">calculate</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Mathematics Fundamentals</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">science</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Science Exploration</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">groups</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Social Studies</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">palette</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Art &amp; Creativity</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">fitness_center</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Physical Education</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-accent text-primary rounded-full p-2 mr-4">
+                    <span class="material-icons">music_note</span>
+                  </div>
+                  <span class="text-gray-800 dark:text-white">Music &amp; Movement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary dark:text-white">Curriculum <span
+                class="text-accent">Highlights</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Innovative teaching methods and unique
+              features that set our academic programs apart.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">construction</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Hands-On Learning</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Project-based activities and practical exercises for
+                exploratory learning.</p>
+            </div>
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">public</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Global Perspective</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Cultural immersion programs and exchange opportunities with
+                partner schools abroad.</p>
+            </div>
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">desktop_mac</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Technology Integration</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Digital literacy and coding programs integrated into the core
+                curriculum.</p>
+            </div>
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">business_center</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Industry Partnerships</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Real-world connections through internships and guest speaker
+                series.</p>
+            </div>
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">psychology</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Personalized Learning</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Adaptive curriculum tailored to individual student needs and
+                learning styles.</p>
+            </div>
+            <div class="bg-background-light dark:bg-primary p-6 rounded-lg shadow-md">
+              <div class="flex items-center mb-3">
+                <div class="bg-accent text-primary p-2 rounded-full mr-4">
+                  <span class="material-icons">emoji_events</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary dark:text-white">Excellence Recognition</h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300">Merit-based programs and competitions to motivate and reward
+                achievement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary dark:text-white">Our Expert <span
+                class="text-accent">Faculty</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Dedicated educators and subject matter
+              experts committed to student success.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
+              <img alt="Dr. Amanda Williams" class="w-full h-56 object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCQ9y2nMSEyEHt_ooTLYXIbGbS7fVy_3y5YFGrvpahfn3YeHf1w3otSVl2edKHAZffJc1pO30hVTx8oNPycBn1xA4HxVpRiF5OyZz_2ekFNEBkSBOpCLln8RZ9MzI6g88dPQ_WjJfAa8-dA9KMXTc7-Whau8K7REBmpIy59-jVMolSJGP8rCmSxhow3mP8xOe1HdZnEoZ9go7HYhEcxj6JhUBSBTLHAdR8OfrNXllH2oXiMkCxV7wZueGZRVhbCngN2UcX8fWmgto" />
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-primary dark:text-white">Dr. Amanda Williams</h3>
+                <p class="text-accent font-semibold mb-2">Head of Sciences</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Ph.D. in Chemistry, with 15 years of teaching
+                  experience. Expert in inquiry-based educational methodology.</p>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
+              <img alt="Prof. David Kumar" class="w-full h-56 object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9IYezvpEPz7NxDyU4Ky10P7ynkNN5Bf_njxor2soAMIiacxkqI0FoXpMun167-Wo1wYMmUHmIU-0AmpH_r7LOH1W5ny-wzqlkujWZcl16MCmRb1CKPXLAJZ7CmuuNuTD7upTP5_Qei-shjNDqdjpPVb7JbW-um5nJAApSkjh3jH1X70fWQzKrOfMCws9MnpTTvwp8wLfZ-BHcp3ty6U6KNZ_h_dnvHV1KEIn-gmzTVJ8-1gXiMMOa2n2-zr0vfhbNOrdIeOuUqno" />
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-primary dark:text-white">Prof. David Kumar</h3>
+                <p class="text-accent font-semibold mb-2">Mathematics Department</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Masters in Applied Mathematics, specializing in
+                  interactive learning techniques and student engagement.</p>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-primary rounded-lg shadow-lg overflow-hidden">
+              <img alt="Ms. Lisa Thompson" class="w-full h-56 object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI-lJkCtWY8Xdmcrd3YlQKQYZ2P1aHbtgSUzwYUyFjKviACIfHqGJqlVcXrEdmFbwj95XAw1hRlmziY6J8HKjTknMwAGWzb5HhoyWGS2NFYrKFa40_2zP7j1vIAnuU3xG8Hb_-e87FKCm_mrGIByfWzqbJa66maI86d9oIFyCbfX_gF866sJpRq3ksIzFZmF0rmPysJOpmTJw6ZxhJVQXOcZyhN8jOeuzlolSf394GRc8RXdPIDqSrnv2grZh5E1m676N81ZHy96o" />
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-primary dark:text-white">Ms. Lisa Thompson</h3>
+                <p class="text-accent font-semibold mb-2">Language Arts Coordinator</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">M.A. in English Literature. Expertise in creative
+                  writing and curriculum design for primary school.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+          <div class="bg-accent text-primary rounded-full p-4 inline-block mb-6">
+            <span class="material-icons text-4xl">download</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4">Download Full Curriculum</h2>
+          <p class="max-w-2xl mx-auto mb-8">Get detailed information about our comprehensive academic programs, course
+            descriptions, and learning objectives.</p>
+          <div class="flex justify-center space-x-4">
+            <a class="bg-accent text-primary font-bold py-3 px-6 rounded-md hover:bg-yellow-600 transition duration-300 flex items-center"
+              href="#">
+              <span class="material-icons mr-2">picture_as_pdf</span>
+              Download Curriculum PDF
+            </a>
+            <a class="bg-gray-700 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-600 transition duration-300 flex items-center"
+              href="#">
+              <span class="material-icons mr-2">event</span>
+              Schedule Campus Tour
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl font-bold text-primary dark:text-white">Ready to Begin Your Academic Journey?</h2>
+          <p class="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">Join our community of learners and
+            discover your potential through our comprehensive academic programs.</p>
+          <div class="flex justify-center space-x-4">
+            <a class="bg-accent text-primary font-bold py-3 px-6 rounded-md hover:bg-yellow-600 transition duration-300"
+              href="#">Apply for Admission</a>
+            <a class="bg-primary text-white font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-300"
+              href="#">Contact Admissions</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary text-white">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img alt="GDS Public School logo" class="h-10 w-10 mr-2"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP2uwP_grIHb_i9BSvV2C7YZE6mhi-ZRIUBHYUKMCDAquOjNEeHvx_zcEdg-8g73EtpUtDlQpxdt4C0MQN0JPZ0RcJNnstYeifMQ683s-uskspDWnqx5KYwXDGhphbfOsJVRPb29J7rLBbKpztYiJEVtn4ga_W4gm13c4NlyoU_mKIXh9F1CjUNUAdSwpmUQqEXPiA7c0ddvvtiJa-YNaXxi5v-2VNzpiipsIrGJZyZ-jG_LleszMwugBGygkN6txNz8wjBHeSIXM" />
+              <span class="text-xl font-bold">GDS Public School</span>
+            </div>
+            <p class="text-gray-400 text-sm">Building tomorrow's leaders through education that inspires and empowers.
+            </p>
+            <div class="flex space-x-4 mt-4">
+              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">facebook</span></a>
+              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
+              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
+              <a class="text-gray-400 hover:text-accent" href="#"><span class="material-icons">public</span></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="text-gray-400 hover:text-accent" href="#">Home</a></li>
+              <li><a class="text-gray-400 hover:text-accent" href="#">About</a></li>
+              <li><a class="text-gray-400 hover:text-accent" href="#">Admissions</a></li>
+              <li><a class="text-gray-400 hover:text-accent" href="#">Events</a></li>
+              <li><a class="text-gray-400 hover:text-accent" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-start">
+                <span class="material-icons text-accent mr-2">location_on</span>
+                <span>123 Education Lane<br />Knowledge City, 12345</span>
+              </li>
+              <li class="flex items-center">
+                <span class="material-icons text-accent mr-2">email</span>
+                <span>info@gdspublicschool.edu</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+            <p class="text-gray-400 text-sm mb-4">Stay updated with our latest news, events, and educational insights.
+            </p>
+            <div class="flex space-x-2">
+              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
+                  class="material-icons text-sm">facebook</span></a>
+              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
+                  class="material-icons text-sm">public</span></a>
+              <a class="bg-accent text-primary p-2 rounded-full hover:bg-yellow-600" href="#"><span
+                  class="material-icons text-sm">public</span></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400 flex justify-between flex-col md:flex-row">
+          <p>© 2023 GDS Public School. All rights reserved.</p>
+          <p>Website Builder</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+        button.classList.add('active-tab');
+        // Add logic here to change course content
+      });
+    });
+  </script>
+
+</body>
+
+</html>

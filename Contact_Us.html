@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GDS Public School - Contact Us</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1F3A3D",
+            accent: "#F2A900",
+            "background-light": "#E5E5E5",
+            "text-light": "#1F3A3D",
+            "card-light": "#FFFFFF",
+            "card-dark": "#2C4A4E",
+            "text-dark": "#FFFFFF"
+          },
+          fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-primary text-text-light dark:text-text-dark">
+  <header class="bg-primary text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold text-primary text-xl">G
+        </div>
+        <span class="text-lg font-semibold">GDS Public School</span>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8 text-sm">
+        <a class="hover:text-accent" href="#">Home</a>
+        <a class="hover:text-accent" href="#">About</a>
+        <a class="hover:text-accent" href="#">Curriculum</a>
+        <a class="hover:text-accent" href="#">Events</a>
+        <a class="text-accent font-semibold border-b-2 border-accent" href="#">Contact Us</a>
+      </nav>
+      <button class="md:hidden text-white">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="bg-card-light dark:bg-card-dark py-20 text-center">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary dark:text-white mb-4">Get in Touch</h1>
+        <p class="text-lg text-text-light dark:text-text-dark max-w-2xl mx-auto">We'd love to hear from you. Reach out
+          for admissions, programs, or general inquiries.</p>
+      </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-primary">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary dark:text-white mb-12">Contact Information</h2>
+        <p class="text-center text-text-light dark:text-text-dark mb-12">Multiple ways to reach us for all your official
+          school needs</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md text-center">
+            <div class="bg-accent text-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+              <span class="material-icons">location_on</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-primary dark:text-white">Campus Address</h3>
+            <p class="text-text-light dark:text-text-dark">123 Education Street<br />Knowledge City, KC 12345</p>
+          </div>
+          <div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md text-center">
+            <div class="bg-accent text-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+              <span class="material-icons">phone</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-primary dark:text-white">Phone Numbers</h3>
+            <p class="text-text-light dark:text-text-dark">Main Office:<br />(555) 123-4567<br />Admissions:<br />(555)
+              987-6543</p>
+          </div>
+          <div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md text-center">
+            <div class="bg-accent text-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+              <span class="material-icons">email</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-primary dark:text-white">Email Addresses</h3>
+            <p class="text-text-light dark:text-text-dark">General
+              Info:<br />info@gdspublicschool.edu<br />Admissions:<br />admissions@gdspublicschool.edu</p>
+          </div>
+          <div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md text-center">
+            <div class="bg-accent text-primary rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+              <span class="material-icons">schedule</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2 text-primary dark:text-white">Office Hours</h3>
+            <p class="text-text-light dark:text-text-dark">Monday - Friday:<br />8:00 AM - 4:00
+              PM<br />Saturday:<br />9:00 AM - 1:00 PM<br />Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-card-light dark:bg-card-dark">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary dark:text-white mb-4">Send Us a Message</h2>
+        <p class="text-center text-text-light dark:text-text-dark mb-12">Have a question or need more information? Fill
+          out the form below and we'll get back to you soon.</p>
+        <div class="max-w-4xl mx-auto">
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-text-light dark:text-text-dark" for="full-name">Full Name
+                *</label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-accent focus:ring-accent bg-background-light dark:bg-primary dark:text-white"
+                id="full-name" name="full-name" placeholder="Enter your full name" type="text" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-text-light dark:text-text-dark" for="email">Email Address
+                *</label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-accent focus:ring-accent bg-background-light dark:bg-primary dark:text-white"
+                id="email" name="email" placeholder="Enter your email address" type="email" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-text-light dark:text-text-dark" for="phone">Phone Number
+                <span class="text-gray-500">(optional)</span></label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-accent focus:ring-accent bg-background-light dark:bg-primary dark:text-white"
+                id="phone" name="phone" placeholder="Enter your phone number" type="tel" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-text-light dark:text-text-dark" for="subject">Subject
+                *</label>
+              <select
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-accent focus:ring-accent bg-background-light dark:bg-primary dark:text-white"
+                id="subject" name="subject">
+                <option>Select a subject</option>
+                <option>Admissions</option>
+                <option>General Inquiry</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-text-light dark:text-text-dark" for="message">Message
+                *</label>
+              <textarea
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-accent focus:ring-accent bg-background-light dark:bg-primary dark:text-white"
+                id="message" name="message" placeholder="Please share your message or inquiry (max 500 characters)"
+                rows="5"></textarea>
+            </div>
+            <div class="md:col-span-2 text-center">
+              <button
+                class="bg-accent text-primary font-bold py-3 px-8 rounded-md hover:bg-yellow-600 transition-colors"
+                type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-primary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-primary dark:text-white mb-4">Find Our Campus</h2>
+        <p class="text-text-light dark:text-text-dark max-w-2xl mx-auto mb-8">Located in the heart of Knowledge City,
+          our campus is easily accessible by public transport.</p>
+        <div class="rounded-lg overflow-hidden shadow-lg mb-8">
+          <img alt="Map showing the location of GDS Public School" class="w-full h-auto"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0DtE7wvP-HDncB2q5bX2Ol_sa3a6Si0sdka-fPxaRrpxpSbGKskIkJKXXuSWTevr27bIiiaTlv16AS9n7__4unisS2ymP8No4ZJ1yAe5JyvPILWsT9M7orY6rGlVYuzFS1d3jtawVgAyW7XCrFt0Iv2I10xf7WEEYQGEvEc1CIgnfIALqx1YDZfEMB7xxKUdp9Gb2YSkl3rlomrPDAVmmBmjyGQM2DlfzRQwaKM7OAn5_DGsL0-6sJB_snIbXF9rfxzzqE8B18f8" />
+        </div>
+        <button
+          class="bg-accent text-primary font-bold py-3 px-8 rounded-md hover:bg-yellow-600 transition-colors flex items-center justify-center mx-auto">
+          <span class="material-icons mr-2">directions</span>
+          Get Directions
+        </button>
+      </div>
+    </section>
+    <section class="py-20 bg-card-light dark:bg-card-dark">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-primary dark:text-white mb-4">Connect With Us</h2>
+        <p class="text-text-light dark:text-text-dark mb-8">Follow us on social media for the latest updates, events,
+          and school news</p>
+        <div class="flex justify-center space-x-4">
+          <a class="w-12 h-12 bg-primary dark:bg-accent text-white dark:text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+            href="#">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path clip-rule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                fill-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a class="w-12 h-12 bg-primary dark:bg-accent text-white dark:text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+            href="#">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+              </path>
+            </svg>
+          </a>
+          <a class="w-12 h-12 bg-primary dark:bg-accent text-white dark:text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+            href="#">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.432-.164-.89a8.947 8.947 0 01-.194-1.12c-.087-.423-.13-.84-.13-1.246 0-1.21.334-2.277 1-3.19a3.86 3.86 0 012.79-1.285c1.1 0 1.954.385 2.56 1.156.605.77.908 1.768.908 2.994 0 1.258-.413 2.333-1.24 3.226-.826.893-1.928 1.34-3.303 1.34-.73 0-1.4-.183-2.01-.55a3.91 3.91 0 01-1.5-1.57c-.157-.344-.236-.78-.236-1.308 0-.69.244-1.31.733-1.86.488-.55 1.1-.824 1.838-.824.512 0 .973.13 1.383.39.41.26.714.62.91 1.08.198.46.297.97.297 1.53 0 .583-.16 1.08-.48 1.49-.32.41-.75.615-1.29.615-.4 0-.75-.15-1.05-.45-.3-.3-.45-.68-.45-1.12 0-.25.04-.51.12-.78.08-.27.2-.56.36-.88.16-.32.33-.64.5-.96l.18-.32c.11-.21.16-.45.16-.71 0-.36-.12-.64-.37-.84-.25-.2-.58-.3-1-.3-.63 0-1.17.22-1.62.66-.45.44-.73 1.02-.86 1.74-.13.72-.195 1.54-.195 2.45 0 .8.14 1.56.42 2.28.28.72.69 1.32 1.23 1.8.54.48 1.17.82 1.89 1.02.72.2 1.48.3 2.28.3 1.37 0 2.58-.37 3.62-1.11.45-.32.8-.7.1.05-1.1.18-1.5.38-1.8.72-2.1"
+                fill-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a class="w-12 h-12 bg-primary dark:bg-accent text-white dark:text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+            href="#">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-primary" id="faq">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-primary dark:text-white mb-12">Frequently Asked Questions</h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="accordion-item bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+            <button
+              class="accordion-header w-full text-left p-4 flex justify-between items-center text-primary dark:text-white font-semibold">
+              <span>What are the admission requirements?</span>
+              <span class="material-icons transform transition-transform">expand_more</span>
+            </button>
+            <div class="accordion-content p-4 pt-0 text-text-light dark:text-text-dark">
+              <p>Our admission process is designed to identify students who will thrive in our academic environment. We
+                look for a strong academic record, extracurricular involvement, and a passion for learning. Specific
+                requirements vary by grade level.</p>
+            </div>
+          </div>
+          <div class="accordion-item bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+            <button
+              class="accordion-header w-full text-left p-4 flex justify-between items-center text-primary dark:text-white font-semibold">
+              <span>What are the school fees?</span>
+              <span class="material-icons transform transition-transform">expand_more</span>
+            </button>
+            <div class="accordion-content p-4 pt-0 text-text-light dark:text-text-dark">
+              <p>Our fee structure is comprehensive and covers tuition, standard materials, and access to campus
+                facilities. For a detailed breakdown of fees for the upcoming academic year, please download our fee
+                schedule from the admissions page or contact the finance office.</p>
+            </div>
+          </div>
+          <div class="accordion-item bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+            <button
+              class="accordion-header w-full text-left p-4 flex justify-between items-center text-primary dark:text-white font-semibold">
+              <span>Do you offer scholarships?</span>
+              <span class="material-icons transform transition-transform">expand_more</span>
+            </button>
+            <div class="accordion-content p-4 pt-0 text-text-light dark:text-text-dark">
+              <p>Yes, we offer a range of merit-based and need-based scholarships to deserving students. Our goal is to
+                make quality education accessible. Information on scholarship criteria and the application process can
+                be found on our website.</p>
+            </div>
+          </div>
+          <div class="accordion-item bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+            <button
+              class="accordion-header w-full text-left p-4 flex justify-between items-center text-primary dark:text-white font-semibold">
+              <span>What extracurricular activities are available?</span>
+              <span class="material-icons transform transition-transform">expand_more</span>
+            </button>
+            <div class="accordion-content p-4 pt-0 text-text-light dark:text-text-dark">
+              <p>We believe in holistic development. Our school offers a wide array of extracurricular activities,
+                including sports (soccer, basketball, swimming), arts (drama, music, painting), and clubs (debate,
+                science, coding). A full list is available in our student handbook.</p>
+            </div>
+          </div>
+          <div class="accordion-item bg-card-light dark:bg-card-dark rounded-lg shadow-md">
+            <button
+              class="accordion-header w-full text-left p-4 flex justify-between items-center text-primary dark:text-white font-semibold">
+              <span>What is the student-teacher ratio?</span>
+              <span class="material-icons transform transition-transform">expand_more</span>
+            </button>
+            <div class="accordion-content p-4 pt-0 text-text-light dark:text-text-dark">
+              <p>We maintain a low student-teacher ratio of approximately 15:1 to ensure personalized attention and
+                effective learning for every student. This allows our teachers to cater to individual student needs and
+                foster a supportive classroom environment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <p class="text-text-light dark:text-text-dark mb-4">Don't see your question answered? We're here to help!</p>
+          <a class="bg-accent text-primary font-bold py-3 px-8 rounded-md hover:bg-yellow-600 transition-colors"
+            href="#">Contact Our Support Team</a>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Looking to Join Us?</h2>
+        <p class="max-w-3xl mx-auto mb-8">Our team is here to help with all your questions about admissions, programs,
+          and school life. Take the next step in your educational journey.</p>
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <a class="bg-accent text-primary font-bold py-3 px-8 rounded-md hover:bg-yellow-600 transition-colors w-full sm:w-auto"
+            href="#">Apply Now</a>
+          <a class="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-md hover:bg-white hover:text-primary transition-colors w-full sm:w-auto"
+            href="#">Request Info</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-primary text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div
+              class="w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold text-primary text-xl">G
+            </div>
+            <span class="text-lg font-semibold">GDS Public School</span>
+          </div>
+          <p class="text-sm text-gray-300">Providing excellence in education and character development.</p>
+          <div class="flex space-x-4 mt-4 text-gray-300">
+            <a class="hover:text-accent" href="#"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path clip-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  fill-rule="evenodd"></path>
+              </svg></a>
+            <a class="hover:text-accent" href="#"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                </path>
+              </svg></a>
+            <a class="hover:text-accent" href="#"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                </path>
+              </svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a class="hover:text-accent" href="#">About</a></li>
+            <li><a class="hover:text-accent" href="#">Admissions</a></li>
+            <li><a class="hover:text-accent" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start"><span
+                class="material-icons text-accent mr-2 text-base">location_on</span><span>123 Education
+                Street<br />Knowledge City, KC 12345</span></li>
+            <li class="flex items-center"><span
+                class="material-icons text-accent mr-2 text-base">phone</span><span>(555) 123-4567</span></li>
+            <li class="flex items-center"><span
+                class="material-icons text-accent mr-2 text-base">email</span><span>info@gdspublicschool.edu</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+          <p class="text-sm text-gray-300 mb-4">Stay connected with our latest news, events, and educational insights.
+          </p>
+          <div class="flex space-x-2">
+            <a class="w-8 h-8 bg-accent text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+              href="#">
+              <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M21.947 7.93c-.66.294-1.37.492-2.11.58.76-.455 1.34-1.176 1.616-2.034-.712.42-1.5.727-2.34.894-.673-.717-1.63-1.164-2.69-1.164-2.032 0-3.68 1.647-3.68 3.68 0 .288.032.568.094.838-3.058-.153-5.77-1.617-7.585-3.845-.316.544-.498 1.175-.498 1.852 0 1.277.65 2.403 1.64 3.064-.604-.018-1.17-.185-1.667-.46v.046c0 1.784 1.27 3.27 2.955 3.608-.31.084-.636.13-.975.13-.237 0-.467-.023-.69-.065.468 1.46 1.825 2.523 3.433 2.553-1.26.988-2.85 1.576-4.576 1.576-.298 0-.59-.017-.88-.05C4.468 18.383 6.616 19 8.95 19c6.918 0 10.7-5.734 10.7-10.7 0-.163-.004-.325-.01-.486.735-.53 1.37-1.19 1.887-1.956z">
+                </path>
+              </svg>
+            </a>
+            <a class="w-8 h-8 bg-accent text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+              href="#">
+              <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path clip-rule="evenodd"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.11 14.5v-5H9.22v-2h1.67V8.61c0-1.64.99-2.61 2.55-2.61.73 0 1.35.05 1.53.08v1.79h-1.05c-.8 0-.95.38-.95.93v1.2H15l-.22 2h-1.91v5h-2.22z"
+                  fill-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a class="w-8 h-8 bg-accent text-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+              href="#">
+              <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6 10.87c0 .2-.02.4-.05.6-.08.5-.24.97-.47 1.4-.23.43-.54.78-.93 1.05s-.85.4-1.4.4c-.55 0-1.02-.13-1.42-.4s-.72-.62-.97-1.05c-.25-.43-.42-.9-.47-1.4-.03-.2-.05-.4-.05-.6V9.13c0-.2.02-.4.05-.6.08-.5.24-.97.47-1.4.23-.43.54-.78.93-1.05s.85-.4 1.4-.4c.55 0 1.02.13 1.42.4s.72.62.97 1.05c.25.43.42.9.47 1.4.03.2.05.4.05.6v3.74zM8 12c0 .2.02.4.05.6.08.5.24.97.47 1.4.23.43.54.78.93 1.05s.85.4 1.4.4c.55 0 1.02-.13 1.42-.4s-.72-.62-.97-1.05c-.25-.43-.42-.9-.47-1.4-.03-.2-.05-.4-.05-.6V9.13c0-.2.02-.4.05-.6.08-.5.24-.97.47-1.4.23-.43.54-.78.93-1.05s.85-.4 1.4-.4c.55 0 1.02.13 1.42.4s-.72-.62-.97-1.05c-.25-.43-.42-.9-.47-1.4-.03-.2-.05-.4-.05-.6z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 mt-8 text-center text-sm text-gray-400">
+        <p>© 2024 GDS Public School. All rights reserved.   |   <a class="hover:text-accent" href="#">Website
+            Builder</a></p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const accordionContent = button.nextElementSibling;
+        const accordionIcon = button.querySelector('.material-icons');
+        button.getAttribute('aria-expanded') === 'true'
+          ? button.setAttribute('aria-expanded', 'false')
+          : button.setAttribute('aria-expanded', 'true');
+        if (button.getAttribute('aria-expanded') === 'true') {
+          accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          accordionIcon.style.transform = 'rotate(180deg)';
+        } else {
+          accordionContent.style.maxHeight = '0px';
+          accordionIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
