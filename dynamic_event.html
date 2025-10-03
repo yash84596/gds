@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - GDS Public School</title>
+    <!-- Keep your existing head content -->
+    <link href="https://cdn.tailwindcss.com/3.3.0/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1F3A3D",
+                        accent: "#F2A900"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Keep your existing header/navigation -->
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center bg-no-repeat text-white"
+        style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3');">
+        <div class="container mx-auto px-6 pb-20 py-40">
+            <div class="text-center pt-5">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">School <span class="text-accent">Events</span></h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Join us for exciting educational events, workshops, and activities throughout the year
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Loading State -->
+    <div id="eventsLoading" class="py-16 text-center">
+        <i class="fas fa-spinner fa-spin text-4xl text-accent mb-4"></i>
+        <p class="text-xl text-gray-600">Loading upcoming events...</p>
+    </div>
+
+    <!-- Events Error State -->
+    <div id="eventsError" class="hidden py-16 text-center">
+        <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+        <p class="text-xl text-gray-600">Unable to load events. Please try again later.</p>
+        <button onclick="loadEvents()" class="mt-4 bg-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90">
+            Retry
+        </button>
+    </div>
+
+    <!-- Featured Event Section -->
+    <section id="featuredEventSection" class="hidden py-16 bg-gradient-to-r from-primary to-primary/90 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Featured Event</h2>
+                <p class="text-xl opacity-90">Don't miss our upcoming highlight event</p>
+            </div>
+            <div id="featuredEvent" class="max-w-4xl mx-auto">
+                <!-- Featured event will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">Upcoming Events</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join us for exciting educational events and activities
+                </p>
+                <div id="lastUpdated" class="text-sm text-gray-500 mt-4">
+                    <!-- Last updated timestamp will appear here -->
+                </div>
+            </div>
+
+            <!-- Events Container -->
+            <div id="eventsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Events will be populated here dynamically -->
+            </div>
+
+            <!-- No Events Message -->
+            <div id="noEventsMessage" class="hidden text-center py-12">
+                <i class="fas fa-calendar-times text-6xl text-gray-300 mb-6"></i>
+                <h3 class="text-2xl font-bold text-gray-600 mb-4">No Upcoming Events</h3>
+                <p class="text-gray-500">Check back soon for exciting new events and activities!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keep your existing footer and other sections -->
+
+    <!-- // Replace with your Google Apps Script Web App URL -->
+    <script>
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyIb1Sac4DjPP3-lBqnTqG9wCfqRd53Rxol5fRfwEJvin7VfFnzs_clO9eefJGB1RwG/exec';
+
+        // Global variables
+        let eventsData = [];
+        let lastLoadTime = null;
+
+        // Load events on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            loadEvents();
+            // Auto-refresh every 5 minutes
+            setInterval(loadEvents, 300000);
+        });
+
+        async function loadEvents() {
+            try {
+                console.log('Loading events from:', GOOGLE_SCRIPT_URL);
+                showLoading();
+
+                // Add cache busting parameter
+                const url = GOOGLE_SCRIPT_URL + '?t=' + Date.now();
+
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // Add timeout
+                    signal: AbortSignal.timeout(10000) // 10 second timeout
+                });
+
+                console.log('Response status:', response.status);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Response data:', result);
+
+                if (result.status === 'success') {
+                    eventsData = result.data || [];
+                    lastLoadTime = new Date(result.lastUpdated);
+                    console.log('Loaded events:', eventsData.length);
+                    displayEvents();
+                    updateLastUpdatedTime();
+                    hideLoading();
+                } else {
+                    throw new Error(result.message || 'Failed to load events');
+                }
+
+            } catch (error) {
+                console.error('Error loading events:', error);
+                showError();
+            }
+        }
+
+        function displayEvents() {
+            const container = document.getElementById('eventsContainer');
+            const featuredSection = document.getElementById('featuredEventSection');
+            const featuredEvent = document.getElementById('featuredEvent');
+            const noEventsMessage = document.getElementById('noEventsMessage');
+
+            console.log('Displaying events:', eventsData.length);
+
+            if (!eventsData || eventsData.length === 0) {
+                container.innerHTML = '';
+                if (featuredSection) featuredSection.classList.add('hidden');
+                if (noEventsMessage) noEventsMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Show featured event (first upcoming event)
+            if (eventsData.length > 0 && featuredSection && featuredEvent) {
+                featuredSection.classList.remove('hidden');
+                featuredEvent.innerHTML = createFeaturedEventHTML(eventsData[0]);
+            }
+
+            // Display all upcoming events
+            if (container) {
+                container.innerHTML = eventsData.map(event => createEventCardHTML(event)).join('');
+            }
+
+            if (noEventsMessage) {
+                noEventsMessage.classList.add('hidden');
+            }
+        }
+
+        function createEventCardHTML(event) {
+            // Ensure image URL is valid
+            const imageUrl = event.eventImage && event.eventImage.trim() !== ''
+                ? event.eventImage
+                : 'https://picsum.photos/300/200?random=' + Math.floor(Math.random() * 1000);
+
+            return `
+    <div
+        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <div class="h-48 overflow-hidden">
+            <img src="${imageUrl}" alt="${event.eventTitle || 'Event'}"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                onerror="this.src='https://picsum.photos/300/200?random=${Math.floor(Math.random() * 1000)}'">
+        </div>
+
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
+                    ${event.eventCategory || 'Event'}
+                </span>
+                <div class="text-right">
+                    <p class="text-sm text-gray-500">${event.dayOfWeek || ''}</p>
+                    <p class="font-bold text-primary">${event.formattedDate || ''}</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-primary mb-3 hover:text-accent transition-colors">
+                ${event.eventTitle || 'Untitled Event'}
+            </h3>
+
+            <p class="text-gray-600 mb-4 line-clamp-3">
+                ${event.eventDescription || 'No description available'}
+            </p>
+
+            <div class="space-y-2 text-sm text-gray-500">
+                ${event.eventTime ? `
+                <div class="flex items-center">
+                    <i class="fas fa-clock mr-2 text-accent"></i>
+                    <span>${event.eventTime}</span>
+                </div>
+                ` : ''}
+                ${event.eventVenue ? `
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2 text-accent"></i>
+                    <span>${event.eventVenue}</span>
+                </div>
+                ` : ''}
+            </div>
+
+            <div class="mt-6">
+                <button
+                    class="w-full bg-accent text-primary font-bold py-3 px-6 rounded-lg hover:bg-accent/90 transition-colors">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </div>
+    `;
+        }
+
+        function createFeaturedEventHTML(event) {
+            const imageUrl = event.eventImage && event.eventImage.trim() !== ''
+                ? event.eventImage
+                : 'https://picsum.photos/800/400?random=' + Math.floor(Math.random() * 1000);
+
+            return `
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-calendar-star text-accent text-2xl mr-3"></i>
+                    <span class="bg-accent text-primary px-4 py-2 rounded-full text-sm font-bold">
+                        ${event.eventCategory || 'Featured'}
+                    </span>
+                </div>
+                <h3 class="text-3xl font-bold mb-4">${event.eventTitle || 'Featured Event'}</h3>
+                <p class="text-lg opacity-90 mb-6 leading-relaxed">${event.eventDescription || 'No description available'}</p>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar text-accent mr-3"></i>
+                        <span>${event.dayOfWeek || ''}, ${event.formattedDate || ''}</span>
+                    </div>
+                    ${
+                event.eventTime ? `
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-accent mr-3"></i>
+                        <span>${event.eventTime}</span>
+                    </div>
+                    ` : ''
+            }
+                    ${
+                event.eventVenue ? `
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-accent mr-3"></i>
+                        <span>${event.eventVenue}</span>
+                    </div>
+                    ` : ''
+            }
+                </div >
+            </div >
+                <div class="lg:order-first">
+                    <img src="${imageUrl}" alt="${event.eventTitle || 'Featured Event'}"
+                        class="w-full h-64 lg:h-80 object-cover rounded-xl"
+                        onerror="this.src='https://picsum.photos/800/400?random=${Math.floor(Math.random() * 1000)}'">
+                </div>
+        </div >
+    </div >
+                `;
+    }
+
+    function updateLastUpdatedTime() {
+    const lastUpdatedElement = document.getElementById('lastUpdated');
+    if (lastUpdatedElement && lastLoadTime) {
+    lastUpdatedElement.innerHTML = `
+                < i class="fas fa-sync-alt mr-2" ></i >
+                    Last updated: ${ lastLoadTime.toLocaleString() }
+    `;
+    }
+    }
+
+    function showLoading() {
+    const loading = document.getElementById('eventsLoading');
+    const error = document.getElementById('eventsError');
+    const container = document.getElementById('eventsContainer');
+
+    if (loading) loading.classList.remove('hidden');
+    if (error) error.classList.add('hidden');
+    if (container) container.classList.add('hidden');
+    }
+
+    function hideLoading() {
+    const loading = document.getElementById('eventsLoading');
+    const container = document.getElementById('eventsContainer');
+
+    if (loading) loading.classList.add('hidden');
+    if (container) container.classList.remove('hidden');
+    }
+
+    function showError() {
+    const loading = document.getElementById('eventsLoading');
+    const error = document.getElementById('eventsError');
+    const container = document.getElementById('eventsContainer');
+
+    if (loading) loading.classList.add('hidden');
+    if (error) error.classList.remove('hidden');
+    if (container) container.classList.add('hidden');
+    }
+    </script>
+</body>
+
+</html>

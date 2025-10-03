@@ -425,93 +425,6 @@
   </section>
 
   <!-- Academic Programs Section -->
-  <!-- <section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-primary mb-4">Academic <span class="text-accent">Programs</span></h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
-          Structured learning pathways that build upon each other to create well-rounded, successful individuals
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8"> -->
-  <!-- Primary Education -->
-  <!-- <div
-          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <div class="text-center mb-6">
-            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
-              <i class="fas fa-child text-3xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">Primary Education (K-5)</h3>
-            <div class="text-accent font-bold text-lg mb-4">5 Years</div>
-            <p class="mb-6">Foundation years focusing on core literacy, numeracy, and social-emotional development in a
-              nurturing environment.</p>
-          </div>
-          <div class="space-y-4">
-            <button
-              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
-              View Curriculum
-            </button>
-            <button
-              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
-              Apply Now
-            </button>
-          </div>
-        </div> -->
-
-  <!-- Middle School -->
-  <!-- <div
-          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <div class="text-center mb-6">
-            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
-              <i class="fas fa-book text-3xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">Middle School (6-8)</h3>
-            <div class="text-accent font-bold text-lg mb-4">3 Years</div>
-            <p class="mb-6">Transitional years building critical thinking, problem-solving, and collaborative skills to
-              prepare for higher education.</p>
-          </div>
-          <div class="space-y-4">
-            <button
-              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
-              View Curriculum
-            </button>
-            <button
-              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
-              Apply Now
-            </button>
-          </div>
-        </div> -->
-
-  <!-- High School -->
-  <!-- <div
-          class="bg-primary text-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-          <div class="text-center mb-6">
-            <div class="bg-accent text-primary rounded-full p-4 inline-block mb-4">
-              <i class="fas fa-graduation-cap text-3xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-4">High School (9-12)</h3>
-            <div class="text-accent font-bold text-lg mb-4">4 Years</div>
-            <p class="mb-6">College preparatory program with advanced placement (AP) courses and specialized tracks for
-              career readiness.</p>
-          </div>
-          <div class="space-y-4">
-            <button
-              class="w-full bg-accent text-primary font-bold py-3 px-4 rounded-lg hover:bg-accent/90 transition duration-300">
-              View Curriculum
-            </button>
-            <button
-              class="w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-lg hover:bg-gray-600 transition duration-300">
-              Apply Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- 2 -->
-  <!-- Academic Programs Section -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
@@ -673,7 +586,7 @@
 
       Object.entries(programs).forEach(([key, program]) => {
         const programCard = document.createElement('div');
-        programCard.className = 'bg-primary rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 transition-transform duration-300';
+        programCard.className = 'bg-primary rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 cursor-pointer transition-all duration-300 ease-out';
 
         programCard.innerHTML = `
                     <div class="p-8 text-center">
@@ -868,13 +781,13 @@
         </h3>
 
         <!-- Semester Tabs -->
-        <div class="flex justify-center mb-10 gap-4 bg-gray-100 p-2 rounded-full max-w-sm mx-auto">
+        <div class="flex justify-center mb-10 gap-4 p-2 rounded-full max-w-sm mx-auto">
           <button id="first-semester-btn" onclick="setActiveSemester('first')"
-            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary">
+            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary bg-gray-100 hover:bg-gray-200">
             First Half
           </button>
           <button id="second-semester-btn" onclick="setActiveSemester('second')"
-            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm">
+            class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm hover:bg-accent/10">
             Second Half
           </button>
         </div>
@@ -1011,7 +924,7 @@
 
       subjects.forEach(subject => {
         const subjectElement = document.createElement('div');
-        subjectElement.className = 'flex items-center p-4 bg-gray-50 rounded-xl transition-all duration-300 hover:shadow-md border border-gray-200 group cursor-pointer hover:bg-accent/5';
+        subjectElement.className = 'flex items-center p-4 bg-[#E8E8E8] rounded-xl transition-all duration-300 hover:shadow-md border border-gray-200 group cursor-pointer hover:bg-accent/5';
         subjectElement.innerHTML = `
                     <div class="bg-accent text-primary rounded-full p-3 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                         <i class="${subject.icon} text-sm"></i>
@@ -1040,7 +953,7 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-hands text-2xl"></i>
@@ -1050,7 +963,7 @@
           <p class="text-text-gray">Project-based activities and practical exercises for exploratory learning.</p>
         </div>
 
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-globe text-2xl"></i>
@@ -1061,7 +974,7 @@
           </p>
         </div>
 
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-laptop-code text-2xl"></i>
@@ -1071,7 +984,7 @@
           <p class="text-text-gray">Digital literacy and coding programs integrated into the core curriculum.</p>
         </div>
 
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-handshake text-2xl"></i>
@@ -1081,7 +994,7 @@
           <p class="text-text-gray">Real-world connections through internships and guest speaker series.</p>
         </div>
 
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-user-cog text-2xl"></i>
@@ -1091,7 +1004,7 @@
           <p class="text-text-gray">Adaptive curriculum tailored to individual student needs and learning styles.</p>
         </div>
 
-        <div class="bg-light-gray p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
           <div class="flex items-center mb-4">
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-trophy text-2xl"></i>
@@ -1240,11 +1153,11 @@
         <div>
           <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Home</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">About</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Admissions</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Events</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="#">Contact</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="admissions.html">Admissions</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a></li>
+            <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a></li>
           </ul>
         </div>
 
