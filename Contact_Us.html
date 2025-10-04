@@ -410,9 +410,9 @@
   </style>
 
   <!-- Hero Section -->
-  <section class="relative bg-cover bg-center bg-no-repeat text-white"
+  <section class="relative mt-20 bg-cover bg-[position:center_0px] bg-no-repeat text-white"
     style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('img/premium_photo-1661402449857-67d921f61fe6.png');">
-    <div class="container mx-auto px-6 pb-20 py-40">
+    <div class="container mx-auto px-6 pb-20 py-20">
       <div class="text-center pt-5">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">Contact <span class="text-accent">Us</span></h1>
         <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -511,7 +511,7 @@
       </div>
 
       <div class="bg-card-light rounded-2xl shadow-xl p-8 border border-gray-100">
-        
+
 
         <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
           <div class="grid md:grid-cols-2 gap-6">
@@ -586,30 +586,30 @@
           </div>
 
           <!-- Success Message -->
-        <div id="successMessage"
-          class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
-          <div class="flex items-center">
-            <i class="fas fa-check-circle mr-2"></i>
-            <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
+          <div id="successMessage"
+            class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle mr-2"></i>
+              <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Error Message -->
-        <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-          <div class="flex items-center">
-            <i class="fas fa-exclamation-circle mr-2"></i>
-            <span>Sorry, there was an error sending your message. Please try again.</span>
+          <!-- Error Message -->
+          <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+            <div class="flex items-center">
+              <i class="fas fa-exclamation-circle mr-2"></i>
+              <span>Sorry, there was an error sending your message. Please try again.</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Loading Message -->
-        <div id="loadingMessage"
-          class="hidden bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6">
-          <div class="flex items-center">
-            <i class="fas fa-spinner fa-spin mr-2"></i>
-            <span>Sending your message...</span>
+          <!-- Loading Message -->
+          <div id="loadingMessage"
+            class="hidden bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6">
+            <div class="flex items-center">
+              <i class="fas fa-spinner fa-spin mr-2"></i>
+              <span>Sending your message...</span>
+            </div>
           </div>
-        </div>
 
           <div class="text-center">
             <button type="submit" id="submitBtn"
@@ -1161,11 +1161,25 @@
           <ul class="space-y-4 text-gray-400">
             <li class="flex items-start">
               <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-              <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span>
+              <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
+              <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk,
+                Chhatrapati Sambhaji nagar</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
-              <span>+1 (555) 123-4567</span>
+              <span>
+                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                  +19&nbsp;940&#8209;353&#8209;1242
+                </a>
+              </span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
+              <span>
+                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                  +19&nbsp;917&#8209;504&#8209;2179
+                </a>
+              </span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
@@ -1204,132 +1218,6 @@
       </div>
     </div>
   </footer>
-
-  <footer class="bg-primary text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-1 py-8 sm:py-10 lg:py-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        <!-- Brand Section -->
-        <div class="sm:col-span-2 lg:col-span-1">
-          <div class="flex items-center mb-4 sm:mb-6">
-            <div class="bg-accent p-2 sm:p-2.5 rounded-md mr-3 sm:mr-4 flex-shrink-0">
-              <i class="fas fa-graduation-cap text-primary text-xl sm:text-2xl"></i>
-            </div>
-            <span class="text-lg sm:text-xl font-bold leading-tight">GDS Public School</span>
-          </div>
-          <p class="text-gray-300 sm:text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-            Building a brighter future through excellence in education and character development.
-          </p>
-          <div class="flex flex-wrap gap-2 sm:gap-3">
-            <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 p-1.5 rounded hover:bg-white/10"
-              href="#" aria-label="Facebook">
-              <i class="fab fa-facebook-f text-base sm:text-lg"></i>
-            </a>
-            <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 p-1.5 rounded hover:bg-white/10"
-              href="#" aria-label="Twitter">
-              <i class="fab fa-twitter text-base sm:text-lg"></i>
-            </a>
-            <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 p-1.5 rounded hover:bg-white/10"
-              href="#" aria-label="Instagram">
-              <i class="fab fa-instagram text-base sm:text-lg"></i>
-            </a>
-            <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 p-1.5 rounded hover:bg-white/10"
-              href="#" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in text-base sm:text-lg"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="order-2 sm:order-none">
-          <h3 class="text-base sm:text-lg font-bold text-accent mb-4 sm:mb-6">Quick Links</h3>
-          <ul class="space-y-2 sm:space-y-3">
-            <li>
-              <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 text-sm sm:text-base block py-1"
-                href="index.html">Home</a>
-            </li>
-            <li>
-              <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 text-sm sm:text-base block py-1"
-                href="about.html">About</a>
-            </li>
-            <li>
-              <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 text-sm sm:text-base block py-1"
-                href="admissions.html">Admissions</a>
-            </li>
-            <li>
-              <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 text-sm sm:text-base block py-1"
-                href="events.html">Events</a>
-            </li>
-            <li>
-              <a class="text-gray-300 sm:text-gray-400 hover:text-accent transition-colors duration-300 text-sm sm:text-base block py-1"
-                href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="order-3 sm:order-none">
-          <h3 class="text-base sm:text-lg font-bold text-accent mb-4 sm:mb-6">Contact Info</h3>
-          <ul class="space-y-3 sm:space-y-4 text-gray-300 sm:text-gray-400">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt text-accent mr-2 sm:mr-3 mt-1 text-sm sm:text-base flex-shrink-0"></i>
-              <span class="leading-relaxed text-sm sm:text-base">
-                123 Education Street,<br class="hidden sm:inline">
-                <span class="sm:hidden"> </span>Knowledge City, KC 12345
-              </span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone text-accent mr-2 sm:mr-3 text-sm sm:text-base flex-shrink-0"></i>
-              <span class="text-sm sm:text-base">+1 (555) 123-4567</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-envelope text-accent mr-2 sm:mr-3 mt-0.5 text-sm sm:text-base flex-shrink-0"></i>
-              <span class="text-sm sm:text-base break-all sm:break-normal">info@gdspublicschool.edu</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Follow Us -->
-        <div class="order-1 sm:order-none sm:col-span-2 lg:col-span-1">
-          <h3 class="text-base sm:text-lg font-bold text-accent mb-4 sm:mb-6">Follow Us</h3>
-          <p class="text-gray-300 sm:text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-            Stay updated with our latest news, events, and educational insights.
-          </p>
-          <div class="flex flex-wrap gap-2 sm:gap-3">
-            <a class="bg-accent text-primary p-2 sm:p-2.5 rounded-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-md"
-              href="#" aria-label="Facebook">
-              <i class="fab fa-facebook-f text-sm sm:text-base"></i>
-            </a>
-            <a class="bg-accent text-primary p-2 sm:p-2.5 rounded-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-md"
-              href="#" aria-label="Twitter">
-              <i class="fab fa-twitter text-sm sm:text-base"></i>
-            </a>
-            <a class="bg-accent text-primary p-2 sm:p-2.5 rounded-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-md"
-              href="#" aria-label="Instagram">
-              <i class="fab fa-instagram text-sm sm:text-base"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright Section -->
-      <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-600 sm:border-gray-700">
-        <div
-          class="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 text-center sm:text-left">
-          <p class="text-gray-300 sm:text-gray-400 text-xs sm:text-sm">
-            © 2024 GDS Public School. All rights reserved.
-          </p>
-          <!-- Optional additional copyright links for larger screens -->
-          <div class="hidden md:flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-accent text-xs transition-colors duration-300">Privacy
-              Policy</a>
-            <a href="#" class="text-gray-400 hover:text-accent text-xs transition-colors duration-300">Terms of
-              Service</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
 </body>
 
 </html>
