@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDS School - Events</title>
+    <title>GDS Public School</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/generated-image.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
@@ -423,7 +424,7 @@
                             <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For general event inquiries and
                                 registration assistance</p>
                             <p class="text-accent font-medium text-sm sm:text-base break-all">events@gdsschool.edu</p>
-                            <p class="text-gray-600 text-sm sm:text-base">+1 (555) 123-4567</p>
+                            <p class="text-gray-600 text-sm sm:text-base">+919403531242</p>
                         </div>
 
                         <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
@@ -447,9 +448,7 @@
                             <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">FAQs & Help</h3>
                             <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Quick answers to common questions
                             </p>
-                            <button
-                                class="text-accent font-medium hover:underline cursor-pointer text-sm sm:text-base">View
-                                FAQ Section</button>
+                            <button onclick="window.location.href='/Contact_Us.html#faq'" class="text-accent font-medium hover:underline cursor-pointer text-sm sm:text-base">View FAQ Section</button>
                         </div>
                     </div>
                 </div>
@@ -778,16 +777,11 @@
                                         <i class="fas fa-user mr-1"></i>Coordinator: ${event.coordinator}
                                     </div>
                                 ` : ''}
-                                ${selectedTimeFilter === 'upcoming' ? `
-                                    <button onclick="handleRegister(${event.id})" 
-                                        class="w-full bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                                        Register Now
-                                    </button>
-                                ` : `
+                                ${selectedTimeFilter === 'past' ? `
                                     <div class="text-center py-2 text-gray-500 text-sm">
                                         <i class="fas fa-check-circle mr-2"></i>Event Completed
                                     </div>
-                                `}
+                                ` : ''}
                             </div>
                         `;
 
@@ -983,7 +977,7 @@
                         <li class="flex items-center">
                             <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;940&#8209;353&#8209;1242
                                 </a>
                             </span>
@@ -991,7 +985,7 @@
                         <li class="flex items-center">
                             <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;917&#8209;504&#8209;2179
                                 </a>
                             </span>

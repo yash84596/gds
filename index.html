@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>GDS Public School</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/generated-image.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -54,29 +55,43 @@
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html" data-en="Home" data-mr="मुख्यपृष्ठ">Home</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html" data-en="About" data-mr="आमच्याबद्दल">About</a>
                     <a class="hover:text-accent transition-colors font-medium text-gray-700"
-                        href="Curriculum.html">Curriculum</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
+                        href="Curriculum.html" data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html" data-en="Events" data-mr="कार्यक्रम">Events</a>
+                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html" data-en="Contact Us" data-mr="संपर्क करा">Contact
                         Us</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn"
-                    class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
-                    <div class="w-6 h-6 flex flex-col justify-center items-center relative">
-                        <div id="hamburgerLine1"
-                            class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                <!-- Language Toggle -->
+                <div class="hidden md:flex items-center ml-4">
+                    <button id="langToggle" class="flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-globe text-gray-600"></i>
+                        <span id="currentLang" class="text-sm font-medium text-gray-700">EN</span>
+                        <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Language Toggle & Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="mobileLangToggle" class="flex items-center px-2 py-1 rounded border border-gray-300 hover:bg-gray-50">
+                        <span id="mobileLang" class="text-xs font-medium text-gray-700">EN</span>
+                    </button>
+                    <button id="mobileMenuBtn"
+                        class="text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+                            <div id="hamburgerLine1"
+                                class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+                            </div>
+                            <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                            </div>
+                            <div id="hamburgerLine3"
+                                class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+                            </div>
                         </div>
-                        <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
-                        </div>
-                        <div id="hamburgerLine3"
-                            class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
-                        </div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -85,12 +100,12 @@
     <section class="relative bg-cover bg-center bg-no-repeat text-white pt-20"
         style="background-image: linear-gradient(rgba(31, 58, 61, 0.8), rgba(31, 58, 61, 0.8)), url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-40">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span class="text-accent">GDS Public
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold" data-en="Welcome to GDS Public School" data-mr="जीडीएस पब्लिक स्कूलमध्ये आपले स्वागत आहे">Welcome to <span class="text-accent">GDS Public
                     School</span></h1>
-            <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">Nurturing minds for a brighter tomorrow. Excellence
+            <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto" data-en="Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development." data-mr="उज्ज्वल उद्याकरिता मनांचे पालनपोषण. शिक्षण, चारित्र्य निर्माण आणि सर्वांगीण विकासात उत्कृष्टता.">Nurturing minds for a brighter tomorrow. Excellence
                 in education, character building, and holistic development.</p>
             <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
-                href="#">
+                href="#" data-en="Begin Your Legacy →" data-mr="आपला वारसा सुरू करा →">
                 Begin Your Legacy <span class="align-middle">→</span>
             </a>
         </div>
@@ -124,29 +139,31 @@
                     <a href="index.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Home</span>
+                        <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
                     </a>
                     <a href="About.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>About</span>
+                        <span data-en="About" data-mr="आमच्याबद्दल">About</span>
                     </a>
                     <a href="Curriculum.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Curriculum</span>
+                        <span data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</span>
                     </a>
                     <a href="Event.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Events</span>
+                        <span data-en="Events" data-mr="कार्यक्रम">Events</span>
                     </a>
                     <a href="Contact_Us.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                        <i
+                        <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span>
+                    </a>i
                             class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
                         <span>Contact Us</span>
                     </a>
@@ -705,6 +722,33 @@
         </div>
     </footer>
 
+    <script>
+        // Language Toggle Functionality
+        let currentLanguage = 'en';
+        
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'mr' : 'en';
+            updateLanguage();
+        }
+        
+        function updateLanguage() {
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en][data-mr]').forEach(element => {
+                element.textContent = element.getAttribute(`data-${currentLanguage}`);
+            });
+            
+            // Update language indicators
+            document.getElementById('currentLang').textContent = currentLanguage.toUpperCase();
+            document.getElementById('mobileLang').textContent = currentLanguage.toUpperCase();
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'mr';
+        }
+        
+        // Event listeners
+        document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+        document.getElementById('mobileLangToggle').addEventListener('click', toggleLanguage);
+    </script>
 </body>
 
 </html>
