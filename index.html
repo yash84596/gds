@@ -50,41 +50,54 @@
                     <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
                         <i class="fas fa-graduation-cap text-primary text-xl"></i>
                     </div>
-                    <span class="text-xl font-bold text-primary">GDS Public School</span>
+                    <span id="schoolName" class="text-xl font-bold text-primary">GDS Public School</span>
                 </div>
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html" data-en="Home" data-mr="मुख्यपृष्ठ">Home</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html" data-en="About" data-mr="आमच्याबद्दल">About</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
-                        href="Curriculum.html" data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html" data-en="Events" data-mr="कार्यक्रम">Events</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html" data-en="Contact Us" data-mr="संपर्क करा">Contact
-                        Us</a>
+                    <a id="navHome" class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="index.html">Home</a>
+                    <a id="navAbout" class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="About.html">About</a>
+                    <a id="navCurriculum" class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Curriculum.html">Curriculum</a>
+                    <a id="navEvents" class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Event.html">Events</a>
+                    <a id="navContact" class="hover:text-accent transition-colors font-medium text-gray-700"
+                        href="Contact_Us.html">Contact Us</a>
                 </nav>
 
-                <!-- Language Toggle -->
+
+                <!-- Desktop Language Toggle -->
                 <div class="hidden md:flex items-center ml-4">
-                    <button id="langToggle" class="flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-globe text-gray-600"></i>
-                        <span id="currentLang" class="text-sm font-medium text-gray-700">EN</span>
-                        <i class="fas fa-chevron-down text-xs text-gray-500"></i>
-                    </button>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input class="sr-only peer" type="checkbox" id="langToggle" onchange="toggleLanguage()">
+                        <div
+                            class="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-8 peer-checked:after:content-['MR'] peer-checked:after:border-white peer-checked:bg-primary peer-checked:after:text-accent shadow-md">
+                        </div>
+                    </label>
                 </div>
 
-                <!-- Mobile Language Toggle & Menu Button -->
+
+                <!-- Mobile Language Toggle -->
                 <div class="md:hidden flex items-center space-x-2">
-                    <button id="mobileLangToggle" class="flex items-center px-2 py-1 rounded border border-gray-300 hover:bg-gray-50">
-                        <span id="mobileLang" class="text-xs font-medium text-gray-700">EN</span>
-                    </button>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="mobileLangToggle" class="sr-only peer"
+                            onchange="toggleMobileLanguage()">
+                        <div
+                            class="peer rounded-full outline-none duration-100 after:duration-500 w-14 h-7 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-5 after:w-5 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-7 peer-checked:after:content-['MR'] peer-checked:bg-primary peer-checked:after:text-accent shadow-md peer-hover:after:scale-95">
+                        </div>
+                    </label>
+
+                    <!-- Keep your existing mobile menu button -->
                     <button id="mobileMenuBtn"
                         class="text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
                         <div class="w-6 h-6 flex flex-col justify-center items-center relative">
                             <div id="hamburgerLine1"
                                 class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
                             </div>
-                            <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+                            <div id="hamburgerLine2"
+                                class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
                             </div>
                             <div id="hamburgerLine3"
                                 class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
@@ -100,12 +113,15 @@
     <section class="relative bg-cover bg-center bg-no-repeat text-white pt-20"
         style="background-image: linear-gradient(rgba(31, 58, 61, 0.8), rgba(31, 58, 61, 0.8)), url('img/ac9d3f1feb667ef8757e660e2d8f33ce.jpg');">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-32 lg:py-40">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold" data-en="Welcome to GDS Public School" data-mr="जीडीएस पब्लिक स्कूलमध्ये आपले स्वागत आहे">Welcome to <span class="text-accent">GDS Public
-                    School</span></h1>
-            <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto" data-en="Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development." data-mr="उज्ज्वल उद्याकरिता मनांचे पालनपोषण. शिक्षण, चारित्र्य निर्माण आणि सर्वांगीण विकासात उत्कृष्टता.">Nurturing minds for a brighter tomorrow. Excellence
-                in education, character building, and holistic development.</p>
-            <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
-                href="#" data-en="Begin Your Legacy →" data-mr="आपला वारसा सुरू करा →">
+            <h1 id="heroTitle" class="text-4xl sm:text-5xl lg:text-6xl font-bold">Welcome to <span
+                    class="text-accent">GDS Public School</span></h1>
+            <p id="heroSubtitle" class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto">
+                Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic
+                development.
+            </p>
+            <a id="heroButton"
+                class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                href="#">
                 Begin Your Legacy <span class="align-middle">→</span>
             </a>
         </div>
@@ -161,11 +177,12 @@
                     </a>
                     <a href="Contact_Us.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
-                        <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <i
+                            class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
                         <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span>
                     </a>i
-                            class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Contact Us</span>
+                    class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                    <span>Contact Us</span>
                     </a>
                 </div>
             </nav>
@@ -462,14 +479,16 @@
         }
     </style>
 
-
-
+    <!--  -->
     <section class="py-16 sm:py-24 bg-[#E8E8E8]">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Where <span class="text-accent">Tradition Meets
-                    Tomorrow</span></h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Combining generations of
-                educational excellence with innovative teaching methods, creating leaders who will shape the future.</p>
+            <h2 id="traditionTitle" class="text-3xl sm:text-4xl font-bold text-primary mb-4">
+                Where <span class="text-accent">Tradition Meets Tomorrow</span>
+            </h2>
+            <p id="traditionSubtitle" class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+                Combining generations of educational excellence with innovative teaching methods, creating leaders who
+                will shape the future.
+            </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Master Educators Card -->
@@ -482,9 +501,13 @@
                         <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
                             <span class="material-icons text-white">person</span>
                         </div>
-                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Master Educators</h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed">World-class faculty with decades of
-                            experience and commitment to educational excellence and student development.</p>
+                        <h3 id="educatorsTitle" class="text-xl font-bold text-primary dark:text-white mb-2 text-left">
+                            Master Educators
+                        </h3>
+                        <p id="educatorsDesc" class="text-gray-600 text-left text-sm leading-relaxed">
+                            World-class faculty with decades of experience and commitment to educational excellence and
+                            student development.
+                        </p>
                     </div>
                 </div>
 
@@ -498,10 +521,13 @@
                         <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
                             <span class="material-icons text-white">schedule</span>
                         </div>
-                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Timeless Spaces</h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed">State-of-the-art facilities that
-                            blend traditional
-                            values with modern learning environments and cutting-edge technology.</p>
+                        <h3 id="spacesTitle" class="text-xl font-bold text-primary dark:text-white mb-2 text-left">
+                            Timeless Spaces
+                        </h3>
+                        <p id="spacesDesc" class="text-gray-600 text-left text-sm leading-relaxed">
+                            State-of-the-art facilities that blend traditional values with modern learning environments
+                            and cutting-edge technology.
+                        </p>
                     </div>
                 </div>
 
@@ -515,105 +541,220 @@
                         <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-sm">
                             <span class="material-icons text-white">public</span>
                         </div>
-                        <h3 class="text-xl font-bold text-primary dark:text-white mb-2 text-left">Connected Learning
+                        <h3 id="learningTitle" class="text-xl font-bold text-primary dark:text-white mb-2 text-left">
+                            Connected Learning
                         </h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed">Global curriculum and international
-                            partnerships that prepare students for success in an interconnected world.</p>
+                        <p id="learningDesc" class="text-gray-600 text-left text-sm leading-relaxed">
+                            Global curriculum and international partnerships that prepare students for success in an
+                            interconnected world.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        // English Content Object
+        const englishContent = {
+            // Header and Navigation
+            schoolName: 'GDS Public School',
+            navHome: 'Home',
+            navAbout: 'About',
+            navCurriculum: 'Curriculum',
+            navEvents: 'Events',
+            navContact: 'Contact Us',
+            heroTitle: 'Welcome to <span class="text-accent">GDS Public School</span>',
+            heroSubtitle: 'Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development.',
+            heroButton: 'Begin Your Legacy →',
+            // Section Content
+            traditionTitle: 'Where <span class="text-accent">Tradition Meets Tomorrow</span>',
+            traditionSubtitle: 'Combining generations of educational excellence with innovative teaching methods, creating leaders who will shape the future.',
+            educatorsTitle: 'Master Educators',
+            educatorsDesc: 'World-class faculty with decades of experience and commitment to educational excellence and student development.',
+            spacesTitle: 'Timeless Spaces',
+            spacesDesc: 'State-of-the-art facilities that blend traditional values with modern learning environments and cutting-edge technology.',
+            learningTitle: 'Connected Learning',
+            learningDesc: 'Global curriculum and international partnerships that prepare students for success in an interconnected world.',
+            // Admission Section
+            admissionTitle: 'Ready to Join Our <span class="text-accent">School Family?</span>',
+            admissionSubtitle: 'Take the first step towards an exceptional educational journey. Our admissions team is here to guide you through the process.',
+            admissionButton: 'Apply for Admission',
+            // Footer Section
+            footerSchoolName: 'GDS Public School',
+            footerDescription: 'Building a brighter future through excellence in education and character development.',
+            footerQuickLinksTitle: 'Quick Links',
+            footerHome: 'Home',
+            footerAbout: 'About',
+            footerCurriculum: 'Curriculum',
+            footerEvents: 'Events',
+            footerContact: 'Contact',
+            footerContactTitle: 'Contact Info',
+            footerAddress: 'Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar',
+            footerPhone1: '+91&nbsp;940&#8209;353&#8209;1242',
+            footerPhone2: '+91&nbsp;917&#8209;504&#8209;2179',
+            footerEmail: 'info@gdspublicschool.edu',
+            footerFollowTitle: 'Follow Us',
+            footerFollowDesc: 'Stay updated with our latest news, events, and educational insights.',
+            footerCopyright: '© 2025 GDS Public School. All rights reserved.'
+        };
 
-    <!-- Our Living Curriculum ignore --> 
+        // Marathi Content Object
+        const marathiContent = {
+            // Header and Navigation
+            schoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+            navHome: 'मुख्यपृष्ठ',
+            navAbout: 'आमच्याबद्दल',
+            navCurriculum: 'अभ्यासक्रम',
+            navEvents: 'कार्यक्रम',
+            navContact: 'संपर्क करा',
+            heroTitle: '<span class="text-accent"> गिरीश ज्ञान संस्कार विद्यालय </span> आपले स्वागत आहे',
+            heroSubtitle: '।। नही ज्ञानेन सदृश्यं पवित्र मिह विद्यते ।।',
+            heroButton: 'आपला वारसा सुरू करा →',
+            // Section Content
+            traditionTitle: 'जिथे <span class="text-accent">परंपरा उद्याला भेटते</span>',
+            traditionSubtitle: 'शैक्षणिक उत्कृष्टतेची पिढ़ी नाविन्यपूर्ण शिकवण्याच्या पद्धतींसह एकत्रित करून, भविष्याला आकार देणारे नेते तयार करत आहे.',
+            educatorsTitle: 'गुरु शिक्षक',
+            educatorsDesc: 'दशकांचा अनुभव आणि शैक्षणिक उत्कृष्टता व विद्यार्थी विकासाची वचनबद्धता असलेले जागतिक दर्जाचे शिक्षकगण.',
+            spacesTitle: 'कालातीत स्थान',
+            spacesDesc: 'पारंपरिक मूल्ये आधुनिक शिक्षण वातावरण आणि अत्याधुनिक तंत्रज्ञानासह मिसळणाऱ्या अत्याधुनिक सुविधा.',
+            learningTitle: 'जोडलेले शिक्षण',
+            learningDesc: 'जागतिक अभ्यासक्रम आणि आंतरराष्ट्रीय भागीदारी जी विद्यार्थ्यांना परस्पर जोडलेल्या जगात यशासाठी तयार करते.',
+            // Admission Section
+            admissionTitle: 'आमच्या <span class="text-accent">शालेय कुटुंबात</span> सामील होण्यास तयार आहात?',
+            admissionSubtitle: 'अपवाद शैक्षणिक प्रवासाकडे पहिले पाऊल टाका. आमची प्रवेश टीम या प्रक्रियेत तुम्हाला मार्गदर्शन करण्यासाठी येथे आहे.',
+            admissionButton: 'प्रवेशासाठी अर्ज करा',
+            // Footer Section
+            footerSchoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+            footerDescription: 'शिक्षण आणि चारित्र्य विकासात उत्कृष्टतेच्या माध्यमातून उज्ज्वल भविष्य घडविणे.',
+            footerQuickLinksTitle: 'जलद दुवे',
+            footerHome: 'मुख्यपृष्ठ',
+            footerAbout: 'आमच्याबद्दल',
+            footerCurriculum: 'अभ्यासक्रम',
+            footerEvents: 'कार्यक्रम',
+            footerContact: 'संपर्क',
+            footerContactTitle: 'संपर्क माहिती',
+            footerAddress: 'भगतसिंग नगर-मयूर <br> पार्क, हरसूल एरिया, शिवाजी <br> चौक, छत्रपती संभाजी नगर',
+            footerPhone1: '+९१ ९४०-३५३-१२४२',
+            footerPhone2: '+९१ ३१७-५०४-२१७३',
+            footerEmail: 'info@gdspublicschool.edu',
+            footerFollowTitle: 'आमचा फॉलो करा',
+            footerFollowDesc: 'आमच्या नवीनतम बातम्या, कार्यक्रम आणि शैक्षणिक अंतर्दृष्टींची माहिती मिळवा.',
+            footerCopyright: '© 2025 गिरीश ज्ञान संस्कार विद्यालय. सर्व हक्क राखीव.'
+        };
 
-    <!-- <section class="py-16 sm:py-24 bg-background-light">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">Our <span class="text-accent">Living Curriculum</span></h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">Where every subject comes alive
-                through discovery, nurturing innovative human beings in grades K-12.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"> -->
-                <!-- Sciences & Mathematics Card -->
-                <!-- <div
-                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
-                    <img alt="Modern science laboratory with equipment and experiments" class="w-full h-56 object-cover"
-                        src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" />
-                    <div class="p-6 relative">
-                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            <span class="material-icons text-white text-xl">science</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Sciences & Mathematics</h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed mb-4">Discover the wonders of nature, explore
-                            advanced mathematical concepts, and develop critical thinking through hands-on experiments.
-                        </p>
-                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
-                            href="#">Explore Journey →</a>
-                    </div>
-                </div> -->
+    </script>
 
-                <!-- Languages & Stories Card -->
-                <!-- <div
-                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
-                    <img alt="Beautiful library interior with classic architecture and bookshelves"
-                        class="w-full h-56 object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7j1HF3XiPiB7uQt9IgAIajeUYRAuSwDPgs1Thx9QflfXM6w2xSdbeNuqxOApUChLi-O8pl_EXTSUpPUnH1RZEucCJlYCEtjUQKbjSPIzxRbDfEtEdED7b26-cI46svyMjy_hfDjahqToU15S-NR-HZKvQbBSFP4BGhy7qV9Dm0bn18ufbBRBodB7rPbXldrFfsa7J_Q_b392KrlKU0cSdEgiB-wnhbRQ054FyuHXgreNo0DTWB08355HwxI-1P_awwsn3aphqMhsL" />
-                    <div class="p-6 relative">
-                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            <span class="material-icons text-white text-xl">book</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Languages & Stories</h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed mb-4">Master multiple languages, dive into
-                            world
-                            literature, and develop exceptional communication and creative writing skills.</p>
-                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
-                            href="#">Explore Journey →</a>
-                    </div>
-                </div> -->
+    <script>
+        // Current language state
+        let currentLanguage = 'english';
 
-                <!-- Arts & Heritage Card -->
-                <!-- <div
-                    class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
-                    <img alt="Colorful art classroom with student artwork and creative displays"
-                        class="w-full h-56 object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtTRhVWgVL1SwiLlW3Mt7KSmkhE9BaBcRGS9GeCuESKCrW6S_VCdOa0wyDctR7ePxp5ut_uWK-ovI2H-JQX03ehi0v0srECthVEQy_OYA9PdxewQqzhlZh0FFBl6ac60grNDIqM3mwi8XG_zNgvjvpNX6-V4Ni80ON5C7uG0OH7QfBi-YfyZNEBArTVwci_kfS_kt9HvAj-TbUMMshtFJMdcS_tEDNGs4yseoilsxEBPRumzl__xorcDSNk3ngDC0M4vkJn6IM3I10" />
-                    <div class="p-6 relative">
-                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            <span class="material-icons text-white text-xl">palette</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 text-left">Arts & Heritage</h3>
-                        <p class="text-gray-600 text-left text-sm leading-relaxed mb-4">Celebrate creativity through visual
-                            arts,
-                            music, drama, and cultural studies that connect past traditions with future innovations.</p>
-                        <a class="font-bold text-accent hover:text-accent/80 text-left block transition-colors"
-                            href="#">Explore Journey →</a>
-                    </div>
-                </div>
-            </div> -->
+        // Function to update content based on selected language
+        function updateContent(language) {
+            const content = language === 'english' ? englishContent : marathiContent;
 
-            <!-- Bottom CTA Button -->
-            <!-- <div class="text-center">
-                <a class="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg text-lg"
-                    href="#">
-                    Discover Our Complete Journey →
-                </a>
-            </div>
-        </div>
-    </section> -->
+            // Update all elements with their respective content
+            Object.keys(content).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = content[key];
+                }
+            });
 
+            currentLanguage = language;
+
+            // Update document language attribute
+            document.documentElement.setAttribute('lang', language === 'english' ? 'en' : 'mr');
+        }
+
+        // Enhanced toggle functions with content switching
+        function toggleLanguage() {
+            const toggle = document.getElementById('langToggle');
+            const mobileToggle = document.getElementById('mobileLangToggle');
+
+            // Sync mobile toggle with desktop toggle
+            if (mobileToggle) {
+                mobileToggle.checked = toggle.checked;
+            }
+
+            if (toggle.checked) {
+                // Switch to Marathi
+                updateContent('marathi');
+                console.log('Switched to Marathi');
+            } else {
+                // Switch to English
+                updateContent('english');
+                console.log('Switched to English');
+            }
+        }
+
+        function toggleMobileLanguage() {
+            const toggle = document.getElementById('langToggle');
+            const mobileToggle = document.getElementById('mobileLangToggle');
+
+            // Sync desktop toggle with mobile toggle
+            if (toggle) {
+                toggle.checked = mobileToggle.checked;
+            }
+
+            if (mobileToggle.checked) {
+                // Switch to Marathi
+                updateContent('marathi');
+                console.log('Switched to Marathi');
+            } else {
+                // Switch to English
+                updateContent('english');
+                console.log('Switched to English');
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set default language to English
+            updateContent('english');
+
+            // Ensure toggles are in sync with default state
+            const toggle = document.getElementById('langToggle');
+            const mobileToggle = document.getElementById('mobileLangToggle');
+
+            if (toggle) toggle.checked = false;
+            if (mobileToggle) mobileToggle.checked = false;
+        });
+
+        // Optional: Function to get current language
+        function getCurrentLanguage() {
+            return currentLanguage;
+        }
+
+        // Optional: Function to switch to specific language programmatically
+        function switchToLanguage(lang) {
+            const isMarathi = lang === 'marathi' || lang === 'mr';
+            const toggle = document.getElementById('langToggle');
+            const mobileToggle = document.getElementById('mobileLangToggle');
+
+            if (toggle) toggle.checked = isMarathi;
+            if (mobileToggle) mobileToggle.checked = isMarathi;
+
+            updateContent(isMarathi ? 'marathi' : 'english');
+        }
+
+    </script>
+    
     <section class="bg-cover bg-center" style="background-image: url('img/15bb93b129fb5b3909ed28b2b58e5249.jpg');">
         <div class="bg-primary bg-opacity-80 py-16 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-                <h2 class="text-3xl sm:text-5xl font-bold">Ready to Join Our <span class="text-accent">School
-                        Family?</span></h2>
-                <p class="mt-4 text-lg max-w-3xl mx-auto">Take the first step towards an exceptional educational
-                    journey. Our admissions team is here to guide you through the process.</p>
-                <a class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
+                <h2 id="admissionTitle" class="text-3xl sm:text-5xl font-bold">Ready to Join Our <span
+                        class="text-accent">School Family?</span></h2>
+                <p id="admissionSubtitle" class="mt-4 text-lg max-w-3xl mx-auto">Take the first step towards an
+                    exceptional educational journey. Our admissions team is here to guide you through the process.</p>
+                <a id="admissionButton"
+                    class="mt-8 inline-block bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300"
                     href="Contact_Us.html#contact">
                     Apply for Admission
                 </a>
             </div>
         </div>
     </section>
+
     <footer class="bg-primary text-white">
         <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -623,10 +764,10 @@
                         <div class="bg-accent p-2.5 rounded-md mr-4">
                             <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
                         </div>
-                        <span class="text-xl font-bold">GDS Public School</span>
+                        <span id="footerSchoolName" class="text-xl font-bold">GDS Public School</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
-                        education and character development.</p>
+                    <p id="footerDescription" class="text-gray-400 leading-relaxed mb-6">Building a brighter future
+                        through excellence in education and character development.</p>
                     <div class="flex space-x-3">
                         <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
                             aria-label="Facebook">
@@ -649,29 +790,34 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <h3 id="footerQuickLinksTitle" class="text-lg font-bold text-accent mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="admissions.html">Admissions</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a></li>
+                        <li><a id="footerHome" class="text-gray-400 hover:text-accent transition-colors"
+                                href="index.html">Home</a></li>
+                        <li><a id="footerAbout" class="text-gray-400 hover:text-accent transition-colors"
+                                href="About.html">About</a></li>
+                        <li><a id="footerCurriculum" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Curriculum.html">Curriculum</a></li>
+                        <li><a id="footerEvents" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Event.html">Events</a></li>
+                        <li><a id="footerContact" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Contact_Us.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <h3 id="footerContactTitle" class="text-lg font-bold text-accent mb-6">Contact Info</h3>
                     <ul class="space-y-4 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-                            <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
-                            <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar</span>
+                            <span id="footerAddress" class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul
+                                Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone1" href="tel:+199403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;940&#8209;353&#8209;1242
                                 </a>
                             </span>
@@ -679,23 +825,23 @@
                         <li class="flex items-center">
                             <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone2" href="tel:+919403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;917&#8209;504&#8209;2179
                                 </a>
                             </span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-                            <span>info@gdspublicschool.edu</span>
+                            <span id="footerEmail">info@gdspublicschool.edu</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Follow Us -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
-                        educational insights.</p>
+                    <h3 id="footerFollowTitle" class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p id="footerFollowDesc" class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest
+                        news, events, and educational insights.</p>
                     <div class="flex space-x-3">
                         <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
                             href="#" aria-label="Facebook">
@@ -716,39 +862,14 @@
             <!-- Copyright Section -->
             <div class="mt-12 pt-8 border-t border-gray-700">
                 <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                    <p id="footerCopyright" class="text-gray-400 text-sm">© 2025 GDS Public School. All rights reserved.
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Language Toggle Functionality
-        let currentLanguage = 'en';
-        
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'mr' : 'en';
-            updateLanguage();
-        }
-        
-        function updateLanguage() {
-            // Update all elements with data attributes
-            document.querySelectorAll('[data-en][data-mr]').forEach(element => {
-                element.textContent = element.getAttribute(`data-${currentLanguage}`);
-            });
-            
-            // Update language indicators
-            document.getElementById('currentLang').textContent = currentLanguage.toUpperCase();
-            document.getElementById('mobileLang').textContent = currentLanguage.toUpperCase();
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'mr';
-        }
-        
-        // Event listeners
-        document.getElementById('langToggle').addEventListener('click', toggleLanguage);
-        document.getElementById('mobileLangToggle').addEventListener('click', toggleLanguage);
-    </script>
+
 </body>
 
 </html>

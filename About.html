@@ -79,25 +79,45 @@
                     <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
                         <i class="fas fa-graduation-cap text-primary text-xl"></i>
                     </div>
-                    <span class="text-xl font-bold text-primary">GDS Public School</span>
+                    <span id="schoolName" class="text-xl font-bold text-primary">GDS Public School</span>
                 </div>
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navHome" class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                    <a id="navAbout" class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                    <a id="navCurriculum" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Curriculum.html">Curriculum</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navEvents" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Event.html">Events</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navContact" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Contact_Us.html">Contact
                         Us</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn"
-                    class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+                <!-- Desktop Language Toggle -->
+                <div class="hidden md:flex items-center ml-4">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input class="sr-only peer" type="checkbox" id="langToggle" onchange="toggleLanguage()">
+                        <div class="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-8 peer-checked:after:content-['MR'] peer-checked:after:border-white peer-checked:bg-primary peer-checked:after:text-accent shadow-md"></div>
+                    </label>
+                </div>
+
+                <!-- Mobile Language Toggle -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="mobileLangToggle" class="sr-only peer" onchange="toggleMobileLanguage()">
+                        <div class="peer rounded-full outline-none duration-100 after:duration-500 w-14 h-7 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-5 after:w-5 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-7 peer-checked:after:content-['MR'] peer-checked:bg-primary peer-checked:after:text-accent shadow-md peer-hover:after:scale-95"></div>
+                    </label>
+                </div>
+
+
+                <!-- Mobile Language Toggle -->
+                <div class="md:hidden flex items-center space-x-2">
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
                     <div class="w-6 h-6 flex flex-col justify-center items-center relative">
                         <div id="hamburgerLine1"
                             class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
@@ -143,23 +163,32 @@
                     <a href="index.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Home</span>
+                        <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
                     </a>
                     <a href="About.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>About</span>
+                        <span data-en="About" data-mr="आमच्याबद्दल">About</span>
                     </a>
                     <a href="Curriculum.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Curriculum</span>
+                        <span data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</span>
                     </a>
                     <a href="Event.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
+                            class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span data-en="Events" data-mr="कार्यक्रम">Events</span>
+                    </a>
+                    <a href="Contact_Us.html"
+                        class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+                        <i
+                            class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
+                        <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span>
+                    </a>
                             class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
                         <span>Events</span>
                     </a>
@@ -457,8 +486,8 @@
         style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('img/about/23d3230086be581156e271b6d445bf6d.jpg');">
         <div class="container mx-auto px-6 pb-20 py-40">
             <div class="text-center pt-5">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6">About Our School</h1>
-                <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                <h1 id="heroTitle" class="text-5xl md:text-6xl font-bold mb-6">About Our School</h1>
+                <p id="heroSubtitle" class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
                     Nurturing minds, building futures, and creating tomorrow's leaders through excellence in education
                 </p>
             </div>
@@ -510,7 +539,7 @@
             <div class="container mx-auto px-6">
                 <!-- Centered Section Header -->
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary">Our Mission & Vision</h2>
+                    <h2 id="missionVisionTitle" class="text-4xl font-bold text-primary">Our Mission & Vision</h2>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -524,8 +553,8 @@
                     <div>
                         <!-- Mission Card -->
                         <div class="bg-accent/10 border-l-4 border-accent p-8 rounded-lg mb-8">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Mission</h3>
-                            <p class="text-text-gray leading-relaxed">
+                            <h3 id="missionTitle" class="text-2xl font-bold text-primary mb-4">Mission</h3>
+                            <p id="missionDesc" class="text-text-gray leading-relaxed">
                                 To provide quality education that empowers students to become confident, creative, and
                                 compassionate individuals who contribute positively to society while achieving their
                                 full potential.
@@ -534,8 +563,8 @@
 
                         <!-- Vision Card -->
                         <div class="bg-primary/5 border-l-4 border-primary p-8 rounded-lg">
-                            <h3 class="text-2xl font-bold text-primary mb-4">Vision</h3>
-                            <p class="text-text-gray leading-relaxed">
+                            <h3 id="visionTitle" class="text-2xl font-bold text-primary mb-4">Vision</h3>
+                            <p id="visionDesc" class="text-text-gray leading-relaxed">
                                 To be a leading educational institution that nurtures global citizens equipped with
                                 21st-century skills, values, and knowledge to excel in an ever-changing world.
                             </p>
@@ -550,8 +579,8 @@
         <section class="py-20 bg-[#E8E8E8]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Rich History</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    <h2 id="historyTitle" class="text-4xl font-bold text-primary mb-4">Our Rich History</h2>
+                    <p id="historySubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">
                         Established in 1985, GDS Public School has been a beacon of educational excellence for over
                         three decades.
                     </p>
@@ -564,7 +593,7 @@
                             <i class="fas fa-flag text-primary text-2xl"></i>
                         </div>
                         <h3 class="text-3xl font-bold text-accent mb-4">1985</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <p id="history1985" class="text-text-gray leading-relaxed">
                             Founded with a vision to provide quality education to the community, we started with just 50
                             students and 5 teachers.
                         </p>
@@ -576,7 +605,7 @@
                             <i class="fas fa-trophy text-primary text-2xl"></i>
                         </div>
                         <h3 class="text-3xl font-bold text-accent mb-4">2000</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <p id="history2000" class="text-text-gray leading-relaxed">
                             Achieved significant milestones in student excellence and expanded to include senior
                             secondary education.
                         </p>
@@ -587,8 +616,8 @@
                         <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-users text-primary text-2xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-accent mb-4">Today</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="historyTodayTitle" class="text-3xl font-bold text-accent mb-4">Today</h3>
+                        <p id="historyToday" class="text-text-gray leading-relaxed">
                             Serving over 1200 students with modern facilities, innovative teaching methods, and global
                             partnerships.
                         </p>
@@ -601,8 +630,8 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Core Values</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    <h2 id="coreValuesTitle" class="text-4xl font-bold text-primary mb-4">Our Core Values</h2>
+                    <p id="coreValuesSubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">
                         The principles that guide everything we do at GDS Public School
                     </p>
                 </div>
@@ -614,8 +643,8 @@
                             class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                             <i class="fas fa-heart text-accent group-hover:text-primary text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Compassion</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="compassionTitle" class="text-xl font-bold text-primary mb-3">Compassion</h3>
+                        <p id="compassionDesc" class="text-text-gray leading-relaxed">
                             Fostering empathy, kindness, and understanding in all our interactions
                         </p>
                     </div>
@@ -626,8 +655,8 @@
                             class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                             <i class="fas fa-star text-accent group-hover:text-primary text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Excellence</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="excellenceTitle" class="text-xl font-bold text-primary mb-3">Excellence</h3>
+                        <p id="excellenceDesc" class="text-text-gray leading-relaxed">
                             Striving for the highest standards in academics, character, and personal growth.
                         </p>
                     </div>
@@ -638,8 +667,8 @@
                             class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                             <i class="fas fa-lightbulb text-accent group-hover:text-primary text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Innovation</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="innovationTitle" class="text-xl font-bold text-primary mb-3">Innovation</h3>
+                        <p id="innovationDesc" class="text-text-gray leading-relaxed">
                             Embracing creativity, critical thinking, and modern teaching methodologies.
                         </p>
                     </div>
@@ -650,8 +679,8 @@
                             class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                             <i class="fas fa-shield-alt text-accent group-hover:text-primary text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary mb-3">Integrity</h3>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="integrityTitle" class="text-xl font-bold text-primary mb-3">Integrity</h3>
+                        <p id="integrityDesc" class="text-text-gray leading-relaxed">
                             Building character through honesty, responsibility, and ethical behavior.
                         </p>
                     </div>
@@ -663,8 +692,8 @@
         <section class="py-20 bg-[#E8E8E8]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4">Our Leadership Team</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto">
+                    <h2 id="leadershipTitle" class="text-4xl font-bold text-primary mb-4">Our Leadership Team</h2>
+                    <p id="leadershipSubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">
                         Experienced educators and administrators dedicated to student success
                     </p>
                 </div>
@@ -675,9 +704,9 @@
                         <img alt="Dr. Sarah Johnson, Principal"
                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
                             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Dr. Sarah Johnson</h3>
-                        <p class="text-accent font-semibold mb-4">Principal</p>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="leader1Name" class="text-xl font-bold text-primary mb-2">Dr. Sarah Johnson</h3>
+                        <p id="leader1Position" class="text-accent font-semibold mb-4">Principal</p>
+                        <p id="leader1Desc" class="text-text-gray leading-relaxed">
                             With over 20 years in education, Dr. Johnson brings visionary leadership and a passion for
                             student-centered learning to our school community.
                         </p>
@@ -688,9 +717,9 @@
                         <img alt="Mr. Michael Chen, Academic Director"
                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Mr. Michael Chen</h3>
-                        <p class="text-accent font-semibold mb-4">Academic Director</p>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="leader2Name" class="text-xl font-bold text-primary mb-2">Mr. Michael Chen</h3>
+                        <p id="leader2Position" class="text-accent font-semibold mb-4">Academic Director</p>
+                        <p id="leader2Desc" class="text-text-gray leading-relaxed">
                             Mr. Chen oversees curriculum development and academic excellence, ensuring our programs meet
                             the highest educational benchmarks.
                         </p>
@@ -701,9 +730,9 @@
                         <img alt="Ms. Emily Rodriguez, Student Affairs Coordinator"
                             class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-accent/20"
                             src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" />
-                        <h3 class="text-xl font-bold text-primary mb-2">Ms. Emily Rodriguez</h3>
-                        <p class="text-accent font-semibold mb-4">Student Affairs Coordinator</p>
-                        <p class="text-text-gray leading-relaxed">
+                        <h3 id="leader3Name" class="text-xl font-bold text-primary mb-2">Ms. Emily Rodriguez</h3>
+                        <p id="leader3Position" class="text-accent font-semibold mb-4">Student Affairs Coordinator</p>
+                        <p id="leader3Desc" class="text-text-gray leading-relaxed">
                             Ms. Rodriguez focuses on student well-being, extracurricular activities, and creating a
                             supportive school environment for all students.
                         </p>
@@ -717,8 +746,8 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-primary mb-4 fade-in">Our Achievements</h2>
-                    <p class="text-xl text-text-gray max-w-3xl mx-auto fade-in" style="animation-delay: 0.2s;">
+                    <h2 id="achievementsTitle" class="text-4xl font-bold text-primary mb-4 fade-in">Our Achievements</h2>
+                    <p id="achievementsSubtitle" class="text-xl text-text-gray max-w-3xl mx-auto fade-in" style="animation-delay: 0.2s;">
                         Recognition and awards that reflect our commitment to educational excellence
                     </p>
                 </div>
@@ -732,7 +761,7 @@
                         <div class="text-4xl font-bold text-accent mb-2 number-display">
                             <span class="counter" data-target="98" data-suffix="%">0</span>
                         </div>
-                        <p class="text-text-gray font-medium">Graduation Rate</p>
+                        <p id="graduationRateLabel" class="text-text-gray font-medium">Graduation Rate</p>
                         <div class="progress-bar">
                             <div class="progress-fill" data-width="98%"></div>
                         </div>
@@ -746,7 +775,7 @@
                         <div class="text-4xl font-bold text-accent mb-2 number-display">
                             <span class="counter" data-target="15" data-suffix="+">0</span>
                         </div>
-                        <p class="text-text-gray font-medium">National Awards</p>
+                        <p id="nationalAwardsLabel" class="text-text-gray font-medium">National Awards</p>
                         <div class="progress-bar">
                             <div class="progress-fill" data-width="90%"></div>
                         </div>
@@ -760,7 +789,7 @@
                         <div class="text-4xl font-bold text-accent mb-2 number-display">
                             <span class="counter" data-target="1200" data-suffix="+">0</span>
                         </div>
-                        <p class="text-text-gray font-medium">Students Enrolled</p>
+                        <p id="studentsEnrolledLabel" class="text-text-gray font-medium">Students Enrolled</p>
                         <div class="progress-bar">
                             <div class="progress-fill" data-width="100%"></div>
                         </div>
@@ -774,7 +803,7 @@
                         <div class="text-4xl font-bold text-accent mb-2 number-display">
                             <span class="counter" data-target="85" data-suffix="%">0</span>
                         </div>
-                        <p class="text-text-gray font-medium">College Acceptance</p>
+                        <p id="collegeAcceptanceLabel" class="text-text-gray font-medium">College Acceptance</p>
                         <div class="progress-bar">
                             <div class="progress-fill" data-width="85%"></div>
                         </div>
@@ -996,8 +1025,8 @@
         <!-- Call to Action Section -->
         <section class="py-20 bg-gradient-to-r from-primary to-primary/90 text-white">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-6">Join Our School Community</h2>
-                <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+                <h2 id="ctaTitle" class="text-4xl font-bold mb-6">Join Our School Community</h2>
+                <p id="ctaSubtitle" class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
                     Discover how GDS Public School can help your child reach their full potential in a nurturing and
                     challenging environment.
                 </p>
@@ -1005,17 +1034,319 @@
                     <a class="inline-flex items-center justify-center bg-accent text-primary font-semibold px-8 py-4 rounded-lg hover:bg-accent/90 transition-colors"
                         href="#">
                         <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>Schedule a Visit</span>
+                        <span id="ctaVisitBtn">Schedule a Visit</span>
                     </a>
                     <a class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors"
                         href="#">
                         <i class="fas fa-download mr-2"></i>
-                        <span>Download Brochure</span>
+                        <span id="ctaBrochureBtn">Download Brochure</span>
                     </a>
                 </div>
             </div>
         </section>
     </main>
+    
+
+    <script>
+        // Current language state
+let currentLanguage = 'english';
+
+// English Content Object
+const englishContent = {
+    // Header and Navigation
+    schoolName: 'GDS Public School',
+    navHome: 'Home',
+    navAbout: 'About',
+    navCurriculum: 'Curriculum',
+    navEvents: 'Events',
+    navContact: 'Contact Us',
+    heroTitle: 'Welcome to <span class="text-accent">GDS Public School</span>',
+    heroSubtitle: 'Nurturing minds for a brighter tomorrow. Excellence in education, character building, and holistic development.',
+    heroButton: 'Begin Your Legacy →',
+    
+    // Section Content
+    traditionTitle: 'Where <span class="text-accent">Tradition Meets Tomorrow</span>',
+    traditionSubtitle: 'Combining generations of educational excellence with innovative teaching methods, creating leaders who will shape the future.',
+    educatorsTitle: 'Master Educators',
+    educatorsDesc: 'World-class faculty with decades of experience and commitment to educational excellence and student development.',
+    spacesTitle: 'Timeless Spaces',
+    spacesDesc: 'State-of-the-art facilities that blend traditional values with modern learning environments and cutting-edge technology.',
+    learningTitle: 'Connected Learning',
+    learningDesc: 'Global curriculum and international partnerships that prepare students for success in an interconnected world.',
+    
+    // Admission Section
+    admissionTitle: 'Ready to Join Our <span class="text-accent">School Family?</span>',
+    admissionSubtitle: 'Take the first step towards an exceptional educational journey. Our admissions team is here to guide you through the process.',
+    admissionButton: 'Apply for Admission',
+    
+    // Footer Section
+    footerSchoolName: 'GDS Public School',
+    footerDescription: 'Building a brighter future through excellence in education and character development.',
+    footerQuickLinksTitle: 'Quick Links',
+    footerHome: 'Home',
+    footerAbout: 'About',
+    footerCurriculum: 'Curriculum',
+    footerEvents: 'Events',
+    footerContact: 'Contact',
+    footerContactTitle: 'Contact Info',
+    footerAddress: 'Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar',
+    footerPhone1: '+91&nbsp;9408209353&nbsp;/&nbsp;82091242',
+    footerPhone2: '+91&nbsp;9178209504&nbsp;/&nbsp;82092179',
+    footerEmail: 'info@gdspublicschool.edu',
+    footerFollowTitle: 'Follow Us',
+    footerFollowDesc: 'Stay updated with our latest news, events, and educational insights.',
+    footerCopyright: '© 2025 GDS Public School. All rights reserved.'
+};
+
+// Marathi Content Object
+const marathiContent = {
+    // Header and Navigation
+    schoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+    navHome: 'मुख्यपृष्ठ',
+    navAbout: 'आमच्याबद्दल',
+    navCurriculum: 'अभ्यासक्रम',
+    navEvents: 'कार्यक्रम',
+    navContact: 'संपर्क करा',
+    heroTitle: '<span class="text-accent"> गिरीश ज्ञान संस्कार विद्यालय </span> आपले स्वागत आहे',
+    heroSubtitle: '।। नही ज्ञानेन सदृश्यं पवित्र मिह विद्यते ।।',
+    heroButton: 'आमच्यासोबत सुरुवात करा →',
+    
+    // Section Content
+    traditionTitle: 'जिथे <span class="text-accent">परंपरा भेटते उद्याला</span>',
+    traditionSubtitle: 'पिढ्यानपिढ्यांचे शैक्षणिक उत्कृष्टता आणि नाविन्यपूर्ण शिकवणी पद्धती एकत्रित करून, भविष्याचे नेते तयार करत आहोत.',
+    educatorsTitle: 'गुरुजी',
+    educatorsDesc: 'दशकांचा अनुभव असलेले जागतिक दर्जाचे शिक्षक आणि शैक्षणिक उत्कृष्टता व विद्यार्थी विकासासाठी वचनबद्धता.',
+    spacesTitle: 'कालजयी जागा',
+    spacesDesc: 'पारंपारिक मूल्यांना आधुनिक शिक्षण वातावरण आणि अत्याधुनिक तंत्रज्ञानासह एकत्रित करणाऱ्या अत्याधुनिक सुविधा.',
+    learningTitle: 'जोडलेले शिक्षण',
+    learningDesc: 'जागतिक अभ्यासक्रम आणि आंतरराष्ट्रीय भागीदारी जे विद्यार्थ्यांना एका परस्पर जोडलेल्या जगात यशासाठी तयार करते.',
+    
+    // Admission Section
+    admissionTitle: 'आमच्या <span class="text-accent">शालेय कुटुंबात</span> सामील होण्यास तयार आहात?',
+    admissionSubtitle: 'अपवादात्मक शैक्षणिक प्रवासाच्या दिशेने पहिले पाऊल उचला. आमची प्रवेश टीम या प्रक्रियेत तुम्हाला मार्गदर्शन करण्यासाठी येथे आहे.',
+    admissionButton: 'प्रवेशासाठी अर्ज करा',
+    
+    // Footer Section
+    footerSchoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+    footerDescription: 'शिक्षणातील उत्कृष्टता आणि चारित्र्य विकासाद्वारे उज्वल भविष्य निर्माण करत आहोत.',
+    footerQuickLinksTitle: 'द्रुत दुवे',
+    footerHome: 'मुख्यपृष्ठ',
+    footerAbout: 'आमच्याबद्दल',
+    footerCurriculum: 'अभ्यासक्रम',
+    footerEvents: 'कार्यक्रम',
+    footerContact: 'संपर्क',
+    footerContactTitle: 'संपर्क माहिती',
+    footerAddress: 'भगतसिंग नगर-मयूर <br> पार्क, हरसूल एरिया, शिवाजी <br> चौक, छत्रपती संभाजी नगर',
+    footerPhone1: '+९१ ९४०-३५३-१२४२',
+    footerPhone2: '+९१ ३१७-५०४-२१७३',
+    footerEmail: 'info@gdspublicschool.edu',
+    footerFollowTitle: 'आमचे अनुसरण करा',
+    footerFollowDesc: 'आमच्या नवीनतम बातम्या, कार्यक्रम आणि शैक्षणिक अंतर्दृष्टीसह अद्यतनित राहा.',
+    footerCopyright: '© २०२५ गिरीश ज्ञान संस्कार विद्यालय. सर्व हक्क राखीव.'
+};
+
+// Function to update content based on selected language
+function updateContent(language) {
+    const content = language === 'english' ? englishContent : marathiContent;
+    
+    // Update all elements with their respective content
+    Object.keys(content).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.innerHTML = content[key];
+        }
+    });
+    
+    currentLanguage = language;
+    
+    // Update document language attribute
+    document.documentElement.setAttribute('lang', language === 'english' ? 'en' : 'mr');
+    
+    // Save language preference to localStorage
+    localStorage.setItem('preferredLanguage', language);
+}
+
+// Enhanced toggle functions with content switching
+function toggleLanguage() {
+    const toggle = document.getElementById('langToggle');
+    const mobileToggle = document.getElementById('mobileLangToggle');
+    
+    // Sync mobile toggle with desktop toggle
+    if (mobileToggle) {
+        mobileToggle.checked = toggle.checked;
+    }
+    
+    if (toggle.checked) {
+        // Switch to Marathi
+        updateContent('marathi');
+        console.log('Switched to Marathi');
+    } else {
+        // Switch to English
+        updateContent('english');
+        console.log('Switched to English');
+    }
+}
+
+function toggleMobileLanguage() {
+    const toggle = document.getElementById('langToggle');
+    const mobileToggle = document.getElementById('mobileLangToggle');
+    
+    // Sync desktop toggle with mobile toggle
+    if (toggle) {
+        toggle.checked = mobileToggle.checked;
+    }
+    
+    if (mobileToggle.checked) {
+        // Switch to Marathi
+        updateContent('marathi');
+        console.log('Switched to Marathi');
+    } else {
+        // Switch to English
+        updateContent('english');
+        console.log('Switched to English');
+    }
+}
+
+// Initialize language on page load
+function initializeLanguage() {
+    // Get saved language preference or default to English
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'english';
+    
+    // Set toggles based on saved preference
+    const toggle = document.getElementById('langToggle');
+    const mobileToggle = document.getElementById('mobileLangToggle');
+    
+    const isMarathi = savedLanguage === 'marathi';
+    
+    if (toggle) toggle.checked = isMarathi;
+    if (mobileToggle) mobileToggle.checked = isMarathi;
+    
+    // Apply the saved language
+    updateContent(savedLanguage);
+}
+
+// Optional: Function to get current language
+function getCurrentLanguage() {
+    return currentLanguage;
+}
+
+// Optional: Function to switch to specific language programmatically
+function switchToLanguage(lang) {
+    const isMarathi = lang === 'marathi' || lang === 'mr';
+    const toggle = document.getElementById('langToggle');
+    const mobileToggle = document.getElementById('mobileLangToggle');
+    
+    if (toggle) toggle.checked = isMarathi;
+    if (mobileToggle) mobileToggle.checked = isMarathi;
+    
+    updateContent(isMarathi ? 'marathi' : 'english');
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeLanguage);
+
+    </script>
+    <script>
+        // About page specific content
+const aboutPageEnglish = {
+    heroTitle: 'About Our School',
+    heroSubtitle: 'Nurturing minds, building futures, and creating tomorrow\'s leaders through excellence in education',
+    missionVisionTitle: 'Our Mission & Vision',
+    missionTitle: 'Mission',
+    missionDesc: 'To provide quality education that empowers students to become confident, creative, and compassionate individuals who contribute positively to society while achieving their full potential.',
+    visionTitle: 'Vision',
+    visionDesc: 'To be a leading educational institution that nurtures global citizens equipped with 21st-century skills, values, and knowledge to excel in an ever-changing world.',
+    historyTitle: 'Our Rich History',
+    historySubtitle: 'Established in 1985, GDS Public School has been a beacon of educational excellence for over three decades.',
+    history1985: 'Founded with a vision to provide quality education to the community, we started with just 50 students and 5 teachers.',
+    history2000: 'Achieved significant milestones in student excellence and expanded to include senior secondary education.',
+    historyTodayTitle: 'Today',
+    historyToday: 'Serving over 1200 students with modern facilities, innovative teaching methods, and global partnerships.',
+    coreValuesTitle: 'Our Core Values',
+    coreValuesSubtitle: 'The principles that guide everything we do at GDS Public School',
+    compassionTitle: 'Compassion',
+    compassionDesc: 'Fostering empathy, kindness, and understanding in all our interactions',
+    excellenceTitle: 'Excellence',
+    excellenceDesc: 'Striving for the highest standards in academics, character, and personal growth.',
+    innovationTitle: 'Innovation',
+    innovationDesc: 'Embracing creativity, critical thinking, and modern teaching methodologies.',
+    integrityTitle: 'Integrity',
+    integrityDesc: 'Building character through honesty, responsibility, and ethical behavior.',
+    achievementsTitle: 'Our Achievements',
+    achievementsSubtitle: 'Recognition and awards that reflect our commitment to educational excellence',
+    graduationRateLabel: 'Graduation Rate',
+    nationalAwardsLabel: 'National Awards',
+    studentsEnrolledLabel: 'Students Enrolled',
+    collegeAcceptanceLabel: 'College Acceptance',
+    ctaTitle: 'Join Our School Community',
+    ctaSubtitle: 'Discover how GDS Public School can help your child reach their full potential in a nurturing and challenging environment.',
+    ctaVisitBtn: 'Schedule a Visit',
+    ctaBrochureBtn: 'Download Brochure',
+    leadershipTitle: 'Our Leadership Team',
+    leadershipSubtitle: 'Experienced educators and administrators dedicated to student success',
+    leader1Name: 'Dr. Sarah Johnson',
+    leader1Position: 'Principal',
+    leader1Desc: 'With over 20 years in education, Dr. Johnson brings visionary leadership and a passion for student-centered learning to our school community.',
+    leader2Name: 'Mr. Michael Chen',
+    leader2Position: 'Academic Director',
+    leader2Desc: 'Mr. Chen oversees curriculum development and academic excellence, ensuring our programs meet the highest educational benchmarks.',
+    leader3Name: 'Ms. Emily Rodriguez',
+    leader3Position: 'Student Affairs Coordinator',
+    leader3Desc: 'Ms. Rodriguez focuses on student well-being, extracurricular activities, and creating a supportive school environment for all students.'
+};
+
+const aboutPageMarathi = {
+    heroTitle: 'आमच्या शाळेबद्दल',
+    heroSubtitle: 'मन जोपासणे, भविष्य घडवणे आणि शिक्षणातील उत्कृष्टतेद्वारे उद्याचे नेते तयार करणे',
+    missionVisionTitle: 'आमचे ध्येय आणि दृष्टिकोन',
+    missionTitle: 'ध्येय',
+    missionDesc: 'दर्जेदार शिक्षण प्रदान करणे जे विद्यार्थ्यांना आत्मविश्वासू, सर्जनशील आणि दयाळू व्यक्ती बनण्यास सक्षम करते जे त्यांच्या पूर्ण क्षमतेचा विकास करताना समाजात सकारात्मक योगदान देतात.',
+    visionTitle: 'दृष्टिकोन',
+    visionDesc: 'एक आघाडीची शैक्षणिक संस्था बनणे जी २१व्या शतकातील कौशल्ये, मूल्ये आणि ज्ञानाने सुसज्ज जागतिक नागरिकांचे पालनपोषण करते जे सतत बदलणाऱ्या जगात उत्कृष्टता मिळवू शकतात.',
+    historyTitle: 'आमचा समृद्ध इतिहास',
+    historySubtitle: '१९८५ मध्ये स्थापन झालेले, गिरीश ज्ञान संस्कार विद्यालय तीन दशकांपेक्षा जास्त काळापासून शैक्षणिक उत्कृष्टतेचा दीपस्तंभ आहे.',
+    history1985: 'समुदायाला दर्जेदार शिक्षण प्रदान करण्याच्या दृष्टिकोनाने स्थापन करून, आम्ही फक्त ५० विद्यार्थी आणि ५ शिक्षकांसह सुरुवात केली.',
+    history2000: 'विद्यार्थ्यांच्या उत्कृष्टतेत महत्त्वाचे टप्पे गाठले आणि उच्च माध्यमिक शिक्षणाचा समावेश करण्यासाठी विस्तार केला.',
+    historyTodayTitle: 'आज',
+    historyToday: 'आधुनिक सुविधा, नावीन्यपूर्ण शिकवणी पद्धती आणि जागतिक भागीदारीसह १२०० पेक्षा जास्त विद्यार्थ्यांना सेवा देत आहोत.',
+    coreValuesTitle: 'आमची मूलभूत मूल्ये',
+    coreValuesSubtitle: 'गिरीश ज्ञान संस्कार विद्यालयात आम्ही जे काही करतो त्यासाठी मार्गदर्शन करणारी तत्त्वे',
+    compassionTitle: 'करुणा',
+    compassionDesc: 'आमच्या सर्व संवादांमध्ये सहानुभूती, दया आणि समजूतीचे पोषण करणे',
+    excellenceTitle: 'उत्कृष्टता',
+    excellenceDesc: 'शिक्षण, चारित्र्य आणि व्यक्तिगत विकासामध्ये सर्वोच्च दर्जासाठी प्रयत्न करणे.',
+    innovationTitle: 'नावीन्य',
+    innovationDesc: 'सर्जनशीलता, टीकात्मक चिंतन आणि आधुनिक शिकवणी पद्धतींचा स्वीकार करणे.',
+    integrityTitle: 'सच्चरित्रता',
+    integrityDesc: 'प्रामाणिकपणा, जबाबदारी आणि नैतिक वर्तनाद्वारे चारित्र्य घडवणे.',
+    achievementsTitle: 'आमची उपलब्धी',
+    achievementsSubtitle: 'शैक्षणिक उत्कृष्टतेसाठी आमच्या वचनबद्धतेचे प्रतिबिंब असलेली मान्यता आणि पुरस्कार',
+    graduationRateLabel: 'पदवी दर',
+    nationalAwardsLabel: 'राष्ट्रीय पुरस्कार',
+    studentsEnrolledLabel: 'नोंदणीकृत विद्यार्थी',
+    collegeAcceptanceLabel: 'महाविद्यालयीन प्रवेश',
+    ctaTitle: 'आमच्या शालेय समुदायात सामील व्हा',
+    ctaSubtitle: 'गिरीश ज्ञान संस्कार विद्यालय तुमच्या मुलाला पोषक आणि आव्हानात्मक वातावरणात त्यांची पूर्ण क्षमता गाठण्यास कशी मदत करू शकते ते शोधा.',
+    ctaVisitBtn: 'भेट नियोजित करा',
+    ctaBrochureBtn: 'माहितीपत्रक डाउनलोड करा',
+    leadershipTitle: 'आमचा नेतृत्व संघ',
+    leadershipSubtitle: 'विद्यार्थ्यांच्या यशासाठी वचनबद्ध अनुभवी शिक्षक आणि प्रशासक',
+    leader1Name: 'डॉ. सारा जॉन्सन',
+    leader1Position: 'मुख्याध्यापिका',
+    leader1Desc: 'शिक्षण क्षेत्रात २० वर्षांपेक्षा जास्त अनुभवासह, डॉ. जॉन्सन आमच्या शालेय समुदायात दूरदर्शी नेतृत्व आणि विद्यार्थी-केंद्रित शिक्षणाची आवड आणतात.',
+    leader2Name: 'श्री. मायकल चेन',
+    leader2Position: 'शैक्षणिक संचालक',
+    leader2Desc: 'श्री. चेन अभ्यासक्रम विकास आणि शैक्षणिक उत्कृष्टतेचे पर्यवेक्षण करतात, आमचे कार्यक्रम सर्वोच्च शैक्षणिक मानदंडांना पूर्ण करतात याची खात्री करतात.',
+    leader3Name: 'सौ. एमिली रोड्रिगेज',
+    leader3Position: 'विद्यार्थी कार्य समन्वयक',
+    leader3Desc: 'सौ. रोड्रिगेज विद्यार्थ्यांचे कल्याण, पाठ्येतर क्रियाकलाप आणि सर्व विद्यार्थ्यांसाठी सहायक शालेय वातावरण तयार करण्यावर भर देतात.'
+};
+
+// Extend the main content objects with About page content
+Object.assign(englishContent, aboutPageEnglish);
+Object.assign(marathiContent, aboutPageMarathi);
+
+    </script>
     <footer class="bg-primary text-white">
         <div class="container mx-auto px-6 sm:px-8 lg:px-1 py-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -1025,10 +1356,10 @@
                         <div class="bg-accent p-2.5 rounded-md mr-4">
                             <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
                         </div>
-                        <span class="text-xl font-bold">GDS Public School</span>
+                        <span id="footerSchoolName" class="text-xl font-bold">GDS Public School</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
-                        education and character development.</p>
+                    <p id="footerDescription" class="text-gray-400 leading-relaxed mb-6">Building a brighter future
+                        through excellence in education and character development.</p>
                     <div class="flex space-x-3">
                         <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
                             aria-label="Facebook">
@@ -1051,34 +1382,34 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <h3 id="footerQuickLinksTitle" class="text-lg font-bold text-accent mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a>
-                        </li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors"
-                                href="admissions.html">Admissions</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a>
-                        </li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a>
-                        </li>
+                        <li><a id="footerHome" class="text-gray-400 hover:text-accent transition-colors"
+                                href="index.html">Home</a></li>
+                        <li><a id="footerAbout" class="text-gray-400 hover:text-accent transition-colors"
+                                href="About.html">About</a></li>
+                        <li><a id="footerCurriculum" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Curriculum.html">Curriculum</a></li>
+                        <li><a id="footerEvents" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Event.html">Events</a></li>
+                        <li><a id="footerContact" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Contact_Us.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <h3 id="footerContactTitle" class="text-lg font-bold text-accent mb-6">Contact Info</h3>
                     <ul class="space-y-4 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-                            <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
-                            <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br>
-                                Chowk, Chhatrapati Sambhaji nagar</span>
+                            <span id="footerAddress" class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul
+                                Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone1" href="tel:+199403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;940&#8209;353&#8209;1242
                                 </a>
                             </span>
@@ -1086,23 +1417,23 @@
                         <li class="flex items-center">
                             <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone2" href="tel:+919175042179" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;917&#8209;504&#8209;2179
                                 </a>
                             </span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-                            <span>info@gdspublicschool.edu</span>
+                            <span id="footerEmail">info@gdspublicschool.edu</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Follow Us -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
-                        educational insights.</p>
+                    <h3 id="footerFollowTitle" class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p id="footerFollowDesc" class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest
+                        news, events, and educational insights.</p>
                     <div class="flex space-x-3">
                         <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
                             href="#" aria-label="Facebook">
@@ -1123,7 +1454,8 @@
             <!-- Copyright Section -->
             <div class="mt-12 pt-8 border-t border-gray-700">
                 <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                    <p id="footerCopyright" class="text-gray-400 text-sm">© 2025 GDS Public School. All rights reserved.
+                    </p>
                 </div>
             </div>
         </div>

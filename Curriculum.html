@@ -48,18 +48,33 @@
           <div class="bg-accent p-2 rounded-lg mr-3 shadow-md">
             <i class="fas fa-graduation-cap text-primary text-xl"></i>
           </div>
-          <span class="text-xl font-bold text-primary">GDS Public School</span>
+          <span id="schoolName" class="text-xl font-bold text-primary">GDS Public School</span>
         </div>
 
         <!-- Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Curriculum.html">Curriculum</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
-            Us</a>
+          <a id="navHome" class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+          <a id="navAbout" class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+          <a id="navCurriculum" class="hover:text-accent transition-colors font-medium text-gray-700" href="Curriculum.html">Curriculum</a>
+          <a id="navEvents" class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
+          <a id="navContact" class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact Us</a>
         </nav>
+
+        <!-- Desktop Language Toggle -->
+        <div class="hidden md:flex items-center ml-4">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input class="sr-only peer" type="checkbox" id="langToggle" onchange="toggleLanguage()">
+            <div class="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-8 peer-checked:after:content-['MR'] peer-checked:after:border-white peer-checked:bg-primary peer-checked:after:text-accent shadow-md"></div>
+          </label>
+        </div>
+
+        <!-- Mobile Language Toggle -->
+        <div class="md:hidden flex items-center space-x-2">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="mobileLangToggle" class="sr-only peer" onchange="toggleMobileLanguage()">
+            <div class="peer rounded-full outline-none duration-100 after:duration-500 w-14 h-7 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-5 after:w-5 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-7 peer-checked:after:content-['MR'] peer-checked:bg-primary peer-checked:after:text-accent shadow-md peer-hover:after:scale-95"></div>
+          </label>
+        </div>
 
         <!-- Mobile Menu Button -->
         <button id="mobileMenuBtn"
@@ -107,27 +122,27 @@
           <a href="index.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Home</span>
+            <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
           </a>
           <a href="About.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>About</span>
+            <span data-en="About" data-mr="आमच्याबद्दल">About</span>
           </a>
           <a href="Curriculum.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Curriculum</span>
+            <span data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</span>
           </a>
           <a href="Event.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Events</span>
+            <span data-en="Events" data-mr="कार्यक्रम">Events</span>
           </a>
           <a href="Contact_Us.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Contact Us</span>
+            <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span>
           </a>
         </div>
       </nav>
@@ -416,8 +431,8 @@
     style="height: 70vh; background-image: linear-gradient(rgba(31, 58, 61, 0.8), rgba(31, 58, 61, 0.8)), url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80');">
     <div class="flex flex-col justify-center h-full">
       <div class="container mx-auto px-6 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Our Academic Programs</h1>
-        <p class="text-xl md:text-2xl max-w-4xl mx-auto opacity-95 drop-shadow-md leading-relaxed">
+        <h1 id="heroTitle" class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Our Academic Programs</h1>
+        <p id="heroSubtitle" class="text-xl md:text-2xl max-w-4xl mx-auto opacity-95 drop-shadow-md leading-relaxed">
           Comprehensive curriculum designed to nurture critical thinking, creativity, and a lifelong love of learning,
           from pre-school through to high school
         </p>
@@ -429,10 +444,10 @@
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <h2 id="academicProgramsTitle" class="text-3xl md:text-4xl font-bold text-primary mb-4">
           Academic <span class="text-accent">Programs</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p id="academicProgramsSubtitle" class="text-xl text-gray-600 max-w-3xl mx-auto">
           Structured learning pathways that build upon each other to create well-rounded, college-ready graduates
         </p>
       </div>
@@ -456,16 +471,16 @@
 
         <div class="grid md:grid-cols-2 gap-8">
           <div>
-            <h4 class="text-xl font-bold text-primary mb-4">Program Overview</h4>
+            <h4 id="modalOverviewTitle" class="text-xl font-bold text-primary mb-4">Program Overview</h4>
             <p id="modalDescription" class="text-gray-600 mb-6 leading-relaxed"></p>
 
             <div class="bg-accent/10 rounded-lg p-4 mb-6">
-              <h5 class="font-bold text-primary mb-2">Program Duration</h5>
+              <h5 id="modalDurationTitle" class="font-bold text-primary mb-2">Program Duration</h5>
               <p id="modalDuration" class="text-accent font-semibold"></p>
             </div>
 
             <div class="bg-primary/10 rounded-lg p-4">
-              <h5 class="font-bold text-primary mb-2">Key Features</h5>
+              <h5 id="modalFeaturesTitle" class="font-bold text-primary mb-2">Key Features</h5>
               <ul id="modalFeatures" class="space-y-2">
                 <!-- Features will be populated -->
               </ul>
@@ -473,7 +488,7 @@
           </div>
 
           <div>
-            <h4 class="text-xl font-bold text-primary mb-4">Core Subjects</h4>
+            <h4 id="modalSubjectsTitle" class="text-xl font-bold text-primary mb-4">Core Subjects</h4>
             <div id="modalSubjects" class="space-y-3">
               <!-- Subjects will be populated -->
             </div>
@@ -481,11 +496,11 @@
         </div>
 
         <div class="flex gap-4 mt-8 justify-center">
-          <button onclick="applyNow()"
+          <button id="modalApplyBtn" onclick="applyNow()"
             class="bg-accent text-primary px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
             Apply Now
           </button>
-          <button onclick="closeModal()"
+          <button id="modalCloseBtn" onclick="closeModal()"
             class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors cursor-pointer whitespace-nowrap">
             Close
           </button>
@@ -500,11 +515,11 @@
       <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
         <i class="fas fa-check text-white text-2xl"></i>
       </div>
-      <h3 class="text-2xl font-bold text-primary mb-4">Application Submitted!</h3>
-      <p class="text-gray-600 mb-6">
+      <h3 id="appModalTitle" class="text-2xl font-bold text-primary mb-4">Application Submitted!</h3>
+      <p id="appModalDesc" class="text-gray-600 mb-6">
         Thank you for your interest in our program. Our admissions team will contact you within 2-3 business days.
       </p>
-      <button onclick="closeApplicationModal()"
+      <button id="appModalCloseBtn" onclick="closeApplicationModal()"
         class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap">
         Close
       </button>
@@ -751,10 +766,10 @@
   <section class="py-16 bg-[#E8E8E8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-primary mb-4">
+        <h2 id="courseBreakdownTitle" class="text-4xl font-bold text-primary mb-4">
           Detailed <span class="text-accent">Course Breakdown</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+        <p id="courseBreakdownSubtitle" class="text-xl text-gray-600 max-w-4xl mx-auto">
           Explore the comprehensive subjects and learning objectives for each academic level
         </p>
       </div>
@@ -763,15 +778,15 @@
       <div class="flex flex-wrap justify-center mb-8 gap-2">
         <button id="primary-btn" onclick="setActiveProgram('primary')"
           class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-accent text-primary shadow-md">
-          Primary Education
+          <span id="primaryBtnText">Primary Education</span>
         </button>
         <button id="middle-btn" onclick="setActiveProgram('middle')"
           class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-primary hover:bg-accent/10">
-          Middle School
+          <span id="middleBtnText">Middle School</span>
         </button>
         <button id="high-btn" onclick="setActiveProgram('high')"
           class="px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-white text-primary hover:bg-accent/10">
-          High School
+          <span id="highBtnText">High School</span>
         </button>
       </div>
 
@@ -785,11 +800,11 @@
         <div class="flex justify-center mb-10 gap-4 p-2 rounded-full max-w-sm mx-auto">
           <button id="first-semester-btn" onclick="setActiveSemester('first')"
             class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-gray-600 hover:text-primary bg-gray-100 hover:bg-gray-200">
-            First Half
+            <span id="firstHalfText">First Half</span>
           </button>
           <button id="second-semester-btn" onclick="setActiveSemester('second')"
             class="px-6 py-2.5 rounded-full font-medium transition-all duration-300 bg-primary text-white shadow-sm hover:bg-accent/10">
-            Second Half
+            <span id="secondHalfText">Second Half</span>
           </button>
         </div>
 
@@ -802,75 +817,148 @@
   </section>
 
   <script>
-    // Course breakdown programs data with icons
+    // Course breakdown programs data with bilingual support
     const coursePrograms = {
-      primary: {
-        title: 'Primary Education (K-5)',
-        subjects: {
-          first: [
-            { name: 'English Language Arts', icon: 'fas fa-book-open' },
-            { name: 'Mathematics Fundamentals', icon: 'fas fa-calculator' },
-            { name: 'Science Exploration', icon: 'fas fa-microscope' },
-            { name: 'Social Studies', icon: 'fas fa-globe-americas' },
-            { name: 'Art & Creativity', icon: 'fas fa-palette' },
-            { name: 'Physical Education', icon: 'fas fa-running' },
-            { name: 'Music & Movement', icon: 'fas fa-music' }
-          ],
-          second: [
-            { name: 'Advanced Reading & Writing', icon: 'fas fa-pen-fancy' },
-            { name: 'Mathematical Problem Solving', icon: 'fas fa-square-root-alt' },
-            { name: 'Environmental Science', icon: 'fas fa-leaf' },
-            { name: 'Cultural Studies', icon: 'fas fa-users' },
-            { name: 'Visual Arts', icon: 'fas fa-paint-brush' },
-            { name: 'Sports & Games', icon: 'fas fa-futbol' },
-            { name: 'Drama & Performance', icon: 'fas fa-theater-masks' }
-          ]
+      english: {
+        primary: {
+          title: 'Primary Education (K-5)',
+          subjects: {
+            first: [
+              { name: 'English Language Arts', icon: 'fas fa-book-open' },
+              { name: 'Mathematics Fundamentals', icon: 'fas fa-calculator' },
+              { name: 'Science Exploration', icon: 'fas fa-microscope' },
+              { name: 'Social Studies', icon: 'fas fa-globe-americas' },
+              { name: 'Art & Creativity', icon: 'fas fa-palette' },
+              { name: 'Physical Education', icon: 'fas fa-running' },
+              { name: 'Music & Movement', icon: 'fas fa-music' }
+            ],
+            second: [
+              { name: 'Advanced Reading & Writing', icon: 'fas fa-pen-fancy' },
+              { name: 'Mathematical Problem Solving', icon: 'fas fa-square-root-alt' },
+              { name: 'Environmental Science', icon: 'fas fa-leaf' },
+              { name: 'Cultural Studies', icon: 'fas fa-users' },
+              { name: 'Visual Arts', icon: 'fas fa-paint-brush' },
+              { name: 'Sports & Games', icon: 'fas fa-futbol' },
+              { name: 'Drama & Performance', icon: 'fas fa-theater-masks' }
+            ]
+          }
+        },
+        middle: {
+          title: 'Middle School (6-8)',
+          subjects: {
+            first: [
+              { name: 'Advanced English Literature', icon: 'fas fa-book' },
+              { name: 'Algebra & Geometry', icon: 'fas fa-shapes' },
+              { name: 'Biology & Chemistry', icon: 'fas fa-flask' },
+              { name: 'World History', icon: 'fas fa-landmark' },
+              { name: 'Computer Science Basics', icon: 'fas fa-laptop-code' },
+              { name: 'Foreign Languages', icon: 'fas fa-language' },
+              { name: 'Leadership Skills', icon: 'fas fa-user-tie' }
+            ],
+            second: [
+              { name: 'Creative Writing & Communication', icon: 'fas fa-feather-alt' },
+              { name: 'Advanced Mathematics', icon: 'fas fa-infinity' },
+              { name: 'Physics & Earth Science', icon: 'fas fa-atom' },
+              { name: 'Geography & Economics', icon: 'fas fa-map-marked-alt' },
+              { name: 'Digital Literacy', icon: 'fas fa-digital-tachograph' },
+              { name: 'Cultural Exchange', icon: 'fas fa-handshake' },
+              { name: 'Community Service', icon: 'fas fa-hands-helping' }
+            ]
+          }
+        },
+        high: {
+          title: 'High School (9-12)',
+          subjects: {
+            first: [
+              { name: 'AP English Literature', icon: 'fas fa-graduation-cap' },
+              { name: 'Calculus & Statistics', icon: 'fas fa-chart-line' },
+              { name: 'Advanced Sciences (Physics/Chemistry/Biology)', icon: 'fas fa-dna' },
+              { name: 'World History & Government', icon: 'fas fa-university' },
+              { name: 'Computer Programming', icon: 'fas fa-code' },
+              { name: 'Business Studies', icon: 'fas fa-briefcase' },
+              { name: 'Research Methodology', icon: 'fas fa-search' }
+            ],
+            second: [
+              { name: 'Academic Writing & Rhetoric', icon: 'fas fa-edit' },
+              { name: 'Advanced Mathematics', icon: 'fas fa-superscript' },
+              { name: 'Laboratory Sciences', icon: 'fas fa-vial' },
+              { name: 'Economics & Psychology', icon: 'fas fa-brain' },
+              { name: 'Technology Innovation', icon: 'fas fa-lightbulb' },
+              { name: 'Entrepreneurship', icon: 'fas fa-rocket' },
+              { name: 'College Preparation', icon: 'fas fa-user-graduate' }
+            ]
+          }
         }
       },
-      middle: {
-        title: 'Middle School (6-8)',
-        subjects: {
-          first: [
-            { name: 'Advanced English Literature', icon: 'fas fa-book' },
-            { name: 'Algebra & Geometry', icon: 'fas fa-shapes' },
-            { name: 'Biology & Chemistry', icon: 'fas fa-flask' },
-            { name: 'World History', icon: 'fas fa-landmark' },
-            { name: 'Computer Science Basics', icon: 'fas fa-laptop-code' },
-            { name: 'Foreign Languages', icon: 'fas fa-language' },
-            { name: 'Leadership Skills', icon: 'fas fa-user-tie' }
-          ],
-          second: [
-            { name: 'Creative Writing & Communication', icon: 'fas fa-feather-alt' },
-            { name: 'Advanced Mathematics', icon: 'fas fa-infinity' },
-            { name: 'Physics & Earth Science', icon: 'fas fa-atom' },
-            { name: 'Geography & Economics', icon: 'fas fa-map-marked-alt' },
-            { name: 'Digital Literacy', icon: 'fas fa-digital-tachograph' },
-            { name: 'Cultural Exchange', icon: 'fas fa-handshake' },
-            { name: 'Community Service', icon: 'fas fa-hands-helping' }
-          ]
-        }
-      },
-      high: {
-        title: 'High School (9-12)',
-        subjects: {
-          first: [
-            { name: 'AP English Literature', icon: 'fas fa-graduation-cap' },
-            { name: 'Calculus & Statistics', icon: 'fas fa-chart-line' },
-            { name: 'Advanced Sciences (Physics/Chemistry/Biology)', icon: 'fas fa-dna' },
-            { name: 'World History & Government', icon: 'fas fa-university' },
-            { name: 'Computer Programming', icon: 'fas fa-code' },
-            { name: 'Business Studies', icon: 'fas fa-briefcase' },
-            { name: 'Research Methodology', icon: 'fas fa-search' }
-          ],
-          second: [
-            { name: 'Academic Writing & Rhetoric', icon: 'fas fa-edit' },
-            { name: 'Advanced Mathematics', icon: 'fas fa-superscript' },
-            { name: 'Laboratory Sciences', icon: 'fas fa-vial' },
-            { name: 'Economics & Psychology', icon: 'fas fa-brain' },
-            { name: 'Technology Innovation', icon: 'fas fa-lightbulb' },
-            { name: 'Entrepreneurship', icon: 'fas fa-rocket' },
-            { name: 'College Preparation', icon: 'fas fa-user-graduate' }
-          ]
+      marathi: {
+        primary: {
+          title: 'प्राथमिक शिक्षण (के-५)',
+          subjects: {
+            first: [
+              { name: 'इंग्रजी भाषा कला', icon: 'fas fa-book-open' },
+              { name: 'गणित मूलभूत तत्त्वे', icon: 'fas fa-calculator' },
+              { name: 'विज्ञान अन्वेषण', icon: 'fas fa-microscope' },
+              { name: 'सामाजिक अभ्यास', icon: 'fas fa-globe-americas' },
+              { name: 'कला आणि सर्जनशीलता', icon: 'fas fa-palette' },
+              { name: 'शारीरिक शिक्षण', icon: 'fas fa-running' },
+              { name: 'संगीत आणि नृत्य', icon: 'fas fa-music' }
+            ],
+            second: [
+              { name: 'प्रगत वाचन आणि लेखन', icon: 'fas fa-pen-fancy' },
+              { name: 'गणितीय समस्या सोडविणे', icon: 'fas fa-square-root-alt' },
+              { name: 'पर्यावरण विज्ञान', icon: 'fas fa-leaf' },
+              { name: 'सांस्कृतिक अभ्यास', icon: 'fas fa-users' },
+              { name: 'दृश्य कला', icon: 'fas fa-paint-brush' },
+              { name: 'खेळ आणि आत्मविश्वास', icon: 'fas fa-futbol' },
+              { name: 'नाटक आणि प्रदर्शन', icon: 'fas fa-theater-masks' }
+            ]
+          }
+        },
+        middle: {
+          title: 'मध्यम शाळा (६-८)',
+          subjects: {
+            first: [
+              { name: 'प्रगत इंग्रजी साहित्य', icon: 'fas fa-book' },
+              { name: 'बीजगणित आणि भूमिती', icon: 'fas fa-shapes' },
+              { name: 'जीवशास्त्र आणि रसायनशास्त्र', icon: 'fas fa-flask' },
+              { name: 'जागतिक इतिहास', icon: 'fas fa-landmark' },
+              { name: 'संगणक विज्ञान मूलभूत तत्त्वे', icon: 'fas fa-laptop-code' },
+              { name: 'परदेशी भाषा', icon: 'fas fa-language' },
+              { name: 'नेतृत्व कौशल्ये', icon: 'fas fa-user-tie' }
+            ],
+            second: [
+              { name: 'सर्जनशील लेखन आणि संवाद', icon: 'fas fa-feather-alt' },
+              { name: 'प्रगत गणित', icon: 'fas fa-infinity' },
+              { name: 'भौतिकशास्त्र आणि पृथ्वी विज्ञान', icon: 'fas fa-atom' },
+              { name: 'भूगोल आणि अर्थशास्त्र', icon: 'fas fa-map-marked-alt' },
+              { name: 'डिजिटल साक्षरता', icon: 'fas fa-digital-tachograph' },
+              { name: 'सांस्कृतिक आदानप्रदान', icon: 'fas fa-handshake' },
+              { name: 'समुदायिक सेवा', icon: 'fas fa-hands-helping' }
+            ]
+          }
+        },
+        high: {
+          title: 'उच्च माध्यमिक शाळा (९-१२)',
+          subjects: {
+            first: [
+              { name: 'एपी इंग्रजी साहित्य', icon: 'fas fa-graduation-cap' },
+              { name: 'कॅल्क्युलस आणि सांख्यिकी', icon: 'fas fa-chart-line' },
+              { name: 'प्रगत विज्ञान (भौतिकशास्त्र/रसायनशास्त्र/जीवशास्त्र)', icon: 'fas fa-dna' },
+              { name: 'जागतिक इतिहास आणि शासन', icon: 'fas fa-university' },
+              { name: 'कॉम्प्युटर प्रोग्रामिंग', icon: 'fas fa-code' },
+              { name: 'व्यवसाय अभ्यास', icon: 'fas fa-briefcase' },
+              { name: 'संशोधन पद्धती', icon: 'fas fa-search' }
+            ],
+            second: [
+              { name: 'शैक्षणिक लेखन आणि वाग्मिता', icon: 'fas fa-edit' },
+              { name: 'प्रगत गणित', icon: 'fas fa-superscript' },
+              { name: 'प्रयोगशाळा विज्ञान', icon: 'fas fa-vial' },
+              { name: 'अर्थशास्त्र आणि मानसशास्त्र', icon: 'fas fa-brain' },
+              { name: 'तंत्रज्ञान नावीन्य', icon: 'fas fa-lightbulb' },
+              { name: 'उद्योजकता', icon: 'fas fa-rocket' },
+              { name: 'महाविद्यालयीन तयारी', icon: 'fas fa-user-graduate' }
+            ]
+          }
         }
       }
     };
@@ -891,8 +979,10 @@
         }
       });
 
-      // Update title
-      document.getElementById('program-title').textContent = coursePrograms[program].title;
+      // Update title based on current language
+      const lang = getCurrentLanguage();
+      const currentPrograms = coursePrograms[lang] || coursePrograms.english;
+      document.getElementById('program-title').textContent = currentPrograms[program].title;
 
       // Update subjects
       updateSubjects();
@@ -919,7 +1009,9 @@
 
     function updateSubjects() {
       const subjectGrid = document.getElementById('subject-grid');
-      const subjects = coursePrograms[activeProgram].subjects[activeSemester];
+      const lang = getCurrentLanguage();
+      const currentPrograms = coursePrograms[lang] || coursePrograms.english;
+      const subjects = currentPrograms[activeProgram].subjects[activeSemester];
 
       subjectGrid.innerHTML = '';
 
@@ -941,14 +1033,13 @@
       updateSubjects();
     });
   </script>
-  <!--  -->
 
   <!-- Curriculum Highlights Section -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-primary mb-4">Curriculum <span class="text-accent">Highlights</span></h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+        <h2 id="highlightsTitle" class="text-4xl font-bold text-primary mb-4">Curriculum <span class="text-accent">Highlights</span></h2>
+        <p id="highlightsSubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">
           Innovative teaching methods and unique features that set our academic programs apart
         </p>
       </div>
@@ -959,9 +1050,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-hands text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Hands-On Learning</h3>
+            <h3 id="handsOnTitle" class="text-xl font-bold text-primary">Hands-On Learning</h3>
           </div>
-          <p class="text-text-gray">Project-based activities and practical exercises for exploratory learning.</p>
+          <p id="handsOnDesc" class="text-text-gray">Project-based activities and practical exercises for exploratory learning.</p>
         </div>
 
         <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
@@ -969,9 +1060,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-globe text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Global Perspective</h3>
+            <h3 id="globalTitle" class="text-xl font-bold text-primary">Global Perspective</h3>
           </div>
-          <p class="text-text-gray">Cultural immersion programs and exchange opportunities with partner schools abroad.
+          <p id="globalDesc" class="text-text-gray">Cultural immersion programs and exchange opportunities with partner schools abroad.
           </p>
         </div>
 
@@ -980,9 +1071,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-laptop-code text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Technology Integration</h3>
+            <h3 id="techTitle" class="text-xl font-bold text-primary">Technology Integration</h3>
           </div>
-          <p class="text-text-gray">Digital literacy and coding programs integrated into the core curriculum.</p>
+          <p id="techDesc" class="text-text-gray">Digital literacy and coding programs integrated into the core curriculum.</p>
         </div>
 
         <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
@@ -990,9 +1081,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-handshake text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Industry Partnerships</h3>
+            <h3 id="industryTitle" class="text-xl font-bold text-primary">Industry Partnerships</h3>
           </div>
-          <p class="text-text-gray">Real-world connections through internships and guest speaker series.</p>
+          <p id="industryDesc" class="text-text-gray">Real-world connections through internships and guest speaker series.</p>
         </div>
 
         <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
@@ -1000,9 +1091,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-user-cog text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Personalized Learning</h3>
+            <h3 id="personalizedTitle" class="text-xl font-bold text-primary">Personalized Learning</h3>
           </div>
-          <p class="text-text-gray">Adaptive curriculum tailored to individual student needs and learning styles.</p>
+          <p id="personalizedDesc" class="text-text-gray">Adaptive curriculum tailored to individual student needs and learning styles.</p>
         </div>
 
         <div class="bg-[#E8E8E8] p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
@@ -1010,9 +1101,9 @@
             <div class="bg-accent text-primary p-3 rounded-full mr-4">
               <i class="fas fa-trophy text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-primary">Excellence Recognition</h3>
+            <h3 id="excellenceTitle" class="text-xl font-bold text-primary">Excellence Recognition</h3>
           </div>
-          <p class="text-text-gray">Merit-based programs and competitions to motivate and reward achievement.</p>
+          <p id="excellenceDesc" class="text-text-gray">Merit-based programs and competitions to motivate and reward achievement.</p>
         </div>
       </div>
     </div>
@@ -1022,8 +1113,8 @@
   <section class="py-20 bg-[#E8E8E8]">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-primary mb-4">Our Expert <span class="text-accent">Faculty</span></h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+        <h2 id="facultyTitle" class="text-4xl font-bold text-primary mb-4">Our Expert <span class="text-accent">Faculty</span></h2>
+        <p id="facultySubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">
           Dedicated educators and subject matter experts committed to student success
         </p>
       </div>
@@ -1036,9 +1127,9 @@
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" />
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-primary mb-2">Dr. Amanda Williams</h3>
-            <p class="text-accent font-semibold mb-3">Head of Sciences</p>
-            <p class="text-text-gray text-sm">Ph.D. in Chemistry, with 15 years of teaching experience. Expert in
+            <h3 id="faculty1Name" class="text-xl font-bold text-primary mb-2">Dr. Amanda Williams</h3>
+            <p id="faculty1Position" class="text-accent font-semibold mb-3">Head of Sciences</p>
+            <p id="faculty1Desc" class="text-text-gray text-sm">Ph.D. in Chemistry, with 15 years of teaching experience. Expert in
               inquiry-based educational methodology.</p>
           </div>
         </div>
@@ -1050,9 +1141,9 @@
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face" />
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-primary mb-2">Prof. David Kumar</h3>
-            <p class="text-accent font-semibold mb-3">Mathematics Department</p>
-            <p class="text-text-gray text-sm">Masters in Applied Mathematics, specializing in interactive learning
+            <h3 id="faculty2Name" class="text-xl font-bold text-primary mb-2">Prof. David Kumar</h3>
+            <p id="faculty2Position" class="text-accent font-semibold mb-3">Mathematics Department</p>
+            <p id="faculty2Desc" class="text-text-gray text-sm">Masters in Applied Mathematics, specializing in interactive learning
               techniques and student engagement.</p>
           </div>
         </div>
@@ -1064,9 +1155,9 @@
               src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop&crop=face" />
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-primary mb-2">Ms. Lisa Thompson</h3>
-            <p class="text-accent font-semibold mb-3">Language Arts Coordinator</p>
-            <p class="text-text-gray text-sm">M.A. in English Literature. Expertise in creative writing and curriculum
+            <h3 id="faculty3Name" class="text-xl font-bold text-primary mb-2">Ms. Lisa Thompson</h3>
+            <p id="faculty3Position" class="text-accent font-semibold mb-3">Language Arts Coordinator</p>
+            <p id="faculty3Desc" class="text-text-gray text-sm">M.A. in English Literature. Expertise in creative writing and curriculum
               design for primary school.</p>
           </div>
         </div>
@@ -1080,21 +1171,67 @@
       <div class="bg-accent text-primary rounded-full p-6 inline-block mb-8">
         <i class="fas fa-download text-4xl"></i>
       </div>
-      <h2 class="text-4xl font-bold mb-4">Download Full Curriculum</h2>
-      <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+      <h2 id="downloadTitle" class="text-4xl font-bold mb-4">Download Full Curriculum</h2>
+      <p id="downloadSubtitle" class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
         Get detailed information about our comprehensive academic programs, course descriptions, and learning objectives
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a class="inline-flex items-center bg-accent text-primary font-bold py-4 px-8 rounded-lg hover:bg-accent/90 transform hover:scale-105 transition-all duration-300 shadow-lg"
           href="#">
           <i class="fas fa-file-pdf mr-3 text-xl"></i>
-          <span class="text-lg">Download Curriculum PDF</span>
+          <span id="downloadPdfBtn" class="text-lg">Download Curriculum PDF</span>
         </a>
         <a class="inline-flex items-center bg-gray-700 text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-600 transform hover:scale-105 transition-all duration-300"
           href="#">
           <i class="fas fa-calendar-alt mr-3 text-xl"></i>
-          <span class="text-lg">Schedule Campus Tour</span>
+          <span id="scheduleTourBtn" class="text-lg">Schedule Campus Tour</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Task Management Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 id="taskTitle" class="text-4xl font-bold text-primary mb-4">Student <span class="text-accent">Tasks</span></h2>
+        <p id="taskSubtitle" class="text-xl text-text-gray max-w-3xl mx-auto">Manage your assignments and track your academic progress</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <!-- Add Task Form -->
+        <div class="bg-[#E8E8E8] rounded-xl p-6 mb-8">
+          <div class="flex flex-col md:flex-row gap-4">
+            <input type="text" id="taskInput" placeholder="Enter new task..." class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent">
+            <select id="taskPriority" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent">
+              <option value="low">Low Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="high">High Priority</option>
+            </select>
+            <button onclick="addTask()" class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+              <i class="fas fa-plus mr-2"></i>Add Task
+            </button>
+          </div>
+        </div>
+        
+        <!-- Task List -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-200">
+          <div class="p-6 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+              <h3 id="taskListTitle" class="text-xl font-bold text-primary">My Tasks</h3>
+              <button onclick="clearCompleted()" class="text-gray-500 hover:text-red-500 transition-colors">
+                <i class="fas fa-trash mr-1"></i><span id="clearBtn">Clear Completed</span>
+              </button>
+            </div>
+          </div>
+          <div id="taskList" class="divide-y divide-gray-200">
+            <!-- Tasks will be populated here -->
+          </div>
+          <div id="emptyState" class="p-8 text-center text-gray-500">
+            <i class="fas fa-tasks text-4xl mb-4 opacity-50"></i>
+            <p id="emptyText">No tasks yet. Add your first task above!</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1102,20 +1239,20 @@
   <!-- Call to Action -->
   <section class="py-20 bg-light-gray">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-primary mb-4">Ready to Begin Your Academic Journey?</h2>
-      <p class="text-xl text-text-gray max-w-3xl mx-auto mb-10">
+      <h2 id="ctaJourneyTitle" class="text-4xl font-bold text-primary mb-4">Ready to Begin Your Academic Journey?</h2>
+      <p id="ctaJourneySubtitle" class="text-xl text-text-gray max-w-3xl mx-auto mb-10">
         Join our community of learners and discover your potential through our comprehensive academic programs
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a class="inline-flex items-center bg-accent text-primary font-bold py-4 px-8 rounded-lg hover:bg-accent/90 transform hover:scale-105 transition-all duration-300 shadow-lg"
           href="Contact_Us.html#contact">
-          <span class="text-lg">Apply for Admission</span>
+          <span id="applyAdmissionBtn" class="text-lg">Apply for Admission</span>
           <i class="fas fa-arrow-right ml-3"></i>
         </a>
         <a class="inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg hover:bg-primary/90 transform hover:scale-105 transition-all duration-300"
           href="Contact_Us.html#contact">
           <i class="fas fa-phone mr-3"></i>
-          <span class="text-lg">Contact Admissions</span>
+          <span id="contactAdmissionsBtn" class="text-lg">Contact Admissions</span>
         </a>
       </div>
     </div>
@@ -1130,9 +1267,9 @@
             <div class="bg-accent p-2.5 rounded-md mr-4">
               <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
             </div>
-            <span class="text-xl font-bold">GDS Public School</span>
+            <span id="footerSchoolName" class="text-xl font-bold">GDS Public School</span>
           </div>
-          <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and
+          <p id="footerDescription" class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and
             character development.</p>
           <div class="flex space-x-3">
             <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
@@ -1152,30 +1289,29 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+          <h3 id="footerQuickLinksTitle" class="text-lg font-bold text-accent mb-6">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="admissions.html">Admissions</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a></li>
+            <li><a id="footerHome" class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
+            <li><a id="footerAbout" class="text-gray-400 hover:text-accent transition-colors" href="About.html">About</a></li>
+            <li><a id="footerCurriculum" class="text-gray-400 hover:text-accent transition-colors" href="Curriculum.html">Curriculum</a></li>
+            <li><a id="footerEvents" class="text-gray-400 hover:text-accent transition-colors" href="Event.html">Events</a></li>
+            <li><a id="footerContact" class="text-gray-400 hover:text-accent transition-colors" href="Contact_Us.html">Contact</a></li>
           </ul>
         </div>
 
         <!-- Contact Info -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+          <h3 id="footerContactTitle" class="text-lg font-bold text-accent mb-6">Contact Info</h3>
           <ul class="space-y-4 text-gray-400">
             <li class="flex items-start">
               <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-              <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
-              <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk,
+              <span id="footerAddress" class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk,
                 Chhatrapati Sambhaji nagar</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
               <span>
-                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                <a id="footerPhone1" href="tel:+199403531242" class="text-gray-400 hover:text-accent">
                   +91&nbsp;940&#8209;353&#8209;1242
                 </a>
               </span>
@@ -1183,22 +1319,22 @@
             <li class="flex items-center">
               <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
               <span>
-                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                <a id="footerPhone2" href="tel:+199175042179" class="text-gray-400 hover:text-accent">
                   +91&nbsp;917&#8209;504&#8209;2179
                 </a>
               </span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-              <span>info@gdspublicschool.edu</span>
+              <span id="footerEmail">info@gdspublicschool.edu</span>
             </li>
           </ul>
         </div>
 
         <!-- Follow Us -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational
+          <h3 id="footerFollowTitle" class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+          <p id="footerFollowDesc" class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational
             insights.</p>
           <div class="flex space-x-3">
             <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
@@ -1220,11 +1356,451 @@
       <!-- Copyright Section -->
       <div class="mt-12 pt-8 border-t border-gray-700">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+          <p id="footerCopyright" class="text-gray-400 text-sm">© 2025 GDS Public School. All rights reserved.</p>
         </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Current language state
+    let currentLanguage = 'english';
+
+    // English Content Object
+    const englishContent = {
+      // Header and Navigation
+      schoolName: 'GDS Public School',
+      navHome: 'Home',
+      navAbout: 'About',
+      navCurriculum: 'Curriculum',
+      navEvents: 'Events',
+      navContact: 'Contact Us',
+      
+      // Hero Section
+      heroTitle: 'Our Academic Programs',
+      heroSubtitle: 'Comprehensive curriculum designed to nurture critical thinking, creativity, and a lifelong love of learning, from pre-school through to high school',
+      
+      // Academic Programs Section
+      academicProgramsTitle: 'Academic <span class="text-accent">Programs</span>',
+      academicProgramsSubtitle: 'Structured learning pathways that build upon each other to create well-rounded, college-ready graduates',
+      
+      // Modal Sections
+      modalOverviewTitle: 'Program Overview',
+      modalDurationTitle: 'Program Duration',
+      modalFeaturesTitle: 'Key Features',
+      modalSubjectsTitle: 'Core Subjects',
+      modalApplyBtn: 'Apply Now',
+      modalCloseBtn: 'Close',
+      appModalTitle: 'Application Submitted!',
+      appModalDesc: 'Thank you for your interest in our program. Our admissions team will contact you within 2-3 business days.',
+      appModalCloseBtn: 'Close',
+      
+      // Course Breakdown Section
+      courseBreakdownTitle: 'Detailed <span class="text-accent">Course Breakdown</span>',
+      courseBreakdownSubtitle: 'Explore the comprehensive subjects and learning objectives for each academic level',
+      primaryBtnText: 'Primary Education',
+      middleBtnText: 'Middle School',
+      highBtnText: 'High School',
+      firstHalfText: 'First Half',
+      secondHalfText: 'Second Half',
+      
+      // Curriculum Highlights Section
+      highlightsTitle: 'Curriculum <span class="text-accent">Highlights</span>',
+      highlightsSubtitle: 'Innovative teaching methods and unique features that set our academic programs apart',
+      handsOnTitle: 'Hands-On Learning',
+      handsOnDesc: 'Project-based activities and practical exercises for exploratory learning.',
+      globalTitle: 'Global Perspective',
+      globalDesc: 'Cultural immersion programs and exchange opportunities with partner schools abroad.',
+      techTitle: 'Technology Integration',
+      techDesc: 'Digital literacy and coding programs integrated into the core curriculum.',
+      industryTitle: 'Industry Partnerships',
+      industryDesc: 'Real-world connections through internships and guest speaker series.',
+      personalizedTitle: 'Personalized Learning',
+      personalizedDesc: 'Adaptive curriculum tailored to individual student needs and learning styles.',
+      excellenceTitle: 'Excellence Recognition',
+      excellenceDesc: 'Merit-based programs and competitions to motivate and reward achievement.',
+      
+      // Faculty Section
+      facultyTitle: 'Our Expert <span class="text-accent">Faculty</span>',
+      facultySubtitle: 'Dedicated educators and subject matter experts committed to student success',
+      faculty1Name: 'Dr. Amanda Williams',
+      faculty1Position: 'Head of Sciences',
+      faculty1Desc: 'Ph.D. in Chemistry, with 15 years of teaching experience. Expert in inquiry-based educational methodology.',
+      faculty2Name: 'Prof. David Kumar',
+      faculty2Position: 'Mathematics Department',
+      faculty2Desc: 'Masters in Applied Mathematics, specializing in interactive learning techniques and student engagement.',
+      faculty3Name: 'Ms. Lisa Thompson',
+      faculty3Position: 'Language Arts Coordinator',
+      faculty3Desc: 'M.A. in English Literature. Expertise in creative writing and curriculum design for primary school.',
+      
+      // Download Section
+      downloadTitle: 'Download Full Curriculum',
+      downloadSubtitle: 'Get detailed information about our comprehensive academic programs, course descriptions, and learning objectives',
+      downloadPdfBtn: 'Download Curriculum PDF',
+      scheduleTourBtn: 'Schedule Campus Tour',
+      
+      // Call to Action Section
+      ctaJourneyTitle: 'Ready to Begin Your Academic Journey?',
+      ctaJourneySubtitle: 'Join our community of learners and discover your potential through our comprehensive academic programs',
+      applyAdmissionBtn: 'Apply for Admission',
+      contactAdmissionsBtn: 'Contact Admissions',
+      
+      // Task Management Section
+      taskTitle: 'Student <span class="text-accent">Tasks</span>',
+      taskSubtitle: 'Manage your assignments and track your academic progress',
+      taskListTitle: 'My Tasks',
+      clearBtn: 'Clear Completed',
+      emptyText: 'No tasks yet. Add your first task above!',
+      
+      // Footer Section
+      footerSchoolName: 'GDS Public School',
+      footerDescription: 'Building a brighter future through excellence in education and character development.',
+      footerQuickLinksTitle: 'Quick Links',
+      footerHome: 'Home',
+      footerAbout: 'About',
+      footerCurriculum: 'Curriculum',
+      footerEvents: 'Events',
+      footerContact: 'Contact',
+      footerContactTitle: 'Contact Info',
+      footerAddress: 'Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar',
+      footerPhone1: '+91&nbsp;940&#8209;353&#8209;1242',
+      footerPhone2: '+91&nbsp;917&#8209;504&#8209;2179',
+      footerEmail: 'info@gdspublicschool.edu',
+      footerFollowTitle: 'Follow Us',
+      footerFollowDesc: 'Stay updated with our latest news, events, and educational insights.',
+      footerCopyright: '© 2025 GDS Public School. All rights reserved.'
+    };
+
+    // Marathi Content Object
+    const marathiContent = {
+      // Header and Navigation
+      schoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+      navHome: 'मुख्यपृष्ठ',
+      navAbout: 'आमच्याबद्दल',
+      navCurriculum: 'अभ्यासक्रम',
+      navEvents: 'कार्यक्रम',
+      navContact: 'संपर्क करा',
+      
+      // Hero Section
+      heroTitle: 'आमचे शैक्षणिक कार्यक्रम',
+      heroSubtitle: 'प्राथमिक शाळापासून ते उच्च माध्यमिक शाळापर्यंत, टीकात्मक चिंतन, सर्जनशीलता आणि आजीवन शिकण्याची आवड जोपासण्यासाठी रचलेला सर्वसमावेशक अभ्यासक्रम',
+      
+      // Academic Programs Section
+      academicProgramsTitle: 'शैक्षणिक <span class="text-accent">कार्यक्रम</span>',
+      academicProgramsSubtitle: 'सर्वांगीण विकास, महाविद्यालयीन शिक्षणासाठी तयार पदवीधर तयार करण्यासाठी एकमेकांवर आधारित रचनात्मक शिक्षण मार्ग',
+      
+      // Modal Sections
+      modalOverviewTitle: 'कार्यक्रम आढावा',
+      modalDurationTitle: 'कार्यक्रम कालावधी',
+      modalFeaturesTitle: 'मुख्य वैशिष्ट्ये',
+      modalSubjectsTitle: 'मूलभूत विषय',
+      modalApplyBtn: 'आता अर्ज करा',
+      modalCloseBtn: 'बंद करा',
+      appModalTitle: 'अर्ज सबमिट झाला!',
+      appModalDesc: 'आमच्या कार्यक्रमात रस दाखविल्याबद्दल धन्यवाद. आमचा प्रवेश संघ २-३ कामकाजाच्या दिवसांत तुमच्याशी संपर्क करेल.',
+      appModalCloseBtn: 'बंद करा',
+      
+      // Course Breakdown Section
+      courseBreakdownTitle: 'तपशीलवार <span class="text-accent">अभ्यासक्रम विभागणी</span>',
+      courseBreakdownSubtitle: 'प्रत्येक शैक्षणिक स्तरासाठी सर्वसमावेशक विषय आणि शिकण्याची उद्दिष्ट्ये एक्सप्लोर करा',
+      primaryBtnText: 'प्राथमिक शिक्षण',
+      middleBtnText: 'मध्यम शाळा',
+      highBtnText: 'उच्च माध्यमिक शाळा',
+      firstHalfText: 'पहिला अर्धा भाग',
+      secondHalfText: 'दुसरा अर्धा भाग',
+      
+      // Curriculum Highlights Section
+      highlightsTitle: 'अभ्यासक्रम <span class="text-accent">वैशिष्ट्ये</span>',
+      highlightsSubtitle: 'आमच्या शैक्षणिक कार्यक्रमांना वेगळे करणारी नावीन्यपूर्ण शिकवणी पद्धती आणि अनन्य वैशिष्ट्ये',
+      handsOnTitle: 'प्रत्यक्ष शिकणे',
+      handsOnDesc: 'अन्वेषणात्मक शिकण्यासाठी प्रकल्प-आधारित क्रियाकलाप आणि व्यावहारिक व्यायाम.',
+      globalTitle: 'जागतिक दृष्टिकोन',
+      globalDesc: 'भागीदार शाळांसह सांस्कृतिक विसर्जन कार्यक्रम आणि आदानप्रदानाच्या संधी.',
+      techTitle: 'तंत्रज्ञान एकीकरण',
+      techDesc: 'मूलभूत अभ्यासक्रमात एकीकृत डिजिटल साक्षरता आणि कोडिंग कार्यक्रम.',
+      industryTitle: 'उद्योग भागीदारी',
+      industryDesc: 'इंटर्नशिप आणि अतिथी वक्ते मालिकाद्वारे वास्तविक जगातील संपर्क.',
+      personalizedTitle: 'व्यक्तिगत शिकणे',
+      personalizedDesc: 'वैयक्तिक विद्यार्थी गरजा आणि शिकण्याच्या शैलींनुसार अनुकूलित अभ्यासक्रम.',
+      excellenceTitle: 'उत्कृष्टतेची मान्यता',
+      excellenceDesc: 'उपलब्धींना प्रेरणा देण्यासाठी आणि पुरस्कृत करण्यासाठी मेधा-आधारित कार्यक्रम आणि स्पर्धा.',
+      
+      // Faculty Section
+      facultyTitle: 'आमचे तज्ञ <span class="text-accent">शिक्षकवृंद</span>',
+      facultySubtitle: 'विद्यार्थ्यांच्या यशासाठी वचनबद्ध समर्पित शिक्षक आणि विषय तज्ञ',
+      faculty1Name: 'डॉ. अमँडा विलियम्स',
+      faculty1Position: 'विज्ञान विभाग प्रमुख',
+      faculty1Desc: 'रसायनशास्त्रात पी.एच.डी., १५ वर्षांचा अध्यापन अनुभव. चौकशी-आधारित शैक्षणिक पद्धतीत तज्ञ.',
+      faculty2Name: 'प्रा. दाविद कुमार',
+      faculty2Position: 'गणित विभाग',
+      faculty2Desc: 'उपयोजित गणितात पदव्युत्तर, इंटरॅक्टिव्ह शिकणी तंत्रे आणि विद्यार्थी सहभागात विशेषज्ञता.',
+      faculty3Name: 'सौ. लिसा थॉम्पसन',
+      faculty3Position: 'भाषा कला समन्वयक',
+      faculty3Desc: 'इंग्रजी साहित्यात एम.ए. सर्जनशील लेखन आणि प्राथमिक शाळेसाठी अभ्यासक्रम रचनामध्ये तज्ञता.',
+      
+      // Download Section
+      downloadTitle: 'संपूर्ण अभ्यासक्रम डाउनलोड करा',
+      downloadSubtitle: 'आमच्या सर्वसमावेशक शैक्षणिक कार्यक्रम, अभ्यासक्रम वर्णन आणि शिकण्याची उद्दिष्ट्ये याबद्दल तपशीलवार माहिती मिळवा',
+      downloadPdfBtn: 'अभ्यासक्रम PDF डाउनलोड करा',
+      scheduleTourBtn: 'कॅम्पस टूर नियोजित करा',
+      
+      // Call to Action Section
+      ctaJourneyTitle: 'तुमचा शैक्षणिक प्रवास सुरू करण्यास तयार आहात?',
+      ctaJourneySubtitle: 'आमच्या शिकणाऱ्यांच्या समुदायात सामील व्हा आणि आमच्या सर्वसमावेशक शैक्षणिक कार्यक्रमांद्वारे तुमची क्षमता शोधा',
+      applyAdmissionBtn: 'प्रवेशासाठी अर्ज करा',
+      contactAdmissionsBtn: 'प्रवेश विभागाशी संपर्क करा',
+      
+      // Footer Section
+      footerSchoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+      footerDescription: 'शिक्षणातील उत्कृष्टता आणि चारित्र्य विकासाद्वारे उज्ज्वल भविष्य घडवणे.',
+      footerQuickLinksTitle: 'द्रुत दुवे',
+      footerHome: 'मुख्यपृष्ठ',
+      footerAbout: 'आमच्याबद्दल',
+      footerCurriculum: 'अभ्यासक्रम',
+      footerEvents: 'कार्यक्रम',
+      footerContact: 'संपर्क',
+      footerContactTitle: 'संपर्क माहिती',
+      footerAddress: 'भगतसिंग नगर-मयूर <br> पार्क, हरसूल एरिया, शिवाजी <br> चौक, छत्रपती संभाजी नगर',
+      footerPhone1: '+९१ ९४०-३५३-१२४२',
+      footerPhone2: '+९१ ३१७-५०४-२१७३',
+      footerEmail: 'info@gdspublicschool.edu',
+      // Task Management Section
+      taskTitle: 'विद्यार्थी <span class="text-accent">कार्ये</span>',
+      taskSubtitle: 'तुमच्या असाइनमेंट्स व्यवस्थापित करा आणि तुमच्या शैक्षणिक प्रगतीचा मागोवा घ्या',
+      taskListTitle: 'माझी कार्ये',
+      clearBtn: 'पूर्ण झालेली साफ करा',
+      emptyText: 'अजून कोणती कार्ये नाहीत. वर तुमचे पहिले कार्य जोडा!',
+      
+      footerFollowTitle: 'आमचे अनुसरण करा',
+      footerFollowDesc: 'आमच्या नवीनतम बातम्या, कार्यक्रम आणि शैक्षणिक अंतर्दृष्टीसह अद्यतनित राहा.',
+      footerCopyright: '© २०२५ गिरीश ज्ञान संस्कार विद्यालय. सर्व हक्क राखीव.'
+    };
+
+    // Function to update content based on selected language
+    function updateContent(language) {
+      const content = language === 'english' ? englishContent : marathiContent;
+      
+      // Update all elements with their respective content
+      Object.keys(content).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.innerHTML = content[key];
+        }
+      });
+      
+      // Update mobile navigation spans with data attributes
+      const mobileNavSpans = document.querySelectorAll('[data-en]');
+      mobileNavSpans.forEach(span => {
+        if (language === 'english') {
+          span.textContent = span.getAttribute('data-en');
+        } else {
+          span.textContent = span.getAttribute('data-mr');
+        }
+      });
+      
+      currentLanguage = language;
+      
+      // Update course breakdown content if functions exist
+      if (typeof updateSubjects === 'function' && typeof activeProgram !== 'undefined') {
+        const lang = language === 'english' ? 'english' : 'marathi';
+        const currentPrograms = coursePrograms[lang] || coursePrograms.english;
+        if (currentPrograms && currentPrograms[activeProgram]) {
+          document.getElementById('program-title').textContent = currentPrograms[activeProgram].title;
+          updateSubjects();
+        }
+      }
+      
+      // Update document language attribute
+      document.documentElement.setAttribute('lang', language === 'english' ? 'en' : 'mr');
+      
+      // Save language preference to localStorage
+      localStorage.setItem('preferredLanguage', language);
+    }
+
+    // Enhanced toggle functions with content switching
+    function toggleLanguage() {
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+      
+      // Sync mobile toggle with desktop toggle
+      if (mobileToggle) {
+        mobileToggle.checked = toggle.checked;
+      }
+      
+      if (toggle.checked) {
+        // Switch to Marathi
+        updateContent('marathi');
+        console.log('Switched to Marathi');
+      } else {
+        // Switch to English
+        updateContent('english');
+        console.log('Switched to English');
+      }
+    }
+
+    function toggleMobileLanguage() {
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+      
+      // Sync desktop toggle with mobile toggle
+      if (toggle) {
+        toggle.checked = mobileToggle.checked;
+      }
+      
+      if (mobileToggle.checked) {
+        // Switch to Marathi
+        updateContent('marathi');
+        console.log('Switched to Marathi');
+      } else {
+        // Switch to English
+        updateContent('english');
+        console.log('Switched to English');
+      }
+    }
+
+    // Initialize language on page load
+    function initializeLanguage() {
+      // Get saved language preference or default to English
+      const savedLanguage = localStorage.getItem('preferredLanguage') || 'english';
+      
+      // Set toggles based on saved preference
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+      
+      const isMarathi = savedLanguage === 'marathi';
+      
+      if (toggle) toggle.checked = isMarathi;
+      if (mobileToggle) mobileToggle.checked = isMarathi;
+      
+      // Apply the saved language
+      updateContent(savedLanguage);
+    }
+
+    // Optional: Function to get current language
+    function getCurrentLanguage() {
+      return currentLanguage;
+    }
+
+    // Optional: Function to switch to specific language programmatically
+    function switchToLanguage(lang) {
+      const isMarathi = lang === 'marathi' || lang === 'mr';
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+      
+      if (toggle) toggle.checked = isMarathi;
+      if (mobileToggle) mobileToggle.checked = isMarathi;
+      
+      updateContent(isMarathi ? 'marathi' : 'english');
+    }
+
+    // Task Management System
+    let tasks = JSON.parse(localStorage.getItem('studentTasks')) || [];
+    let taskIdCounter = parseInt(localStorage.getItem('taskIdCounter')) || 1;
+
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      const priority = document.getElementById('taskPriority');
+      const text = input.value.trim();
+      
+      if (!text) return;
+      
+      const task = {
+        id: taskIdCounter++,
+        text: text,
+        priority: priority.value,
+        completed: false,
+        createdAt: new Date().toISOString()
+      };
+      
+      tasks.unshift(task);
+      saveTasks();
+      renderTasks();
+      
+      input.value = '';
+      priority.value = 'low';
+    }
+
+    function toggleTask(id) {
+      const task = tasks.find(t => t.id === id);
+      if (task) {
+        task.completed = !task.completed;
+        saveTasks();
+        renderTasks();
+      }
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      saveTasks();
+      renderTasks();
+    }
+
+    function clearCompleted() {
+      tasks = tasks.filter(t => !t.completed);
+      saveTasks();
+      renderTasks();
+    }
+
+    function saveTasks() {
+      localStorage.setItem('studentTasks', JSON.stringify(tasks));
+      localStorage.setItem('taskIdCounter', taskIdCounter.toString());
+    }
+
+    function renderTasks() {
+      const taskList = document.getElementById('taskList');
+      const emptyState = document.getElementById('emptyState');
+      
+      if (tasks.length === 0) {
+        taskList.style.display = 'none';
+        emptyState.style.display = 'block';
+        return;
+      }
+      
+      taskList.style.display = 'block';
+      emptyState.style.display = 'none';
+      
+      taskList.innerHTML = tasks.map(task => {
+        const priorityColors = {
+          low: 'bg-green-100 text-green-800',
+          medium: 'bg-yellow-100 text-yellow-800',
+          high: 'bg-red-100 text-red-800'
+        };
+        
+        return `
+          <div class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
+            <div class="flex items-center flex-1">
+              <input type="checkbox" ${task.completed ? 'checked' : ''} 
+                     onchange="toggleTask(${task.id})" 
+                     class="mr-3 w-4 h-4 text-accent focus:ring-accent border-gray-300 rounded">
+              <span class="${task.completed ? 'line-through text-gray-500' : 'text-gray-800'} flex-1">
+                ${task.text}
+              </span>
+              <span class="ml-3 px-2 py-1 text-xs font-medium rounded-full ${priorityColors[task.priority]}">
+                ${task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
+              </span>
+            </div>
+            <button onclick="deleteTask(${task.id})" 
+                    class="ml-4 text-gray-400 hover:text-red-500 transition-colors">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeLanguage();
+      renderTasks();
+      
+      // Add Enter key support for task input
+      document.getElementById('taskInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          addTask();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -51,29 +51,49 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Curriculum.html">Curriculum</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html">Events</a>
-          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html">Contact
+        <nav class="hidden md:flex items-center space-x-8 flex-1 justify-center">
+          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html" id="navHome">Home</a>
+          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html" id="navAbout">About</a>
+          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Curriculum.html" id="navCurriculum">Curriculum</a>
+          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Event.html" id="navEvents">Events</a>
+          <a class="hover:text-accent transition-colors font-medium text-gray-700" href="Contact_Us.html" id="navContact">Contact
             Us</a>
         </nav>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn"
-          class="md:hidden text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
-          <div class="w-6 h-6 flex flex-col justify-center items-center relative">
-            <div id="hamburgerLine1"
-              class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+        <!-- Desktop Language Toggle -->
+        <div class="hidden md:flex items-center">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input class="sr-only peer" type="checkbox" id="langToggle" onchange="toggleLanguage()">
+            <div
+              class="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-8 peer-checked:after:content-['MR'] peer-checked:after:border-white peer-checked:bg-primary peer-checked:after:text-accent shadow-md">
             </div>
-            <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+          </label>
+        </div>
+
+        <!-- Mobile Language Toggle -->
+        <div class="md:hidden flex items-center space-x-2">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="mobileLangToggle" class="sr-only peer" onchange="toggleMobileLanguage()">
+            <div
+              class="peer rounded-full outline-none duration-100 after:duration-500 w-14 h-7 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-5 after:w-5 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-7 peer-checked:after:content-['MR'] peer-checked:bg-primary peer-checked:after:text-accent shadow-md peer-hover:after:scale-95">
             </div>
-            <div id="hamburgerLine3"
-              class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+          </label>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn"
+            class="text-gray-600 hover:text-primary transition-colors p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent">
+            <div class="w-6 h-6 flex flex-col justify-center items-center relative">
+              <div id="hamburgerLine1"
+                class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out transform origin-center">
+              </div>
+              <div id="hamburgerLine2" class="w-6 h-0.5 bg-current mb-1 transition-all duration-300 ease-in-out">
+              </div>
+              <div id="hamburgerLine3"
+                class="w-6 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center">
+              </div>
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -106,35 +126,36 @@
           <a href="index.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Home</span>
+            <span id="mobileNavHome">Home</span>
           </a>
           <a href="About.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>About</span>
+            <span id="mobileNavAbout">About</span>
           </a>
           <a href="Curriculum.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Curriculum</span>
+            <span id="mobileNavCurriculum">Curriculum</span>
           </a>
           <a href="Event.html"
-            class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
+            class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Events</span>
+            <span id="mobileNavEvents">Events</span>
           </a>
           <a href="Contact_Us.html"
             class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
             <i class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-            <span>Contact Us</span>
+            <span id="mobileNavContact">Contact Us</span>
           </a>
         </div>
+
       </nav>
 
       <!-- Mobile Menu Footer -->
       <div class="p-6 border-t border-gray-100 bg-gray-50">
         <div class="text-center">
-          <div class="text-sm text-gray-500 mb-3">Connect with us</div>
+          <div class="text-sm text-gray-500 mb-3" id="mobileConnectText">Connect with us</div>
           <div class="flex justify-center space-x-4">
             <a href="#"
               class="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent/80 transition-colors">
@@ -308,7 +329,370 @@
     // Initialize mobile menu when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       new MobileMenu();
+      initializeLanguage();
     });
+
+    // Language functionality
+    let currentLanguage = 'en';
+
+    const englishContent = {
+      // Navigation
+      navHome: 'Home',
+      navAbout: 'About',
+      navCurriculum: 'Curriculum',
+      navEvents: 'Events',
+      navContact: 'Contact Us',
+      mobileNavHome: 'Home',
+      mobileNavAbout: 'About',
+      mobileNavCurriculum: 'Curriculum',
+      mobileNavEvents: 'Events',
+      mobileNavContact: 'Contact Us',
+      mobileConnectText: 'Connect with us',
+      mobileLangText: 'English / मराठी',
+      
+      // Hero Section
+      heroTitle: 'Contact <span class="text-accent">Us</span>',
+      heroSubtitle: "We'd love to hear from you. Reach out for admissions, programs, or general inquiries.",
+      
+      // Contact Form
+      formTitle: 'Send Us a Message',
+      formSubtitle: "Have a question or need more information? Fill out the form below and we'll get back to you soon.",
+      firstNameLabel: 'First Name *',
+      lastNameLabel: 'Last Name *',
+      emailLabel: 'Email Address *',
+      phoneLabel: 'Phone Number',
+      subjectLabel: 'Subject *',
+      messageLabel: 'Message *',
+      selectSubject: 'Select a subject',
+      admissionsOption: 'Admissions Inquiry',
+      programsOption: 'Academic Programs',
+      feesOption: 'Fee Structure',
+      visitOption: 'Campus Visit',
+      generalOption: 'General Information',
+      otherOption: 'Other',
+      newsletterLabel: 'I would like to receive newsletters and updates about school events',
+      submitBtnText: 'Send Message',
+      successText: "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+      errorText: 'Sorry, there was an error sending your message. Please try again.',
+      loadingText: 'Sending your message...',
+      
+      // Contact Information
+      contactInfoTitle: 'Get in Touch',
+      contactInfoSubtitle: 'Multiple ways to reach us for all your educational needs',
+      visitUsTitle: 'Visit Us',
+      addressLine1: 'Bhagatsingh Nagar-mayur Park',
+      addressLine2: 'Harsul Area, Shivaji Chowk',
+      addressLine3: 'Chhatrapati Sambhaji nagar',
+      callUsTitle: 'Call Us',
+      mainOfficeLabel: 'Main Office:',
+      admissionsPhoneLabel: 'Admissions:',
+      emailUsTitle: 'Email Us',
+      generalInfoLabel: 'General Info:',
+      admissionsEmailLabel: 'Admissions:',
+      officeHoursTitle: 'Office Hours',
+      mondayFridayLabel: 'Monday - Friday:',
+      mondayFridayTime: '8:00 AM - 5:00 PM',
+      saturdayLabel: 'Saturday:',
+      saturdayTime: '9:00 AM - 2:00 PM',
+      sundayLabel: 'Sunday:',
+      sundayTime: 'Closed',
+      
+      // Campus Location
+      campusLocationTitle: 'Find Our Campus',
+      campusLocationSubtitle: 'Located in the heart of Chhatrapati Sambhaji nagar, our campus is easily accessible by public transport',
+      directionsBtn: 'Get Directions',
+      
+      // Social Media
+      socialMediaTitle: 'Connect With Us',
+      socialMediaSubtitle: 'Follow us on social media for the latest updates, events, and school news',
+      
+      // FAQ
+      faqTitle: 'Frequently Asked Questions',
+      faqSubtitle: 'Quick answers to common questions about admissions, programs, and school life',
+      faqHelpTitle: "Don't see your question answered? We're here to help!",
+      faqHelpText: 'Our team is here to help with all your questions about admissions, programs, and school life. Take the next step in your educational journey.',
+      callNowBtn: 'Call Now',
+      emailUsBtn: 'Email Us',
+      
+      // Footer
+      footerSchoolName: 'GDS Public School',
+      footerDescription: 'Building a brighter future through excellence in education and character development.',
+      footerQuickLinksTitle: 'Quick Links',
+      footerHome: 'Home',
+      footerAbout: 'About',
+      footerCurriculum: 'Curriculum',
+      footerEvents: 'Events',
+      footerContact: 'Contact',
+      footerContactTitle: 'Contact Info',
+      footerAddress: 'Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar',
+      footerFollowTitle: 'Follow Us',
+      footerFollowDesc: 'Stay updated with our latest news, events, and educational insights.',
+      footerCopyright: '© 2025 GDS Public School. All rights reserved.'
+    };
+
+    const marathiContent = {
+      // Navigation
+      navHome: 'मुख्यपृष्ठ',
+      navAbout: 'आमच्याबद्दल',
+      navCurriculum: 'अभ्यासक्रम',
+      navEvents: 'कार्यक्रम',
+      navContact: 'संपर्क',
+      mobileNavHome: 'मुख्यपृष्ठ',
+      mobileNavAbout: 'आमच्याबद्दल',
+      mobileNavCurriculum: 'अभ्यासक्रम',
+      mobileNavEvents: 'कार्यक्रम',
+      mobileNavContact: 'संपर्क',
+      mobileConnectText: 'आमच्याशी जुडा',
+      mobileLangText: 'मराठी / English',
+      
+      // Hero Section
+      heroTitle: '<span class="text-accent">आमच्याशी</span> संपर्क साधा',
+      heroSubtitle: 'आम्हाला तुमच्याकडून ऐकायला आवडेल. प्रवेश, कार्यक्रम किंवा सामान्य चौकशीसाठी संपर्क साधा.',
+      
+      // Contact Form
+      formTitle: 'आम्हाला संदेश पाठवा',
+      formSubtitle: 'तुमचा प्रश्न आहे किंवा अधिक माहिती हवी आहे? खालील फॉर्म भरा आणि आम्ही लवकरच तुमच्याशी संपर्क साधू.',
+      firstNameLabel: 'पहिले नाव *',
+      lastNameLabel: 'आडनाव *',
+      emailLabel: 'ईमेल पत्ता *',
+      phoneLabel: 'फोन नंबर',
+      subjectLabel: 'विषय *',
+      messageLabel: 'संदेश *',
+      selectSubject: 'विषय निवडा',
+      admissionsOption: 'प्रवेश चौकशी',
+      programsOption: 'शैक्षणिक कार्यक्रम',
+      feesOption: 'फी संरचना',
+      visitOption: 'कॅम्पस भेट',
+      generalOption: 'सामान्य माहिती',
+      otherOption: 'इतर',
+      newsletterLabel: 'मला शाळेच्या कार्यक्रमांबद्दल वृत्तपत्रे आणि अपडेट्स मिळवायचे आहेत',
+      submitBtnText: 'संदेश पाठवा',
+      successText: 'धन्यवाद! तुमचा संदेश यशस्वीरित्या पाठवला गेला आहे. आम्ही लवकरच तुमच्याशी संपर्क साधू.',
+      errorText: 'क्षमस्व, तुमचा संदेश पाठवताना त्रुटी झाली. कृपया पुन्हा प्रयत्न करा.',
+      loadingText: 'तुमचा संदेश पाठवत आहे...',
+      
+      // Contact Information
+      contactInfoTitle: 'संपर्कात रहा',
+      contactInfoSubtitle: 'तुमच्या सर्व शैक्षणिक गरजांसाठी आमच्याशी संपर्क साधण्याचे अनेक मार्ग',
+      visitUsTitle: 'आमची भेट घ्या',
+      addressLine1: 'भगतसिंग नगर-मयूर पार्क',
+      addressLine2: 'हरसूल परिसर, शिवाजी चौक',
+      addressLine3: 'छत्रपती संभाजी नगर',
+      callUsTitle: 'आम्हाला कॉल करा',
+      mainOfficeLabel: 'मुख्य कार्यालय:',
+      admissionsPhoneLabel: 'प्रवेश:',
+      emailUsTitle: 'आम्हाला ईमेल करा',
+      generalInfoLabel: 'सामान्य माहिती:',
+      admissionsEmailLabel: 'प्रवेश:',
+      officeHoursTitle: 'कार्यालयीन वेळा',
+      mondayFridayLabel: 'सोमवार - शुक्रवार:',
+      mondayFridayTime: 'सकाळी ८:०० - संध्याकाळी ५:००',
+      saturdayLabel: 'शनिवार:',
+      saturdayTime: 'सकाळी ९:०० - दुपारी २:००',
+      sundayLabel: 'रविवार:',
+      sundayTime: 'बंद',
+      
+      // Campus Location
+      campusLocationTitle: 'आमचा कॅम्पस शोधा',
+      campusLocationSubtitle: 'छत्रपती संभाजी नगरच्या मध्यभागी स्थित, आमचा कॅम्पस सार्वजनिक वाहतुकीद्वारे सहज पोहोचण्यायोग्य आहे',
+      directionsBtn: 'दिशा मिळवा',
+      
+      // Social Media
+      socialMediaTitle: 'आमच्याशी जुडा',
+      socialMediaSubtitle: 'नवीनतम अपडेट्स, कार्यक्रम आणि शाळेच्या बातम्यांसाठी सोशल मीडियावर आमचे अनुसरण करा',
+      
+      // FAQ
+      faqTitle: 'वारंवार विचारले जाणारे प्रश्न',
+      faqSubtitle: 'प्रवेश, कार्यक्रम आणि शाळेच्या जीवनाबद्दल सामान्य प्रश्नांची द्रुत उत्तरे',
+      faqHelpTitle: 'तुमच्या प्रश्नाचे उत्तर दिसत नाही? आम्ही मदतीसाठी येथे आहोत!',
+      faqHelpText: 'प्रवेश, कार्यक्रम आणि शाळेच्या जीवनाबद्दलच्या तुमच्या सर्व प्रश्नांसाठी आमची टीम मदतीसाठी येथे आहे. तुमच्या शैक्षणिक प्रवासात पुढील पाऊल टाका.',
+      callNowBtn: 'आता कॉल करा',
+      emailUsBtn: 'आम्हाला ईमेल करा',
+      
+      // Footer
+      footerSchoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+      footerDescription: 'शिक्षण आणि चारित्र्य विकासात उत्कृष्टतेद्वारे उज्ज्वल भविष्य घडवणे.',
+      footerQuickLinksTitle: 'द्रुत दुवे',
+      footerHome: 'मुख्यपृष्ठ',
+      footerAbout: 'आमच्याबद्दल',
+      footerCurriculum: 'अभ्यासक्रम',
+      footerEvents: 'कार्यक्रम',
+      footerContact: 'संपर्क',
+      footerContactTitle: 'संपर्क माहिती',
+      footerAddress: 'भगतसिंग नगर-मयूर <br> पार्क, हरसूल परिसर, शिवाजी <br> चौक, छत्रपती संभाजी नगर',
+      footerPhone1: '+९१ ९४०-३५३-१२४२',
+      footerPhone2: '+९१ ३१७-५०४-२१७३',
+      footerFollowTitle: 'आमचे अनुसरण करा',
+      footerFollowDesc: 'आमच्या नवीनतम बातम्या, कार्यक्रम आणि शैक्षणिक अंतर्दृष्टींचे अपडेट मिळवा.',
+      footerCopyright: '© २०२५ गिरीश ज्ञान संस्कार विद्यालय. सर्व हक्क राखीव.'
+    };
+
+    function updateContent() {
+      const content = currentLanguage === 'en' ? englishContent : marathiContent;
+      
+      // Update all elements with IDs
+      Object.keys(content).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.innerHTML = content[key];
+        }
+      });
+      
+      // Update placeholders
+      const placeholders = {
+        firstName: currentLanguage === 'en' ? 'Enter your first name' : 'तुमचे पहिले नाव टाका',
+        lastName: currentLanguage === 'en' ? 'Enter your last name' : 'तुमचे आडनाव टाका',
+        email: currentLanguage === 'en' ? 'Enter your email address' : 'तुमचा ईमेल पत्ता टाका',
+        phone: currentLanguage === 'en' ? 'Enter your phone number' : 'तुमचा फोन नंबर टाका',
+        message: currentLanguage === 'en' ? 'Tell us more about your inquiry...' : 'तुमच्या चौकशीबद्दल अधिक सांगा...'
+      };
+      
+      Object.keys(placeholders).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.placeholder = placeholders[id];
+        }
+      });
+      
+      // Language toggle is handled by CSS content
+      
+      // Update FAQ content
+      updateFAQContent();
+    }
+
+    function updateFAQContent() {
+      const faqsEn = [
+        {
+          question: "What are the admission requirements?",
+          answer: "Admission requirements vary by grade level. Please contact our admissions office for specific requirements and application procedures."
+        },
+        {
+          question: "What is the fee structure?",
+          answer: "Our fee structure is competitive and includes tuition, books, and activities. Contact our admissions office for detailed fee information."
+        },
+        {
+          question: "Do you offer scholarships?",
+          answer: "Yes, we offer merit-based and need-based scholarships. Applications are reviewed annually during the admission process."
+        },
+        {
+          question: "What extracurricular activities are available?",
+          answer: "We offer sports, arts, music, drama, debate, science clubs, and many other activities to support holistic development."
+        },
+        {
+          question: "What is the student-teacher ratio?",
+          answer: "We maintain a low student-teacher ratio of 15:1 to ensure personalized attention and quality education."
+        }
+      ];
+      
+      const faqsMr = [
+        {
+          question: "प्रवेशाच्या आवश्यकता काय आहेत?",
+          answer: "प्रवेशाच्या आवश्यकता वर्गानुसार बदलतात. विशिष्ट आवश्यकता आणि अर्ज प्रक्रियेसाठी कृपया आमच्या प्रवेश कार्यालयाशी संपर्क साधा."
+        },
+        {
+          question: "फी संरचना काय आहे?",
+          answer: "आमची फी संरचना स्पर्धात्मक आहे आणि त्यात शिकवणी, पुस्तके आणि क्रियाकलाप समाविष्ट आहेत. तपशीलवार फी माहितीसाठी आमच्या प्रवेश कार्यालयाशी संपर्क साधा."
+        },
+        {
+          question: "तुम्ही शिष्यवृत्ती देता का?",
+          answer: "होय, आम्ही गुणवत्ता-आधारित आणि गरज-आधारित शिष्यवृत्ती देतो. प्रवेश प्रक्रियेदरम्यान अर्जांचे वार्षिक पुनरावलोकन केले जाते."
+        },
+        {
+          question: "कोणते अतिरिक्त क्रियाकलाप उपलब्ध आहेत?",
+          answer: "आम्ही खेळ, कला, संगीत, नाटक, वादविवाद, विज्ञान क्लब आणि सर्वांगीण विकासासाठी इतर अनेक क्रियाकलाप देतो."
+        },
+        {
+          question: "विद्यार्थी-शिक्षक गुणोत्तर काय आहे?",
+          answer: "वैयक्तिक लक्ष आणि दर्जेदार शिक्षण सुनिश्चित करण्यासाठी आम्ही १५:१ चा कमी विद्यार्थी-शिक्षक गुणोत्तर राखतो."
+        }
+      ];
+      
+      const currentFaqs = currentLanguage === 'en' ? faqsEn : faqsMr;
+      const faqContainer = document.getElementById('faqContainer');
+      faqContainer.innerHTML = '';
+      
+      currentFaqs.forEach((faq, index) => {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'bg-card-light rounded-lg shadow-md border border-gray-100';
+        faqItem.innerHTML = `
+          <button
+            onclick="toggleFAQ(${index})"
+            class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
+          >
+            <span class="font-semibold text-primary">${faq.question}</span>
+            <i id="faq-icon-${index}" class="fas fa-plus text-accent transition-transform"></i>
+          </button>
+          <div id="faq-answer-${index}" class="hidden px-6 pb-4">
+            <p class="text-text-gray leading-relaxed">${faq.answer}</p>
+          </div>
+        `;
+        faqContainer.appendChild(faqItem);
+      });
+    }
+
+    function toggleLanguage() {
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+
+      // Sync mobile toggle with desktop toggle
+      if (mobileToggle) {
+        mobileToggle.checked = toggle.checked;
+      }
+
+      if (toggle.checked) {
+        // Switch to Marathi
+        currentLanguage = 'mr';
+        updateContent();
+      } else {
+        // Switch to English
+        currentLanguage = 'en';
+        updateContent();
+      }
+      
+      localStorage.setItem('preferredLanguage', currentLanguage);
+    }
+
+    function toggleMobileLanguage() {
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+
+      // Sync desktop toggle with mobile toggle
+      if (toggle) {
+        toggle.checked = mobileToggle.checked;
+      }
+
+      if (mobileToggle.checked) {
+        // Switch to Marathi
+        currentLanguage = 'mr';
+        updateContent();
+      } else {
+        // Switch to English
+        currentLanguage = 'en';
+        updateContent();
+      }
+      
+      localStorage.setItem('preferredLanguage', currentLanguage);
+    }
+
+    function initializeLanguage() {
+      const savedLanguage = localStorage.getItem('preferredLanguage');
+      const toggle = document.getElementById('langToggle');
+      const mobileToggle = document.getElementById('mobileLangToggle');
+      
+      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'mr')) {
+        currentLanguage = savedLanguage;
+        const isMarathi = savedLanguage === 'mr';
+        if (toggle) toggle.checked = isMarathi;
+        if (mobileToggle) mobileToggle.checked = isMarathi;
+      } else {
+        // Default to English
+        currentLanguage = 'en';
+        if (toggle) toggle.checked = false;
+        if (mobileToggle) mobileToggle.checked = false;
+      }
+      
+      updateContent();
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -415,8 +799,8 @@
     style="background-image: linear-gradient(rgba(31, 58, 61, 0.75), rgba(31, 58, 61, 0.75)), url('img/premium_photo-1661402449857-67d921f61fe6.png');">
     <div class="container mx-auto px-6 pb-20 py-20">
       <div class="text-center pt-5">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">Contact <span class="text-accent">Us</span></h1>
-        <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6" id="heroTitle">Contact <span class="text-accent">Us</span></h1>
+        <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed" id="heroSubtitle">
           We'd love to hear from you. Reach out for admissions, programs, or general inquiries.
         </p>
       </div>
@@ -430,8 +814,8 @@
   <section id="contact" class="py-16 bg-white bg-mt-8">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Send Us a Message</h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" id="formTitle">Send Us a Message</h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto" id="formSubtitle">
           Have a question or need more information? Fill out the form below and we'll get back to you soon.
         </p>
       </div>
@@ -442,7 +826,7 @@
         <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label for="firstName" class="block text-sm font-semibold text-primary mb-2">
+              <label for="firstName" class="block text-sm font-semibold text-primary mb-2" id="firstNameLabel">
                 First Name *
               </label>
               <input type="text" id="firstName" name="firstName" required
@@ -450,7 +834,7 @@
                 placeholder="Enter your first name" />
             </div>
             <div>
-              <label for="lastName" class="block text-sm font-semibold text-primary mb-2">
+              <label for="lastName" class="block text-sm font-semibold text-primary mb-2" id="lastNameLabel">
                 Last Name *
               </label>
               <input type="text" id="lastName" name="lastName" required
@@ -461,7 +845,7 @@
 
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label for="email" class="block text-sm font-semibold text-primary mb-2">
+              <label for="email" class="block text-sm font-semibold text-primary mb-2" id="emailLabel">
                 Email Address *
               </label>
               <input type="email" id="email" name="email" required
@@ -469,7 +853,7 @@
                 placeholder="Enter your email address" />
             </div>
             <div>
-              <label for="phone" class="block text-sm font-semibold text-primary mb-2">
+              <label for="phone" class="block text-sm font-semibold text-primary mb-2" id="phoneLabel">
                 Phone Number
               </label>
               <input type="tel" id="phone" name="phone"
@@ -479,23 +863,23 @@
           </div>
 
           <div>
-            <label for="subject" class="block text-sm font-semibold text-primary mb-2">
+            <label for="subject" class="block text-sm font-semibold text-primary mb-2" id="subjectLabel">
               Subject *
             </label>
             <select id="subject" name="subject" required
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors">
-              <option value="">Select a subject</option>
-              <option value="admissions">Admissions Inquiry</option>
-              <option value="programs">Academic Programs</option>
-              <option value="fees">Fee Structure</option>
-              <option value="visit">Campus Visit</option>
-              <option value="general">General Information</option>
-              <option value="other">Other</option>
+              <option value="" id="selectSubject">Select a subject</option>
+              <option value="admissions" id="admissionsOption">Admissions Inquiry</option>
+              <option value="programs" id="programsOption">Academic Programs</option>
+              <option value="fees" id="feesOption">Fee Structure</option>
+              <option value="visit" id="visitOption">Campus Visit</option>
+              <option value="general" id="generalOption">General Information</option>
+              <option value="other" id="otherOption">Other</option>
             </select>
           </div>
 
           <div>
-            <label for="message" class="block text-sm font-semibold text-primary mb-2">
+            <label for="message" class="block text-sm font-semibold text-primary mb-2" id="messageLabel">
               Message *
             </label>
             <textarea id="message" name="message" required rows="5"
@@ -506,7 +890,7 @@
           <div class="flex items-center">
             <input type="checkbox" id="newsletter" name="newsletter"
               class="w-4 h-4 text-accent bg-gray-100 border-gray-300 rounded focus:ring-accent focus:ring-2" />
-            <label for="newsletter" class="ml-2 text-sm text-text-gray">
+            <label for="newsletter" class="ml-2 text-sm text-text-gray" id="newsletterLabel">
               I would like to receive newsletters and updates about school events
             </label>
           </div>
@@ -516,7 +900,7 @@
             class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
             <div class="flex items-center">
               <i class="fas fa-check-circle mr-2"></i>
-              <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
+              <span id="successText">Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
             </div>
           </div>
 
@@ -524,7 +908,7 @@
           <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
             <div class="flex items-center">
               <i class="fas fa-exclamation-circle mr-2"></i>
-              <span>Sorry, there was an error sending your message. Please try again.</span>
+              <span id="errorText">Sorry, there was an error sending your message. Please try again.</span>
             </div>
           </div>
 
@@ -533,7 +917,7 @@
             class="hidden bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6">
             <div class="flex items-center">
               <i class="fas fa-spinner fa-spin mr-2"></i>
-              <span>Sending your message...</span>
+              <span id="loadingText">Sending your message...</span>
             </div>
           </div>
 
@@ -541,7 +925,7 @@
             <button type="submit" id="submitBtn"
               class="bg-accent text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-accent/90 transition-colors cursor-pointer inline-flex items-center">
               <i class="fas fa-paper-plane mr-2"></i>
-              Send Message
+              <span id="submitBtnText">Send Message</span>
             </button>
           </div>
         </form>
@@ -632,8 +1016,8 @@
   <section class="py-16 bg-[#E8E8E8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" id="contactInfoTitle">Get in Touch</h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto" id="contactInfoSubtitle">
           Multiple ways to reach us for all your educational needs
         </p>
       </div>
@@ -645,11 +1029,11 @@
           <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
             <i class="fas fa-map-marker-alt text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold text-primary mb-4 text-center">Visit Us</h3>
+          <h3 class="text-xl font-bold text-primary mb-4 text-center" id="visitUsTitle">Visit Us</h3>
           <div class="text-center text-text-gray space-y-2">
-            <p>123 Education Street</p>
-            <p>Knowledge City, KC 12345</p>
-            <p>United States</p>
+            <p id="addressLine1">Bhagatsingh Nagar-mayur Park</p>
+            <p id="addressLine2">Harsul Area, Shivaji Chowk</p>
+            <p id="addressLine3">Chhatrapati Sambhaji nagar</p>
           </div>
         </div>
 
@@ -659,12 +1043,12 @@
           <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
             <i class="fas fa-phone text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold text-primary mb-4 text-center">Call Us</h3>
+          <h3 class="text-xl font-bold text-primary mb-4 text-center" id="callUsTitle">Call Us</h3>
           <div class="text-center text-text-gray space-y-2">
-            <p><strong>Main Office:</strong></p>
-            <p>+1 (555) 123-4567</p>
-            <p><strong>Admissions:</strong></p>
-            <p>+1 (555) 123-4568</p>
+            <p><strong id="mainOfficeLabel">Main Office:</strong></p>
+            <p>+91 940-353-1242</p>
+            <p><strong id="admissionsPhoneLabel">Admissions:</strong></p>
+            <p>+91 917-504-2179</p>
           </div>
         </div>
 
@@ -674,31 +1058,31 @@
           <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
             <i class="fas fa-envelope text-white text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold text-primary mb-4 text-center">Email Us</h3>
+          <h3 class="text-xl font-bold text-primary mb-4 text-center" id="emailUsTitle">Email Us</h3>
           <div class="text-center text-text-gray space-y-2">
-            <p><strong>General Info:</strong></p>
-            <p>info@gdsschool.edu</p>
-            <p><strong>Admissions:</strong></p>
-            <p>admissions@gdsschool.edu</p>
+            <p><strong id="generalInfoLabel">General Info:</strong></p>
+            <p>info@gdspublicschool.edu</p>
+            <p><strong id="admissionsEmailLabel">Admissions:</strong></p>
+            <p>admissions@gdspublicschool.edu</p>
           </div>
         </div>
       </div>
 
       <!-- Office Hours -->
       <div class="bg-primary/5 rounded-2xl p-8 mb-16">
-        <h3 class="text-2xl font-bold text-primary mb-6 text-center">Office Hours</h3>
+        <h3 class="text-2xl font-bold text-primary mb-6 text-center" id="officeHoursTitle">Office Hours</h3>
         <div class="grid md:grid-cols-3 gap-6 text-center">
           <div>
-            <p class="font-semibold text-primary">Monday - Friday:</p>
-            <p class="text-text-gray">8:00 AM - 5:00 PM</p>
+            <p class="font-semibold text-primary" id="mondayFridayLabel">Monday - Friday:</p>
+            <p class="text-text-gray" id="mondayFridayTime">8:00 AM - 5:00 PM</p>
           </div>
           <div>
-            <p class="font-semibold text-primary">Saturday:</p>
-            <p class="text-text-gray">9:00 AM - 2:00 PM</p>
+            <p class="font-semibold text-primary" id="saturdayLabel">Saturday:</p>
+            <p class="text-text-gray" id="saturdayTime">9:00 AM - 2:00 PM</p>
           </div>
           <div>
-            <p class="font-semibold text-primary">Sunday:</p>
-            <p class="text-text-gray">Closed</p>
+            <p class="font-semibold text-primary" id="sundayLabel">Sunday:</p>
+            <p class="text-text-gray" id="sundayTime">Closed</p>
           </div>
         </div>
       </div>
@@ -709,11 +1093,11 @@
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" id="campusLocationTitle">
           Find Our Campus
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Located in the heart of Knowledge City, our campus is easily accessible by public transport
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" id="campusLocationSubtitle">
+          Located in the heart of Chhatrapati Sambhaji nagar, our campus is easily accessible by public transport
         </p>
       </div>
 
@@ -729,12 +1113,12 @@
 
       <!-- Get Directions Button -->
       <div class="text-center mt-6">
-        <a href="https://maps.google.com/?q=123+Education+Street,+Knowledge+City,+KC+12345" target="_blank"
+        <a href="https://maps.google.com/?q=Bhagatsingh+Nagar+mayur+Park+Harsul+Area+Shivaji+Chowk+Chhatrapati+Sambhaji+nagar" target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer whitespace-nowrap shadow-md hover:shadow-lg transform hover:scale-105 transition-transform duration-200"
           aria-label="Get directions to GDS Public School">
           <i class="fas fa-directions mr-2"></i>
-          Get Directions
+          <span id="directionsBtn">Get Directions</span>
         </a>
       </div>
     </div>
@@ -843,10 +1227,10 @@
   <section class="py-16 bg-[#E8E8E8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" id="socialMediaTitle">
           Connect With Us
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto" id="socialMediaSubtitle">
           Follow us on social media for the latest updates, events, and school news
         </p>
       </div>
@@ -968,8 +1352,8 @@
   <section id="faq" class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
-        <p class="text-xl text-text-gray max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" id="faqTitle">Frequently Asked Questions</h2>
+        <p class="text-xl text-text-gray max-w-3xl mx-auto" id="faqSubtitle">
           Quick answers to common questions about admissions, programs, and school life
         </p>
       </div>
@@ -980,9 +1364,9 @@
 
       <div class="text-center mt-12">
         <div class="bg-card-light rounded-2xl p-8 shadow-lg border border-gray-100">
-          <h3 class="text-xl font-bold text-primary mb-4">Don't see your question answered? We're here to
+          <h3 class="text-xl font-bold text-primary mb-4" id="faqHelpTitle">Don't see your question answered? We're here to
             help!</h3>
-          <p class="text-text-gray mb-6">
+          <p class="text-text-gray mb-6" id="faqHelpText">
             Our team is here to help with all your questions about admissions, programs, and school life.
             Take the next step in your educational journey.
           </p>
@@ -990,12 +1374,12 @@
             <a href="tel:+919403531242"
               class="bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer inline-flex items-center">
               <i class="fas fa-phone mr-2"></i>
-              Call Now
+              <span id="callNowBtn">Call Now</span>
             </a>
-            <a href="mailto:info@gdsschool.edu"
+            <a href="mailto:info@gdspublicschool.edu"
               class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors cursor-pointer inline-flex items-center">
               <i class="fas fa-envelope mr-2"></i>
-              Email Us
+              <span id="emailUsBtn">Email Us</span>
             </a>
           </div>
         </div>
@@ -1084,26 +1468,6 @@
       }
     }
 
-    // Handle form submission
-    // function handleFormSubmit(event) {
-    //   event.preventDefault();
-
-    // Show success message
-    // const successMessage = document.getElementById('successMessage');
-    // const form = document.getElementById('contactForm');
-
-    // successMessage.classList.remove('hidden');
-    // form.reset();
-
-    // Scroll to success message
-    // successMessage.scrollIntoView({ behavior: 'smooth' });
-
-    // Hide success message after 5 seconds
-    //   setTimeout(() => {
-    //     successMessage.classList.add('hidden');
-    //   }, 5000);
-    // }
-
     // Smooth scrolling for anchor links
     document.addEventListener('click', function (e) {
       if (e.target.matches('a[href^="#"]')) {
@@ -1128,10 +1492,9 @@
             <div class="bg-accent p-2.5 rounded-md mr-4">
               <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
             </div>
-            <span class="text-xl font-bold">GDS Public School</span>
+            <span id="footerSchoolName" class="text-xl font-bold">GDS Public School</span>
           </div>
-          <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and
-            character development.</p>
+          <p id="footerDescription" class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in education and character development.</p>
           <div class="flex space-x-3">
             <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#" aria-label="Facebook">
               <i class="fab fa-facebook-f text-lg"></i>
@@ -1150,30 +1513,28 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+          <h3 id="footerQuickLinksTitle" class="text-lg font-bold text-accent mb-6">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="admissions.html">Admissions</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a></li>
-            <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a></li>
+            <li><a id="footerHome" class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
+            <li><a id="footerAbout" class="text-gray-400 hover:text-accent transition-colors" href="About.html">About</a></li>
+            <li><a id="footerCurriculum" class="text-gray-400 hover:text-accent transition-colors" href="Curriculum.html">Curriculum</a></li>
+            <li><a id="footerEvents" class="text-gray-400 hover:text-accent transition-colors" href="Event.html">Events</a></li>
+            <li><a id="footerContact" class="text-gray-400 hover:text-accent transition-colors" href="Contact_Us.html">Contact</a></li>
           </ul>
         </div>
 
         <!-- Contact Info -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+          <h3 id="footerContactTitle" class="text-lg font-bold text-accent mb-6">Contact Info</h3>
           <ul class="space-y-4 text-gray-400">
             <li class="flex items-start">
               <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-              <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
-              <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk,
-                Chhatrapati Sambhaji nagar</span>
+              <span id="footerAddress" class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
               <span>
-                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
+                <a id="footerPhone1" href="tel:+919403531242" class="text-gray-400 hover:text-accent">
                   +91&nbsp;940&#8209;353&#8209;1242
                 </a>
               </span>
@@ -1181,23 +1542,22 @@
             <li class="flex items-center">
               <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
               <span>
-                <a href="tel:+199403531242" class="text-gray-400 hover:text-accent">
+                <a id="footerPhone2" href="tel:+919175042179" class="text-gray-400 hover:text-accent">
                   +91&nbsp;917&#8209;504&#8209;2179
                 </a>
               </span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-              <span>info@gdspublicschool.edu</span>
+              <span id="footerEmail">info@gdspublicschool.edu</span>
             </li>
           </ul>
         </div>
 
         <!-- Follow Us -->
         <div>
-          <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational
-            insights.</p>
+          <h3 id="footerFollowTitle" class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+          <p id="footerFollowDesc" class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and educational insights.</p>
           <div class="flex space-x-3">
             <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md" href="#"
               aria-label="Facebook">
@@ -1218,7 +1578,7 @@
       <!-- Copyright Section -->
       <div class="mt-12 pt-8 border-t border-gray-700">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+          <p class="text-gray-400 text-sm" id="footerCopyright">© 2025 GDS Public School. All rights reserved.</p>
         </div>
       </div>
     </div>

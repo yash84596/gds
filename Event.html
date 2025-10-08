@@ -42,16 +42,32 @@
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navHome" class="hover:text-accent transition-colors font-medium text-gray-700" href="index.html">Home</a>
+                    <a id="navAbout" class="hover:text-accent transition-colors font-medium text-gray-700" href="About.html">About</a>
+                    <a id="navCurriculum" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Curriculum.html">Curriculum</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navEvents" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Event.html">Events</a>
-                    <a class="hover:text-accent transition-colors font-medium text-gray-700"
+                    <a id="navContact" class="hover:text-accent transition-colors font-medium text-gray-700"
                         href="Contact_Us.html">Contact
                         Us</a>
                 </nav>
+
+                <!-- Desktop Language Toggle -->
+                <div class="hidden md:flex items-center ml-4">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input class="sr-only peer" type="checkbox" id="langToggle" onchange="toggleLanguage()">
+                        <div class="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-8 peer-checked:after:content-['MR'] peer-checked:after:border-white peer-checked:bg-primary peer-checked:after:text-accent shadow-md"></div>
+                    </label>
+                </div>
+
+                <!-- Mobile Language Toggle -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="mobileLangToggle" class="sr-only peer" onchange="toggleMobileLanguage()">
+                        <div class="peer rounded-full outline-none duration-100 after:duration-500 w-14 h-7 bg-accent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-accent/30 after:content-['EN'] after:absolute after:outline-none after:rounded-full after:h-5 after:w-5 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center after:text-primary after:font-bold after:text-xs peer-checked:after:translate-x-7 peer-checked:after:content-['MR'] peer-checked:bg-primary peer-checked:after:text-accent shadow-md peer-hover:after:scale-95"></div>
+                    </label>
+                </div>
 
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn"
@@ -101,31 +117,31 @@
                     <a href="index.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i class="fas fa-home mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Home</span>
+                        <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
                     </a>
                     <a href="About.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-info-circle mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>About</span>
+                        <span data-en="About" data-mr="आमच्याबद्दल">About</span>
                     </a>
                     <a href="Curriculum.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-graduation-cap mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Curriculum</span>
+                        <span data-en="Curriculum" data-mr="अभ्यासक्रम">Curriculum</span>
                     </a>
                     <a href="Event.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-calendar-alt mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Events</span>
+                        <span data-en="Events" data-mr="कार्यक्रम">Events</span>
                     </a>
                     <a href="Contact_Us.html"
                         class="mobile-nav-link group flex items-center px-6 py-4 text-gray-700 hover:text-accent hover:bg-accent/5 font-medium transition-all duration-300 border-l-4 border-transparent hover:border-accent">
                         <i
                             class="fas fa-envelope mr-4 text-lg group-hover:text-accent transition-colors duration-300"></i>
-                        <span>Contact Us</span>
+                        <span data-en="Contact Us" data-mr="संपर्क करा">Contact Us</span>
                     </a>
                 </div>
             </nav>
@@ -316,7 +332,7 @@
                 <div class="relative max-w-7xl mx-auto pt-8 sm:pt-12 lg:pt-3 px-4 sm:px-6 lg:px-8">
                     <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         <div class="text-center lg:text-left">
-                            <div
+                            <div id="featuredEventLabel"
                                 class="inline-block bg-accent text-primary px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
                                 Featured Event
                             </div>
@@ -344,11 +360,11 @@
                             <p id="featuredDescription"
                                 class="text-white/90 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed"></p>
                             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                                <button onclick="handleRegister('featured')"
+                                <button onclick="handleRegister('featured')" id="registerNowBtn"
                                     class="bg-accent text-primary px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer text-sm sm:text-base">
                                     Register Now
                                 </button>
-                                <button onclick="addToCalendar('featured')"
+                                <button onclick="addToCalendar('featured')" id="addToCalendarBtn"
                                     class="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors cursor-pointer text-sm sm:text-base">
                                     Add to Calendar
                                 </button>
@@ -407,9 +423,9 @@
             <section class="py-12 sm:py-16 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-8 sm:mb-12">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">Event Support &
+                        <h2 id="contactSectionTitle" class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4">Event Support &
                             Contact</h2>
-                        <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">Need help with
+                        <p id="contactSectionSubtitle" class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">Need help with
                             event registration or have questions?
                             Our team is here to assist you</p>
                     </div>
@@ -420,8 +436,8 @@
                                 class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i class="fas fa-headset text-white text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">General Support</h3>
-                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For general event inquiries and
+                            <h3 id="generalSupportTitle" class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">General Support</h3>
+                            <p id="generalSupportDesc" class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For general event inquiries and
                                 registration assistance</p>
                             <p class="text-accent font-medium text-sm sm:text-base break-all">events@gdsschool.edu</p>
                             <p class="text-gray-600 text-sm sm:text-base">+919403531242</p>
@@ -432,9 +448,9 @@
                                 class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i class="fas fa-calendar-check text-white text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">Event Coordination
+                            <h3 id="eventCoordinationTitle" class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">Event Coordination
                             </h3>
-                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For event planning and
+                            <p id="eventCoordinationDesc" class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">For event planning and
                                 coordination matters</p>
                             <p class="text-accent font-medium text-sm sm:text-base">Ms. Emily Rodriguez</p>
                             <p class="text-gray-600 text-sm sm:text-base break-all">coordinator@gdsschool.edu</p>
@@ -445,10 +461,10 @@
                                 class="w-12 h-12 sm:w-16 sm:h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i class="fas fa-question-circle text-white text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">FAQs & Help</h3>
-                            <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Quick answers to common questions
+                            <h3 id="faqHelpTitle" class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">FAQs & Help</h3>
+                            <p id="faqHelpDesc" class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Quick answers to common questions
                             </p>
-                            <button onclick="window.location.href='/Contact_Us.html#faq'" class="text-accent font-medium hover:underline cursor-pointer text-sm sm:text-base">View FAQ Section</button>
+                            <button id="viewFaqBtn" onclick="window.location.href='/Contact_Us.html#faq'" class="text-accent font-medium hover:underline cursor-pointer text-sm sm:text-base">View FAQ Section</button>
                         </div>
                     </div>
                 </div>
@@ -460,7 +476,7 @@
                 <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto mx-4">
                     <div class="p-4 sm:p-6">
                         <div class="flex items-center justify-between mb-4 sm:mb-6">
-                            <h3 class="text-lg sm:text-2xl font-bold text-primary">Event Registration</h3>
+                            <h3 id="eventRegistrationTitle" class="text-lg sm:text-2xl font-bold text-primary">Event Registration</h3>
                             <button onclick="closeRegistrationModal()"
                                 class="text-gray-400 hover:text-gray-600 cursor-pointer p-2">
                                 <i class="fas fa-times text-lg sm:text-2xl"></i>
@@ -491,53 +507,53 @@
 
                         <form class="space-y-4" onsubmit="submitRegistration(event)">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <label id="fullNameLabel" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                                 <input type="text" name="fullname" required
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                                    placeholder="Enter your full name">
+                                    id="fullNameInput" placeholder="Enter your full name">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <label id="emailLabel" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                                 <input type="email" name="email" required
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                                    placeholder="Enter your email address">
+                                    id="emailInput" placeholder="Enter your email address">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <label id="phoneLabel" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                                 <input type="tel" name="phone" required
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
-                                    placeholder="Enter your phone number">
+                                    id="phoneInput" placeholder="Enter your phone number">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Relationship to
+                                <label id="relationshipLabel" class="block text-sm font-medium text-gray-700 mb-2">Relationship to
                                     School</label>
-                                <select name="relationship"
+                                <select name="relationship" id="relationshipSelect"
                                     class="w-full px-3 py-2 pr-8 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm">
-                                    <option value="parent">Parent</option>
-                                    <option value="student">Student</option>
-                                    <option value="teacher">Teacher</option>
-                                    <option value="community">Community Member</option>
-                                    <option value="other">Other</option>
+                                    <option value="parent" id="parentOption">Parent</option>
+                                    <option value="student" id="studentOption">Student</option>
+                                    <option value="teacher" id="teacherOption">Teacher</option>
+                                    <option value="community" id="communityOption">Community Member</option>
+                                    <option value="other" id="otherOption">Other</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements or
+                                <label id="notesLabel" class="block text-sm font-medium text-gray-700 mb-2">Special Requirements or
                                     Notes</label>
-                                <textarea name="notes" rows="3" maxlength="500"
+                                <textarea name="notes" rows="3" maxlength="500" id="notesInput"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm resize-none"
                                     placeholder="Any special requirements or additional information (max 500 characters)"></textarea>
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-3 pt-4">
-                                <button type="button" onclick="closeRegistrationModal()"
+                                <button type="button" onclick="closeRegistrationModal()" id="cancelBtn"
                                     class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer text-sm sm:text-base">
                                     Cancel
                                 </button>
-                                <button type="submit"
+                                <button type="submit" id="submitRegisterBtn"
                                     class="flex-1 bg-accent text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors cursor-pointer text-sm sm:text-base">
                                     Register Now
                                 </button>
@@ -905,8 +921,254 @@
                         });
                 }
 
+                // ========== LANGUAGE MANAGEMENT ==========
+                let currentLanguage = 'english';
+
+                const englishContent = {
+                    navHome: 'Home',
+                    navAbout: 'About',
+                    navCurriculum: 'Curriculum',
+                    navEvents: 'Events',
+                    navContact: 'Contact Us',
+                    eventsTitle: 'Upcoming Events',
+                    eventsSubtitle: 'Join us for exciting educational events and activities',
+                    featuredEventLabel: 'Featured Event',
+                    registerNowBtn: 'Register Now',
+                    addToCalendarBtn: 'Add to Calendar',
+                    contactSectionTitle: 'Event Support & Contact',
+                    contactSectionSubtitle: 'Need help with event registration or have questions? Our team is here to assist you',
+                    generalSupportTitle: 'General Support',
+                    generalSupportDesc: 'For general event inquiries and registration assistance',
+                    eventCoordinationTitle: 'Event Coordination',
+                    eventCoordinationDesc: 'For event planning and coordination matters',
+                    faqHelpTitle: 'FAQs & Help',
+                    faqHelpDesc: 'Quick answers to common questions',
+                    viewFaqBtn: 'View FAQ Section',
+                    eventRegistrationTitle: 'Event Registration',
+                    fullNameLabel: 'Full Name',
+                    emailLabel: 'Email Address',
+                    phoneLabel: 'Phone Number',
+                    relationshipLabel: 'Relationship to School',
+                    parentOption: 'Parent',
+                    studentOption: 'Student',
+                    teacherOption: 'Teacher',
+                    communityOption: 'Community Member',
+                    otherOption: 'Other',
+                    notesLabel: 'Special Requirements or Notes',
+                    cancelBtn: 'Cancel',
+                    submitRegisterBtn: 'Register Now',
+                    footerSchoolName: 'GDS Public School',
+                    footerDescription: 'Building a brighter future through excellence in education and character development.',
+                    footerQuickLinksTitle: 'Quick Links',
+                    footerHome: 'Home',
+                    footerAbout: 'About',
+                    footerCurriculum: 'Curriculum',
+                    footerEvents: 'Events',
+                    footerContact: 'Contact',
+                    footerContactTitle: 'Contact Info',
+                    footerAddress: 'Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar',
+                    footerPhone1: '+91&nbsp;940&#8209;353&#8209;1242',
+                    footerPhone2: '+91&nbsp;917&#8209;504&#8209;2179',
+                    footerEmail: 'info@gdspublicschool.edu',
+                    footerFollowTitle: 'Follow Us',
+                    footerFollowDesc: 'Stay updated with our latest news, events, and educational insights.',
+                    footerCopyright: '© 2025 GDS Public School. All rights reserved.'
+                };
+
+                const marathiContent = {
+                    navHome: 'मुख्यपृष्ठ',
+                    navAbout: 'आमच्याबद्दल',
+                    navCurriculum: 'अभ्यासक्रम',
+                    navEvents: 'कार्यक्रम',
+                    navContact: 'संपर्क करा',
+                    eventsTitle: 'आगामी कार्यक्रम',
+                    eventsSubtitle: 'रोमांचक शैक्षणिक कार्यक्रम आणि क्रियाकलापांसाठी आमच्यात सामील व्हा',
+                    featuredEventLabel: 'वैशिष्ट्यीकृत कार्यक्रम',
+                    registerNowBtn: 'आता नोंदणी करा',
+                    addToCalendarBtn: 'कॅलेंडरमध्ये जोडा',
+                    contactSectionTitle: 'कार्यक्रम सहाय्य आणि संपर्क',
+                    contactSectionSubtitle: 'कार्यक्रम नोंदणीसाठी मदत हवी किंवा प्रश्न आहेत? आमचा संघ तुम्हाला मदत करण्यासाठी इथे आहे',
+                    generalSupportTitle: 'सामान्य सहाय्य',
+                    generalSupportDesc: 'सामान्य कार्यक्रम चौकशी आणि नोंदणी सहाय्यासाठी',
+                    eventCoordinationTitle: 'कार्यक्रम समन्वय',
+                    eventCoordinationDesc: 'कार्यक्रम नियोजन आणि समन्वय बाबींसाठी',
+                    faqHelpTitle: 'वारंवार विचारले जाणारे प्रश्न आणि मदत',
+                    faqHelpDesc: 'सामान्य प्रश्नांची जलद उत्तरे',
+                    viewFaqBtn: 'वारंवार विचारले जाणारे प्रश्न पहा',
+                    eventRegistrationTitle: 'कार्यक्रम नोंदणी',
+                    fullNameLabel: 'पूर्ण नाव',
+                    emailLabel: 'ईमेल पत्ता',
+                    phoneLabel: 'फोन नंबर',
+                    relationshipLabel: 'शाळेशी नाते',
+                    parentOption: 'पालक',
+                    studentOption: 'विद्यार्थी',
+                    teacherOption: 'शिक्षक',
+                    communityOption: 'समुदाय सदस्य',
+                    otherOption: 'इतर',
+                    notesLabel: 'विशेष आवश्यकता किंवा टिप्पण्या',
+                    cancelBtn: 'रद्द करा',
+                    submitRegisterBtn: 'आता नोंदणी करा',
+                    footerSchoolName: 'गिरीश ज्ञान संस्कार विद्यालय',
+                    footerDescription: 'शिक्षण आणि चारित्र्य विकासात उत्कृष्टतेच्या माध्यमातून उज्ज्वल भविष्य घडविणे.',
+                    footerQuickLinksTitle: 'जलद दुवे',
+                    footerHome: 'मुख्यपृष्ठ',
+                    footerAbout: 'आमच्याबद्दल',
+                    footerCurriculum: 'अभ्यासक्रम',
+                    footerEvents: 'कार्यक्रम',
+                    footerContact: 'संपर्क',
+                    footerContactTitle: 'संपर्क माहिती',
+                    footerAddress: 'भगतसिंग नगर-मयूर <br> पार्क, हरसूल एरिया, शिवाजी <br> चौक, छत्रपती संभाजी नगर',
+                    footerPhone1: '+९१ ९४०-३५३-१२४२',
+                    footerPhone2: '+९१ ३१७-५०४-२१७३',
+                    footerEmail: 'info@gdspublicschool.edu',
+                    footerFollowTitle: 'आमचा फॉलो करा',
+                    footerFollowDesc: 'आमच्या नवीनतम बातम्या, कार्यक्रम आणि शैक्षणिक अंतर्दृष्टींची माहिती मिळवा.',
+                    footerCopyright: '© २०२५ गिरीश ज्ञान संस्कार विद्यालय. सर्व हक्क राखीव.'
+                };
+
+                function updateContent(language) {
+                    const content = language === 'english' ? englishContent : marathiContent;
+                    
+                    Object.keys(content).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            if (key === 'footerAddress' || key.includes('Phone')) {
+                                element.innerHTML = content[key];
+                            } else {
+                                element.textContent = content[key];
+                            }
+                        }
+                    });
+                    
+                    const mobileNavSpans = document.querySelectorAll('[data-en]');
+                    mobileNavSpans.forEach(span => {
+                        if (language === 'english') {
+                            span.textContent = span.getAttribute('data-en');
+                        } else {
+                            span.textContent = span.getAttribute('data-mr');
+                        }
+                    });
+                    
+                    updatePlaceholders(language);
+                    updateCategoryFilters(language);
+                    updateTimeFilterButtons(language);
+                    
+                    currentLanguage = language;
+                    document.documentElement.setAttribute('lang', language === 'english' ? 'en' : 'mr');
+                    localStorage.setItem('preferredLanguage', language);
+                }
+
+                function updatePlaceholders(language) {
+                    const placeholders = {
+                        english: {
+                            fullNameInput: 'Enter your full name',
+                            emailInput: 'Enter your email address',
+                            phoneInput: 'Enter your phone number',
+                            notesInput: 'Any special requirements or additional information (max 500 characters)'
+                        },
+                        marathi: {
+                            fullNameInput: 'तुमचे पूर्ण नाव टाका',
+                            emailInput: 'तुमचा ईमेल पत्ता टाका',
+                            phoneInput: 'तुमचा फोन नंबर टाका',
+                            notesInput: 'कोणत्याही विशेष आवश्यकता किंवा अतिरिक्त माहिती (कमाल ५०० अक्षरे)'
+                        }
+                    };
+                    
+                    Object.keys(placeholders[language]).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.placeholder = placeholders[language][key];
+                        }
+                    });
+                }
+
+                function updateCategoryFilters(language) {
+                    const categoryNames = {
+                        english: {
+                            all: 'All Events',
+                            Seminar: 'Seminars',
+                            Workshop: 'Workshops',
+                            Bootcamp: 'Bootcamps',
+                            Entertainment: 'Entertainment',
+                            Meeting: 'Meetings'
+                        },
+                        marathi: {
+                            all: 'सर्व कार्यक्रम',
+                            Seminar: 'सेमिनार',
+                            Workshop: 'कार्यशाळा',
+                            Bootcamp: 'बूटकॅम्प',
+                            Entertainment: 'मनोरंजन',
+                            Meeting: 'सभा'
+                        }
+                    };
+                    
+                    categories.forEach(category => {
+                        const button = document.getElementById(`category-${category.id}`);
+                        if (button) {
+                            button.textContent = categoryNames[language][category.id] || category.name;
+                        }
+                    });
+                }
+
+                function updateTimeFilterButtons(language) {
+                    const upcomingBtn = document.getElementById('upcomingBtn');
+                    const pastBtn = document.getElementById('pastBtn');
+                    
+                    if (language === 'marathi') {
+                        if (upcomingBtn) upcomingBtn.textContent = 'आगामी कार्यक्रम';
+                        if (pastBtn) pastBtn.textContent = 'मागील कार्यक्रम';
+                    } else {
+                        if (upcomingBtn) upcomingBtn.textContent = 'Upcoming Events';
+                        if (pastBtn) pastBtn.textContent = 'Past Events';
+                    }
+                }
+
+                function toggleLanguage() {
+                    const toggle = document.getElementById('langToggle');
+                    const mobileToggle = document.getElementById('mobileLangToggle');
+                    
+                    if (mobileToggle) {
+                        mobileToggle.checked = toggle.checked;
+                    }
+                    
+                    if (toggle.checked) {
+                        updateContent('marathi');
+                    } else {
+                        updateContent('english');
+                    }
+                }
+
+                function toggleMobileLanguage() {
+                    const toggle = document.getElementById('langToggle');
+                    const mobileToggle = document.getElementById('mobileLangToggle');
+                    
+                    if (toggle) {
+                        toggle.checked = mobileToggle.checked;
+                    }
+                    
+                    if (mobileToggle.checked) {
+                        updateContent('marathi');
+                    } else {
+                        updateContent('english');
+                    }
+                }
+
+                function initializeLanguage() {
+                    const savedLanguage = localStorage.getItem('preferredLanguage') || 'english';
+                    const toggle = document.getElementById('langToggle');
+                    const mobileToggle = document.getElementById('mobileLangToggle');
+                    
+                    const isMarathi = savedLanguage === 'marathi';
+                    
+                    if (toggle) toggle.checked = isMarathi;
+                    if (mobileToggle) mobileToggle.checked = isMarathi;
+                    
+                    updateContent(savedLanguage);
+                }
+
                 // ========== INITIALIZATION ==========
                 document.addEventListener('DOMContentLoaded', function () {
+                    initializeLanguage();
                     renderCategoryFilters();
                     showLoadingState();
                     fetchEventsFromGoogleSheets();
@@ -924,10 +1186,10 @@
                         <div class="bg-accent p-2.5 rounded-md mr-4">
                             <i class="fas fa-graduation-cap text-primary" style="font-size: 24px;"></i>
                         </div>
-                        <span class="text-xl font-bold">GDS Public School</span>
+                        <span id="footerSchoolName" class="text-xl font-bold">GDS Public School</span>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">Building a brighter future through excellence in
-                        education and character development.</p>
+                    <p id="footerDescription" class="text-gray-400 leading-relaxed mb-6">Building a brighter future
+                        through excellence in education and character development.</p>
                     <div class="flex space-x-3">
                         <a class="text-gray-400 hover:text-accent transition-colors p-1.5" href="#"
                             aria-label="Facebook">
@@ -950,34 +1212,33 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Quick Links</h3>
+                    <h3 id="footerQuickLinksTitle" class="text-lg font-bold text-accent mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="index.html">Home</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="about.html">About</a>
-                        </li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors"
-                                href="admissions.html">Admissions</a></li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="events.html">Events</a>
-                        </li>
-                        <li><a class="text-gray-400 hover:text-accent transition-colors" href="contact.html">Contact</a>
-                        </li>
+                        <li><a id="footerHome" class="text-gray-400 hover:text-accent transition-colors"
+                                href="index.html">Home</a></li>
+                        <li><a id="footerAbout" class="text-gray-400 hover:text-accent transition-colors"
+                                href="About.html">About</a></li>
+                        <li><a id="footerCurriculum" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Curriculum.html">Curriculum</a></li>
+                        <li><a id="footerEvents" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Event.html">Events</a></li>
+                        <li><a id="footerContact" class="text-gray-400 hover:text-accent transition-colors"
+                                href="Contact_Us.html">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Contact Info</h3>
+                    <h3 id="footerContactTitle" class="text-lg font-bold text-accent mb-6">Contact Info</h3>
                     <ul class="space-y-4 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-accent mr-3 mt-1" style="font-size: 18px;"></i>
-                            <!-- <span class="leading-relaxed">123 Education Street,<br>Knowledge City, KC 12345</span> -->
-                            <span class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br>
-                                Chowk, Chhatrapati Sambhaji nagar</span>
+                            <span id="footerAddress" class="leading-relaxed">Bhagatsingh Nagar-mayur <br> Park, Harsul Area, Shivaji <br> Chowk, Chhatrapati Sambhaji nagar</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone1" href="tel:+919403531242" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;940&#8209;353&#8209;1242
                                 </a>
                             </span>
@@ -985,23 +1246,23 @@
                         <li class="flex items-center">
                             <i class="fas fa-mobile-alt text-accent mr-3" style="font-size: 18px;"></i>
                             <span>
-                                <a href="tel:+919403531242" class="text-gray-400 hover:text-accent">
+                                <a id="footerPhone2" href="tel:+919175042179" class="text-gray-400 hover:text-accent">
                                     +91&nbsp;917&#8209;504&#8209;2179
                                 </a>
                             </span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope text-accent mr-3" style="font-size: 18px;"></i>
-                            <span>info@gdspublicschool.edu</span>
+                            <span id="footerEmail">info@gdspublicschool.edu</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Follow Us -->
                 <div>
-                    <h3 class="text-lg font-bold text-accent mb-6">Follow Us</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest news, events, and
-                        educational insights.</p>
+                    <h3 id="footerFollowTitle" class="text-lg font-bold text-accent mb-6">Follow Us</h3>
+                    <p id="footerFollowDesc" class="text-gray-400 mb-6 leading-relaxed">Stay updated with our latest
+                        news, events, and educational insights.</p>
                     <div class="flex space-x-3">
                         <a class="bg-accent text-primary p-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-md"
                             href="#" aria-label="Facebook">
@@ -1022,7 +1283,8 @@
             <!-- Copyright Section -->
             <div class="mt-12 pt-8 border-t border-gray-700">
                 <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p class="text-gray-400 text-sm">© 2024 GDS Public School. All rights reserved.</p>
+                    <p id="footerCopyright" class="text-gray-400 text-sm">© 2025 GDS Public School. All rights reserved.
+                    </p>
                 </div>
             </div>
         </div>
